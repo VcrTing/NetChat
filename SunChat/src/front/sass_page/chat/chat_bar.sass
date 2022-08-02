@@ -1,0 +1,24 @@
+$chat_top_bar: 52px
+.chat-top-bar
+    background: $def
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 400
+    min-height: $chat_top_bar
+    & > div > div
+        padding: 0px $ds
+        min-height: $chat_top_bar
+    .room-L > div
+        border-right: 1.4px solid $hr_x2
+
+.for-chat-top
+    .room-L,
+    .chat-pot-paner > div
+        padding-top: $chat_top_bar
+
+    .room-L .chat-top-bar
+        border-left: 1px solid transparent
+    .room-R > .chat-top-bar
+        border-bottom: 0.7px solid $hr
+        // border-left: 1.4px solid $hr_x2

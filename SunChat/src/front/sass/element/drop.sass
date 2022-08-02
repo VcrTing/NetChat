@@ -1,0 +1,43 @@
+
+.dropdown
+    position: relative
+    z-index: 500
+    display: inline-block
+        
+    .drop-inner
+        position: absolute
+        z-index: 500
+        opacity: 0
+        visibility: hidden
+        left: 50%
+        transform: translateX(-50%)
+
+    .drop-inner > div
+        @extend .br
+        transform: translate3d(0, $ds, 0)
+        
+    &:hover,
+    &:focus,
+    &:active, 
+    &:focus-visible
+        .drop-inner
+            opacity: 1
+            visibility: visible
+        .drop-inner > div
+            transform: translate3d(0, $ds, 0)
+
+.dropmenu-def
+    z-index: 600
+    overflow: hidden
+    min-width: 8em
+    background: #FFF
+    border-radius: 6px
+    padding: $ds_n 0 !important
+    box-shadow: 0.5px 2px 4px -1px rgba(0, 0, 0, 0.2)
+    button
+        width: 100%
+        padding: 6px 16px
+        border-radius: 0px
+        text-align: left
+        &:hover
+            background: $def

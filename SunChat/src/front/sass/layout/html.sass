@@ -1,0 +1,195 @@
+
+$topH: 38px
+
+$menuW: calc(120px + 8vw )
+$menuW_r: calc(-120px - 8vw )
+$menuC: #FFF // #1F2C2E
+$menuHr: #A3AED0
+$menuBg: #1E1601 // #D0B6A3
+$menuTxt: rgba(255, 255, 255, 0.65)
+
+// 主界面
+.html
+    width: 100vw
+    height: 100vh
+    overflow: hidden
+    position: relative
+
+.menu
+    overflow-y: scroll
+    background: $menuC
+    min-width: $menuW
+    min-height: 100%
+    width: $menuW
+    z-index: 600
+    bottom: 0
+    button
+        color: $sub
+        // color: $menuTxt
+
+.content
+    padding: 0
+    position: relative
+
+.top
+    width: 100%
+    z-index: 500
+    min-height: 38px
+    max-height: 49px
+    color: #FFFFFFEF
+    background: $primary
+
+.top,
+.menu
+    top: 0
+    left: 0
+    position: fixed
+
+.top,
+.content
+    padding: 0
+    // padding-left: $menuW
+
+.content,
+.center
+    height: 100%
+    max-height: 100%
+
+.top
+    @extend .bxs_n
+    padding-top: $ds_s
+    padding-bottom: $ds_s
+
+.center
+    overflow-y: scroll
+
+// MENU 动画
+.collapse-menu-item
+    margin-bottom: $ds_s
+    & > button
+        &:focus,
+        &:active,
+        &:focus-visible
+            // background: $primary_Thin
+        &:hover
+            color: $tit !important
+            // background: $primary
+.menu-many-wrapper > button .collapse-i
+    transform: rotate(-90deg)
+.menu-many-wrapper > button:hover .collapse-i
+    transform: rotate(0deg)
+    // transform: rotate(90deg) translateX(2px)
+
+// 总体
+.menu-main
+    height: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+.menu-space
+    width: 100%
+    height: calc( 80px + 1vw )
+
+// 背景 线
+.menu-hr
+    margin: $ds $ds 0
+    height: 1px
+    padding: 0
+    border: none
+    opacity: 0.26
+    border-radius: 1em
+    background: $menuHr
+
+// 背景
+.menu-bg
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 499
+    width: 100vw
+    height: 100vh
+    background: rgba(0, 0, 0, 0.4)
+    
+.pl_menu
+    padding-left: calc( 38px + 1.2vw ) !important
+    
+    
+@media screen and (min-width: 1444px)
+    .menu-one-wrapper,
+    .menu-many-wrapper > button
+        padding-left: $ds_x3 !important
+        padding-right: $ds_x3 !important
+    .menu-many-wrapper
+        & > div
+            // margin-top: $ds_n
+    .pl_menu
+        .pl_n
+            padding-left: $ds_x
+
+@media screen and (max-width: 1444px)
+    //
+
+
+@media screen and ( min-width: 1082px )
+    .html
+        .menu-bg
+            display: none
+@media screen and ( max-width: 1082px )
+
+    .html
+        .top
+            width: 100%
+            min-width: 100vw
+        .top,
+        .content
+            padding-left: 0px
+        .content
+            overflow-x: scroll
+            .center
+                // min-width: 911px
+        .menu
+            min-width: 216px
+
+    .html-active
+        .menu
+            animation: menu-shower .362s ease-in-out
+        .menu-bg
+            animation: menu-bg-shower .122s ease-in-out
+    .html-hide
+        .menu
+            margin-left: -216px // $menuW_r
+            animation: menu-hide .362s ease-in-out
+        .menu-bg
+            display: none 
+            animation: menu-bg-hide .122s ease-in-out
+
+
+@keyframes menu-hide
+    0%
+        opacity: 0.4
+        transform: translateX(0px)
+    100%
+        opacity: 1
+        transform: translateX(-90px)
+        margin-left: $menuW_r
+@keyframes menu-bg-hide
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+        display: none 
+
+
+// SHOWER
+@keyframes menu-shower
+    0%
+        opacity: 0.4
+        transform: translateX($menuW_r)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+@keyframes menu-bg-shower
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+        display: block

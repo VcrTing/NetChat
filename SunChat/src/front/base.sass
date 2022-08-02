@@ -1,0 +1,88 @@
+html
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC', 'Source Han Sans CN', 'Source Han Sans TC', 'Noto Sans CJK TC', 'WenQuanYi Micro Hei', SimSun, sans-serif
+div,
+button
+    border-radius: 0px
+
+@import ./sass_conf/wh
+@import ./sass_conf/font
+@import ./sass_conf/color
+@import ./sass_conf/other
+@import ./sass_conf/distance
+@import ./sass_conf/layout
+@import ./sass_conf/radius
+
+::-webkit-scrollbar
+    width: 0px !important
+
+html
+    color: $tit
+    font-size: $fs
+    background: $bg !important
+
+*
+    margin: 0
+    padding: 0
+    line-height: $lh
+    box-sizing: border-box
+
+*
+    color: inherit
+    font-size: inherit
+
+@import ./sass_conf/color_implements
+
+a,
+li,
+button 
+    padding: 0
+    transition: all .362s
+
+ul
+    list-style: none
+
+a
+    cursor: pointer
+    text-decoration: none
+    
+p
+    line-height: $lh
+    padding-bottom: $ds
+
+.hand,
+i
+    cursor: pointer
+i
+    font-size: 1em
+
+img 
+    width: 100%
+    height: auto
+    user-select: none
+
+.btn,
+button
+    width: auto
+    margin: 0
+    padding: auto
+    cursor: pointer
+    user-select: none
+    box-sizing: border-box
+    background: transparent
+    border: 1px solid transparent
+    outline: 2px solid transparent
+
+
+@import ./sass_conf/plant/screen
+@import ./sass_conf/plant/pc
+@import ./sass_conf/plant/pad
+@import ./sass_conf/plant/mobie
+@import ./sass_conf/plant/mobie_page
+@import ./sass_conf/plant/mini
+@import ./sass_conf/plant/xplant_splite
+@import ./sass_conf/plant/xplant_splite_s
+
+@import ./sass/lunching
+
+@import ./sass_page/page
+

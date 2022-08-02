@@ -1,0 +1,80 @@
+
+.ani_mod_hui
+    opacity: 0.4
+    animation: ani_mod_hui .062s ease-in
+@keyframes ani_mod_hui
+    0%
+        opacity: 0
+    100%
+        opacity: 0.4
+
+.modal
+    &,
+    .modal-hui,
+    .modal-cont
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        top: 0
+        z-index: 800
+        transition: all .242s
+    &
+        top: 120vh
+        display: none
+        position: fixed !important
+        transition: all 0s
+    .modal-hui
+        @extend .ani_mod_hui
+        background: #000
+        transition: all .062s ease-in
+    .modal-cont
+        // 
+    .modal-center
+        position: relative
+        @extend .upper_mod
+        background: #FFF
+        padding: $ds $ds_x2
+        box-shadow: 0px 0.618px 6px -1.2px rgba(0, 0, 0, 0.24)
+
+    .modal-center
+        @extend .fx-c
+        width: auto
+        max-width: calc(360px + 30vw)
+        height: auto
+        z-index: 802
+        overflow: hidden
+
+    .modal-center > div
+        padding: $ds
+        max-width: 100%
+        max-height: 80vh
+        overflow-x: hidden
+        overflow-y: scroll
+        & > div
+            overflow-y: scroll
+
+
+.modal-active
+    @extend .fx-c
+    top: 0vh
+    display: flex
+
+.modal-menu
+    .modal-center
+        margin-left: $menuW
+    &,
+    .modal-hui,
+    .modal-cont
+        z-index: 550
+
+.min-w
+    min-width: 60vw
+
+// 最后 宽度
+.modal-w-min
+    .modal-center
+        width: 100%
+        max-width: 60vw
+        & > div 
+            width: 100%

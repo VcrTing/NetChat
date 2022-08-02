@@ -1,0 +1,130 @@
+
+.collapse-item,
+.collapse-item > div,
+.collapse-item > button
+    width: 100%
+    position: relative
+    background: transparent
+
+.collapse-td-item,
+.collapse-td-item > div,
+.collapse-td-item > button
+    &,
+    & > div
+        z-index: 20
+
+.collapse-item
+    margin-bottom: $ds
+    & > div,
+    & > button
+        outline: none
+        border-color: transparent !important
+        text-align: left
+        border-radius: 0px
+    & > button
+        @extend .mh
+        padding: $ds_t $ds
+    & > div
+        max-height: 0px
+        overflow: hidden
+        transform: translateY(-1em)
+        transition: all .242s ease-out
+
+.collapse-active
+    & > div
+        max-height: 24em
+        transform: translateY(0px)
+    & > button 
+        .i-icing
+            transition: all .242s ease-in-out
+            transform: rotate(-180deg) !important
+
+
+// 默认
+.collapse-def
+    .collapse-item
+        & > div
+            background: #FFF !important
+            border-bottom-left-radius: $br
+            border-bottom-right-radius: $br
+        & > button
+            background: #F2F2F2
+    .collapse-active
+        & > button
+            border-bottom-left-radius: 0px
+            border-bottom-right-radius: 0px
+
+// MENU
+.collapse-menu-item
+    // margin-bottom: $ds_s
+    & > button
+        padding: $ds_s $ds_x2
+        &:hover
+            background: $primary_Tiny
+
+    & > div
+        // margin-top: $ds_s
+    .collapse-i
+        opacity: 0.8
+        font-size: 1em
+        transition: all .122s ease-in
+    .collapse-button-active
+        .collapse-i
+            // color: $primary
+
+    .active
+        // background: $primary_Hover
+        background: $primary_Thin
+        position: relative
+        *
+            color: $tit
+        &::after
+            position: absolute
+            content: ''
+            top: 0
+            right: 0
+            bottom: 0
+            width: 4px
+            opacity: 1
+            background: $primary
+            border-radius: 0px
+            animation: menu_stick .242s ease-out
+
+@keyframes menu_stick 
+    0%
+        opacity: 0.4
+    100%
+        opacity: 1
+
+.menu-many-wrapper
+    & > button
+        padding-right: $ds
+    & > div
+        // min-height: 60em !important
+    & > div > div
+        margin: 0px
+        margin-top: $ds_s
+        & > button
+            margin-bottom: $ds_s
+
+// TABLE TD
+.collapse-td-item,
+.collapse-tab-item,
+.collapse-card-item
+    & > button
+        padding: 0
+        cursor: default
+    .collapse-td-active
+        max-height: 240em
+        
+
+    
+.collapse-tab-item,
+.collapse-card-item
+    margin-bottom: 0px
+    .collapse-card-active
+        max-height: 90em
+
+.collapse-card-item
+    & > div > div
+        margin-top: $ds

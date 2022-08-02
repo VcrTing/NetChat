@@ -1,0 +1,24 @@
+
+.htmi-top-menu
+    li
+        cursor: pointer
+        position: relative
+        margin-left: $ds_x2
+        &, &::after
+            padding: 0px $ds
+            transition: all .242s ease-in-out
+        *
+            z-index: 300
+        &::after
+            border: 2px solid transparent
+            height: $topH
+            width: 100%
+            z-index: -1
+            @extend .abs-cc
+            background: none
+        &:hover::after
+            background: rgba(255, 255, 255, 0.05)
+        &:focus::after, &:focus-visible::after, &:active::after
+            border-color: #FFFFFFDC                
+    .active::after
+        background: rgba(255, 255, 255, 0.07)
