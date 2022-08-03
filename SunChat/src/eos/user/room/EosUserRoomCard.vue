@@ -8,7 +8,9 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
             }"></div>
-            <div v-else class="user-avatar" :class="{ 'bg-def': !is_now, 'bg-avatar': is_now }"></div>
+            <div v-else class="user-avatar user-def-avatar" :class="{ 'bg-def': !is_now, 'bg-avatar': is_now }">
+                <span>{{ name_avatar }}</span>
+            </div>
         </div>
         <span class="px_s"></span>
         <nav class="t-l fx-1">
@@ -44,6 +46,11 @@ export default {
         },
         is_now() {
             return this.cher ? (this.cher.phone_number == this.reciever.phone_number) : false
+        },
+
+        name_avatar() {
+            const res = this.cher ? this.cher.profile_name : ''
+            return res ? res.substring(0, 1) : ''
         }
     }
 }

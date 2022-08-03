@@ -7,8 +7,6 @@
             <nav class="dropmenu-def drop-chat-setting tit">
                 <button>Starred messages</button>
                 <button @click="go('/chat/settings')">Settings</button>
-                <hr/>
-                <button>Log out</button>
             </nav>
         </template>
     </ui-dropdown>

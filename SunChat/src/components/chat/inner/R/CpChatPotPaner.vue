@@ -22,20 +22,34 @@ export default {
         }
     },
     computed: {
-        receiver() { return this.pina().chatter },
+        phoned() {
+            const src = this.pina().chatter
+            return src ? src.phone_number : ''
+        },
         words() { return this.pina().chat_ioc_words( this.chtr ) },
         pot() { return document.getElementById('pot_' + this.$.uid) }
     },
     mounted() {
         this.down()
+        // console.log('tooi_time =', this.tooi_time.himmer_time())
     },
     methods: {
+
+        // 先将消息插入数组
+        insert_words(v) {
+            this.pina().insert_words( v, this.phoned )
+        },
+
         // 发送消息
         async say(sentence) { 
-            sentence.phone_number = this.receiver.phone_number
-            await this.pina().say( this, sentence )
             this.down()
+            sentence.phone_number = this.phoned
+            this.insert_words( sentence )
+            this.down()
+            await this.pina().say( this, sentence )
+            // 发送成功后 做的事情
             await this.$refs.reREF.refresh()
+            this.down()
         },
 
         // 对话框，弹到底部

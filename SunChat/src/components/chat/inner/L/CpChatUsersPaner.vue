@@ -1,7 +1,7 @@
 <template>
     <div class="chat-user-paner">
         <eos-user-room-filter></eos-user-room-filter>
-        <div v-for="(v, i) in rooms" :key="i">
+        <div @click="change(v.chatter)" v-for="(v, i) in rooms" :key="i">
             <eos-user-room-card v-if="v.chatter" :chatter="v.chatter" :msgs="v.msgs"></eos-user-room-card>
         </div>
     </div>
@@ -13,8 +13,18 @@ import EosUserRoomFilter from '../../../../eos/user/filter/EosUserRoomFilter.vue
 
 export default {
   components: { EosUserRoomCard, EosUserRoomFilter },
+    methods: {
+        change(chr) {
+            const ph_oid = chr.phone_number // 
+            if (ph_oid != this.chatter.phone_number) {
+                console.log('改变 oid =', ph_oid)
+                this.pina().change_chatter( ph_oid )
+            }
+        }
+    },
     computed: {
-        rooms() { return this.pina().rooms }
+        rooms() { return this.pina().rooms },
+        chatter() { return this.pina().chatter }
     }
 }
 </script>

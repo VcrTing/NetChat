@@ -3,7 +3,7 @@
         <div v-for="(v, i) in msgs" :key="i">
             <nav>
                 <eos-chat-spoon-timed v-if="v.is_iong" :timed="v.date_time"></eos-chat-spoon-timed>
-                <eos-chat-spoon-cont :type="v.type" :cont="v.message" :direction="v.direction"></eos-chat-spoon-cont>
+                <eos-chat-spoon-cont v-if="v" :item="v" :type="v.type" :direction="v.direction"></eos-chat-spoon-cont>
             </nav>
         </div>
         <div class="msg-spoon-space"></div>

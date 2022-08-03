@@ -13,8 +13,8 @@ const _iong_taiking = function(n, o_timed, hm = IONG) {
     const iong = _iong(n[ key ], o_timed)
     if (iong > hm) {
         n.is_iong = true
-        n.iong_minute = Math.floor(iong / 60 / 1000)
     }
+    n.iong_minute = (iong / 60 / 1000)
     return n
 }
 

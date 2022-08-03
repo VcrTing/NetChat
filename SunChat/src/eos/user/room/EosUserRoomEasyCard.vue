@@ -7,7 +7,9 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
             }"></div>
-            <div v-else class="user-avatar bg-avatar"></div>
+            <div v-else class="user-avatar bg-avatar user-def-avatar">
+                <span>{{ name_avatar }}</span>
+            </div>
         </div>
         <span class="px_s"></span>
         <nav class="t-l fx-1 fs_s">
@@ -25,6 +27,13 @@
 <script>
 export default {
     props: [ 'user' ],
+    computed: {
+
+        name_avatar() {
+            const res = this.user ? this.user.profile_name : ''
+            return res ? res.substring(0, 1) : ''
+        }
+    }
 }
 </script>
 

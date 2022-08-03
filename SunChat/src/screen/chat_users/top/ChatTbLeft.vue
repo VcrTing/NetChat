@@ -1,13 +1,14 @@
 <template>
     <div class="fx-r">
-        <div class="pr">
+        <!--
+        <div class="">
             <eos-user-easy-card></eos-user-easy-card>
         </div>
         <nav class="fx-r ister">
-            <div>刷新</div>
             <div>编辑</div>
-            <eos-chat-setting-drop-menu></eos-chat-setting-drop-menu>
-        </nav>
+            <div>设定</div>
+            <eos-chat-setting-drop-menu></!--eos-chat-setting-drop-menu>
+        </nav>-->
     </div>
 </template>
 

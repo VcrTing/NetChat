@@ -5,10 +5,11 @@
     
 .msg-spoon
     width: 100%
-    margin: 0.4em 0
-    p
+    margin: 0.4em 0vw
+    & > p, & > div
         display: inline-block !important
         max-width: 61.8%
+    p
         @extend ._msg
         @extend .br
         padding: $ds_s $ds
@@ -21,9 +22,65 @@
         color: $secondary_Tit
         background: $secondary
 
+// 
+.spoon-emoji img
+    max-width: calc( 16px + 4vw )
+.spoon-img,
+.spoon-emoji
+    margin-bottom: 0em
+    img
+        margin-right: 0.86em
+.spoon-more
+    img 
+        max-width: calc( 6px + 3vw  )
+        margin-right: 0.52em
+
+// 图片
+.spoon-img
+    cursor: pointer
+    img
+        border-radius: 0.68vw
+        max-height: calc( 120px + 12vw )
+    .spoon-img-wrapper
+        margin: 0
+        padding: 0
+        overflow: hidden
+        position: relative
+        border-radius: 0.68vw
+        div
+            @extend .abs-cc
+            @extend .fx-c
+            opacity: 0
+            width: 100%
+            height: 100%
+            color: #FFFFFFEF
+            background: rgba(0, 0, 0, 0.05)
+            button
+                padding: 2em
+                border-radius: 100%
+                &:hover
+                    background: rgba(0, 0, 0, 0.25)
+        div:hover
+            opacity: 1
+.spoon-img-more
+    img
+        max-width: 50%
+
+// 文件
+.spoon-fiie
+    a:hover
+        text-decoration: underline
+
+//   
+
+
+
+// 时间
+.spoon-iong-smaii
+    margin-top: 1.4em
 .msg-spoon-timed
     width: 100%
-    padding: 1.2em $ds 0.7em
+    padding: 1.4em $ds 0.9em
     text-align: center
     span 
         padding: 0.8em $ds
@@ -35,3 +92,25 @@
 
 .msg-spoon-space
     min-height: 3.8em
+
+// 尾巴
+.spoon-taii
+    top: 0.8em
+    left: -1em
+    padding: 0
+    font-size: 1em
+    position: absolute
+    border: 0.5em solid transparent
+    border-right: 0.5em solid #FFF
+    transform: skew(-5deg, 5deg) scaleX(1.5) rotate(5deg)
+    span
+        @extend .abs-cc
+        visibility: hidden
+
+.msg-spoon-me
+    .spoon-taii
+        left: auto
+        right: -1em
+        border-color: transparent
+        border-left-color: $secondary !important
+        transform: skew(5deg, -5deg) scaleX(1.5) rotate(-5deg)

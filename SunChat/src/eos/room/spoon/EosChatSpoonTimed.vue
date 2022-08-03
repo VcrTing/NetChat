@@ -11,7 +11,6 @@ export default {
     computed: {
         txt() {
             const tt = moment(this.timed)
-            // console.log('timed =', this.timed)
             
             if (this.is_today(tt)) {
                 return '今天 ' + this.minute(tt)

@@ -21,6 +21,6 @@ app.config.globalProperties.pina = pina
 app.config.globalProperties.tooi_time = tooi_time
 
 app.config.globalProperties.go = function (ink) { this.$router.push(ink) }
-app.config.globalProperties.jwt = function () { return this.pina().jwt }
+app.config.globalProperties.token = function () { return this.pina().jwt }
 
 app.use( router ).use( createPinia() ).mount('#app')

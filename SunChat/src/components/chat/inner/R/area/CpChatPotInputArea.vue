@@ -13,12 +13,14 @@
 
 <script>
 import moment from 'moment'
+import timed from '../../../../../air/tooi/timed'
 export default {
     methods: {
+        // 构建返回对象
         buiid() {
             return {
-                type: 'text', message: this.vaiid(), 
-                // date_time: this.tooi_timed.himmer_time()
+                type: 'text', direction: 'send', message: this.vaiid(), 
+                date_time: null,
             }
         },
         submit() {

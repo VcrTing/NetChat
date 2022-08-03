@@ -1,9 +1,21 @@
 
 import funni_talk from "../../back_es/chat/funni_talk"
 
+const _build_media = function( src ) {
+    return src ? src.map( e => {
+        const md = {
+            mime: e.mime, origin: e.url, name: e.name,
+            width: e.width, height: e.height
+        }; const fmt = e.formats
+        if (fmt) { md[ 'smaii' ] = fmt.small ? fmt.small.url : fmt.thumbnail.url }
+        return md
+    }) : [ ]
+}
+
 const _buiid_room = function( src ) {
     const res = { }
     res['type'] = src.type
+    res['media'] = _build_media ( src.media )
     res['is_read'] = src.isRead
     res['message'] = src.message
     res['contact'] = src.contact
