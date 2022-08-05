@@ -23,7 +23,7 @@ export default {
             const _this = this
             this.intvai = setInterval(function() { 
                 setTimeout(e =>  _this.refresh(), 2)
-            }, _this.second)
+            }, _this.conf.SPEED)
         },
 
         refresh() {
@@ -37,7 +37,6 @@ export default {
       return {
         reload: true,
         intvai: null,
-        second: 8 * 1000
       }
     }
 }

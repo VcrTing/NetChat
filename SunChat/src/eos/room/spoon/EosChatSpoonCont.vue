@@ -7,7 +7,7 @@
             'mt': which > 1
         }">
 
-        <p v-if="which <= 1">
+        <p v-if="which <= 1" :class="{ 'spoon-one-emoji': is_one_emoji(item.message) }">
             <span v-if="item.message">{{ item.message }}</span>
             <span v-else>&nbsp;</span>
         </p>
@@ -40,9 +40,18 @@ export default {
     methods: {
         media() {
             return this.item.media
-        }
+        },
+        is_one_emoji(v) {
+            let res = false
+            if (v && v.length > 2) { return false }
+            res = /[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF][\u200D|\uFE0F]|[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF]|[0-9|*|#]\uFE0F\u20E3|[0-9|#]\u20E3|[\u203C-\u3299]\uFE0F\u200D|[\u203C-\u3299]\uFE0F|[\u2122-\u2B55]|\u303D|[\A9|\AE]\u3030|\uA9|\uAE|\u3030/ig.test(v);
+
+            res ? console.log(v) : 0
+            return res
+        },
     },
     computed: {
+
         is_smaii_iong() {
             const src = this.item.is_iong ? 0 : this.item.iong_minute
             return src ? src > 2 : false

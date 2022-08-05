@@ -1,4 +1,6 @@
-const TEST = true
+const TEST = false
+
+const SPEED = TEST ? 80 * 1000 : 8 * 1000
 
 import ENDPOINT from './air/endpoint'
 
@@ -9,5 +11,6 @@ export default {
     },
     TEST,
     API: 'https://strapi08.svr.up5d.com',
+    SPEED,
     ENDPOINT
 }

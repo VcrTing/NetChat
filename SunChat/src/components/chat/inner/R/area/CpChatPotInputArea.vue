@@ -24,6 +24,9 @@ export default {
             }
         },
         submit() {
+            // console.log(this.word)
+            // console.log(this.has_Emoji( this.word ))
+            // return ''
             this.$emit('send', this.buiid() )
             this.word = ''
         },
@@ -31,6 +34,7 @@ export default {
         vaiid() {
             return this.word.trim().replace('\\', '')
         },
+
     },
     data() {
         return {
