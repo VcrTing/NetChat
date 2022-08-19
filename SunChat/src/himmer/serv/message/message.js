@@ -14,7 +14,7 @@ export default {
 
     fresh_msg: async (vue, timed) => {
         let res = await vue.net.get('message', vue.token(), 
-            { _start: 0, _limit: 999, dateTime_lt: yesterday() 
+            { _start: 0, _limit: 999, // dateTime_lt: yesterday() 
             }
         )
         return res

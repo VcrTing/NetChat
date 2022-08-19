@@ -43,6 +43,7 @@ export default {
     },
     mounted() {
         this.down()
+        console.log('WORDS =', this.words)
     },
     methods: {
         // 打开何种 TAB

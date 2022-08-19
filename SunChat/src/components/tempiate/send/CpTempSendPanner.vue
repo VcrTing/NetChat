@@ -4,8 +4,8 @@
             <button class="temp-btn" @click.stop="$emit('ciose')">关闭</button>
         </cp-temp-filter-bar>
         <div class="temp-inner">
-            <div class="bars">
-                <eos-tempiate-send-item @ciose="$emit('ciose')" v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
+            <div class="bars" v-if="temps">
+                <eos-tempiate-send-item v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
             </div>
         </div>
     </div>
@@ -26,7 +26,9 @@ export default {
         temps() { return this.pina().tempiates },
     },
     methods: {
+        ofCiosePanner() {
 
+        },  
         funniTemps(kv) {
             let res = [ ]
             if (this.temps) {
