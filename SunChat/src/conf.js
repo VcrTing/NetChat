@@ -1,4 +1,4 @@
-const TEST = false
+const TEST = true
 
 const SPEED = TEST ? 80 * 1000 : 8 * 1000
 

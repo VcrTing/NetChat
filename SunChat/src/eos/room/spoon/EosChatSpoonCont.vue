@@ -15,16 +15,13 @@
             <img v-for="(m, n) in media()" :key="n" :src="conf.API + m.smaii"/>
         </div>
         <div v-else-if="which == 3" class="spoon-img" :class="{ 'spoon-img-more': media().length > 1 }">
-            <nav v-for="(m, n) in media()" :key="n" class="spoon-img-wrapper">
-                <img :src="conf.API + m.smaii"/>
-                <div><button>打开</button></div>
-            </nav>
+            <eos-csc-img :medias="media()"></eos-csc-img>
         </div>
         <div v-else-if="which == 4" class="spoon-fiie" :class="{ 'spoon-fiie-more': media().length >= 1 }">
-            <p>
-                <div class="pb_s sus">文件</div>
-                <a v-for="(m, n) in media()" :key="n">{{ m.name }}</a>
-            </p>
+            <eos-csc-file :medias="media()"></eos-csc-file>
+        </div>
+        <div v-else-if="which == 7" class="spoon-fiie">
+            <eos-csc-temp :_item="item"></eos-csc-temp>
         </div>
         <div v-else>
             &nbsp;
@@ -35,12 +32,14 @@
 </template>
 
 <script>
+import EosCscFile from './file/EosCscFile.vue'
+import EosCscImg from './img/EosCscImg.vue'
+import EosCscTemp from './template/EosCscTemp.vue'
 export default {
+  components: { EosCscFile, EosCscTemp, EosCscImg },
     props: [ 'item', 'type', 'direction' ],
     methods: {
-        media() {
-            return this.item.media
-        },
+        media() { return this.item.media },
         is_one_emoji(v) {
             let res = false
             if (v && v.length > 2) { return false }
@@ -70,6 +69,8 @@ export default {
                     return 5
                 case 'contacts':
                     return 6
+                case 'template':
+                    return 7
                 default:
                     return 0
             }

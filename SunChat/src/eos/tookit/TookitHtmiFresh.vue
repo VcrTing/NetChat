@@ -28,7 +28,6 @@ export default {
 
         refresh() {
             this.reload = false
-            console.log('刷新！！！')
             this.$emit('refresh')
             this.$nextTick(() => this.reload = true)
         }

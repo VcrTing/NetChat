@@ -1,0 +1,87 @@
+$ep-H: calc( 112px + 12vw )
+
+.attch-bar
+    @extend .ciear
+    width: 100%
+    background: $def
+    padding: 0 !important
+    height: auto !important
+    overflow: visible !important
+    box-shadow: 0px -1.2px 2px 0px rgba(0, 0, 0, 0.07) 
+    & > div
+        @extend .ciear
+        width: 100%
+        max-height: 0em
+        overflow: hidden
+        overflow-y: scroll
+
+.ab-active
+    opacity: 1
+    bottom: 3.2em
+    animation: emoji_panner .242s ease-out
+    & > div
+        opacity: 1
+        max-height: $ep-H
+        animation: emoji_panner_inner .242s ease-out
+
+@keyframes emoji_panner
+    0%
+        opacity: 0.8
+        bottom: 0
+    100%
+        opacity: 1
+        bottom: 3.2em
+
+@keyframes emoji_panner_inner
+    0%
+        max-height: 0em
+    100%
+        max-height: $ep-H
+    
+// 自定义
+.temp-panner,
+.emoji-panner
+    left: 0
+    position: absolute
+    padding: 0
+
+    & > div 
+        padding-top: 0 !important
+
+.emoji-panner
+    .emoji-aii
+        padding: $ds_s $ds_x2
+        margin: 0px -6px
+        font-size: calc( 12px + 1vw )
+        li
+            padding: 0 $ds_s
+            display: inline-block
+
+.ab-active
+    bottom: 3.4em
+
+        
+// TABS 选择
+
+.emoji-panner-tabs
+    li
+        padding: $ds $ds
+        min-width: 12.5%
+        position: relative
+        text-align: center
+        display: inline-block
+        &::after
+            position: absolute
+            width: 100%
+            content: ''
+            left: 0
+            bottom: 0
+            opacity: 0
+            height: 4px
+            background: none
+            transition: all .12s ease-in-out
+
+    .ept-active
+        &::after
+            opacity: 1
+            background: $primary

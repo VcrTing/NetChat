@@ -10,5 +10,11 @@ export default () => {
 
         rooms: { },
         users,
+
+        tempiates: [ ],
+
+        // 0 = 非打开，1 = 图片 Gaiiary
+        MODAL: 0,
+        GALLARY: [  ]
     }
 }

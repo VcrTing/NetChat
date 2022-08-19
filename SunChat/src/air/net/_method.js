@@ -23,7 +23,6 @@ const get = async function(uri, token, data){
 
 const get = async function( uri, token, data, cdt = '' ) {
     const url = conf.API + conf.ENDPOINT[ uri ] + '/' + cdt + tool.param( data )
-    // console.log('GET URL =', url)
     let res = await axios.get(url, { headers: tool.headers(token) })
     return res && res.status == 200 ? res.data : [ ]
 }
@@ -34,8 +33,10 @@ const get_one = async function( uri, cdt, token, data = {} ) {
     return res && res.status == 200 ? res.data : [ ]
 }
 
-const post = async function( uri, token, data ) {
-    const url = conf.API + conf.ENDPOINT[ uri ]
+const post = async function( uri, token, data, params = {} ) {
+    const url = conf.API + conf.ENDPOINT[ uri ] + tool.param( params )
+    console.log('POST =', url)
+    console.log('POST DATA =', data)
     let res = await axios.post(url, data, { headers: tool.headers(token) })
     return res && res.status <= 399 ? res.data : null
 }

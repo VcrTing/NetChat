@@ -1,0 +1,46 @@
+
+.bars > div
+    padding: $ds_t $ds_x
+    padding-right: 0px
+    .btn-send
+        min-width: 6em
+        border-radius: 0px
+        padding: $ds_n $ds_x2
+        border: 1px solid transparent
+        border-right-width: 0px
+        &:hover
+            background: #FFF
+            border: 1px solid $def
+    &:hover
+        background: rgba(255, 255, 255, 0.7)
+
+.temp-filter-bar
+    background: #FFF !important
+    .tfb-cate
+        @extend .h6
+        padding: 0
+        button
+            @extend .ciear
+            font-weight: bold
+            padding: $ds_n $ds_x2
+        .active
+            background: $def
+
+    .tfb-tag
+        padding: $ds 0 $ds $ds_x
+        background: $def
+        button
+            padding: $ds_t $ds_x
+            border-radius: 0.2em
+            font-size: $fs_s 
+        .active
+            background: rgba(255, 255, 255, 0.7)
+
+.temp-btn
+    padding: $ds_s $ds !important
+    border-radius: 0px
+    background: none
+    border: none
+    border-top: 1px solid transparent
+    &:hover
+        border-color: $def

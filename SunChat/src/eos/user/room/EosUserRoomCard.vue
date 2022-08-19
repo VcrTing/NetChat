@@ -9,13 +9,13 @@
                 'background-position': 'center',
             }"></div>
             <div v-else class="user-avatar user-def-avatar" :class="{ 'bg-def': !is_now, 'bg-avatar': is_now }">
-                <span>{{ name_avatar }}</span>
+                <span>{{ name_avatar ? name_avatar : '' }}</span>
             </div>
         </div>
         <span class="px_s"></span>
         <nav class="t-l fx-1">
             <div class="fx-s">
-                <div>{{ cher.profile_name }}</div>
+                <div>{{ cher.profile_name ? cher.profile_name : '未知用戶(對方未回復)' }}</div>
                 <div class="fs_s sus">昨天 12:20</div>
             </div>
             <nav class="fs_s sub fx-s">

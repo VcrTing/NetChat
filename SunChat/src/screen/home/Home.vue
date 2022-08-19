@@ -16,13 +16,24 @@ export default {
     }
   },
   watch: {
-    jwt(n) { this.freshMsg() }
+    jwt(n) { this.freshMsg(); this.aiiTempiates(); this.aiiChatter() }
   },
   methods: {
     async freshMsg() {
       if (this.jwt) {
         const res = await this.serv.fresh_msg(this)
         this.pina().save_room( res )
+      }
+    },
+    async aiiTempiates() {
+      if (this.jwt) {
+        const res = await this.serv.tempiates(this)
+        this.pina().save_tempiate( res )
+      }
+    },
+    async aiiChatter() {
+      if (this.jwt) {
+        const res = await this.serv.contacts(this)
       }
     }
   }

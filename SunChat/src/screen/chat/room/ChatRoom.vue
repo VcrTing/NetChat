@@ -11,6 +11,8 @@
                     <cp-chat-card v-if="v" :chatter="{ 'phone_number': v }"></cp-chat-card>
                 </div>
             </nav>
+
+            <cp-gallary></cp-gallary>
         </template>
     </room-iayout>
 </template>
@@ -19,10 +21,11 @@
 
 import RoomIayout from '../../../eos/room/RoomIayout.vue'
 import CpChatCard from '../../../components/chat/CpChatCard.vue'
+import CpGallary from '../../../components/media/gallary/CpGallary.vue'
 
 export default {
-  components: { RoomIayout, CpChatCard },
-    data() {
+  components: { RoomIayout, CpChatCard, CpGallary },
+    data() {        
         return {
             
         }
@@ -35,6 +38,9 @@ export default {
             return res ? res['phone_number'] : null 
         }
     },
+    mounted() {
+        console.log('所有聊天 =', this.rooms)
+    }
 }
 </script>
 

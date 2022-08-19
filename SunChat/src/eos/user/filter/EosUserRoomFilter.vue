@@ -1,8 +1,14 @@
 <template>
     <div class="f-row eos-user-room-filter">
-        <input class="input" v-model="word" placeholder="搜索用户"/>
-        <div>
-            排序
+        <nav class="ip-i-i fx-1">
+            <span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input class="input" v-model="word" placeholder="搜索用户"/>
+        </nav>
+        <div @click="sort">
+            <i v-if="!is_sort" class="fa-solid fa-arrow-down-short-wide"></i>
+            <i v-else class="fa-solid fa-arrow-down-wide-short"></i>
         </div>
     </div>
 </template>
@@ -11,7 +17,20 @@
 export default {
     data() {
         return {
-            word: ''
+            word: '', is_sort: false
+        }
+    },
+    watch: {
+        word(n) {
+            this.$emit('search', n)
+        },
+        is_sort(n) {
+            this.$emit('sort', n)
+        }
+    },
+    methods: {
+        sort() {
+            this.is_sort = !this.is_sort
         }
     }
 }

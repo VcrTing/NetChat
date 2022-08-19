@@ -1,14 +1,14 @@
 <template>
-    <ui-dropdown>
+    <ui-dropdown :class="'user-dropdown'">
         <template v-slot:tit>
             <ui-icon-opt></ui-icon-opt>
         </template>
         <template v-slot:cont>
-            <nav class="dropmenu-def drop-chat-user tit">
-                <button>Archive chat</button>
-                <button>Mute notifications</button>
-                <button>Unpin chat</button>
-                <button>Mark as unread</button>
+            <nav class="tit">
+                <button @click.stop="option(1)">Archive chat</button>
+                <button @click.stop="option(2)">Mute notifications</button>
+                <button @click.stop="option(3)">Unpin chat</button>
+                <button @click.stop="option(4)">Mark as unread</button>
             </nav>
         </template>
     </ui-dropdown>
@@ -24,6 +24,12 @@ export default {
 </script>
 
 <style lang="sass">
-.drop-chat-user
-    min-width: 12em
+.user-dropdown
+    min-width: 3em
+    min-height: 1em
+    .drop-trig
+        text-align: right
+    .drop-inner
+        left: 50%
+        transform: translate3d(-90%, 0, 0)
 </style>

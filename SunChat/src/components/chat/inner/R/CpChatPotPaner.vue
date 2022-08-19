@@ -4,9 +4,14 @@
             <cp-chat-pot-cont :msgs="words" v-if="words"></cp-chat-pot-cont>
         </div>
         <nav>
-            <cp-chat-pot-input-area @send="say"></cp-chat-pot-input-area>
+            <cp-chat-pot-input-area @openTab="open_Tab" ref="areaREF" @send="say"></cp-chat-pot-input-area>
         </nav>
         <him-refresh-msgs @sign="down" ref="reREF"></him-refresh-msgs>
+
+        <!-- 表情包 面板 -->
+        <cp-emoji-panner :open="tabs == 1" @send_emoji="insert_emoji"></cp-emoji-panner>
+        <!-- 模版消息 面板 -->
+        <cp-temp-send-panner :open="tabs == 2"></cp-temp-send-panner>
     </div>
 </template>
 
@@ -14,11 +19,18 @@
 import CpChatPotInputArea from './area/CpChatPotInputArea.vue'
 import CpChatPotCont from './cont/CpChatPotCont.vue'
 import HimRefreshMsgs from '../../../../himmer/back_vue/HimRefreshMsgs.vue'
+import CpEmojiPanner from '../../../emoji/CpEmojiPanner.vue'
+import CpTempSendPanner from '../../../tempiate/send/CpTempSendPanner.vue'
 export default {
-  components: { CpChatPotCont, CpChatPotInputArea, HimRefreshMsgs },
+  components: { CpChatPotCont, CpChatPotInputArea, HimRefreshMsgs, CpEmojiPanner, CpTempSendPanner },
     props: {
         chtr: {
             type: Object
+        }
+    },
+    data(){
+        return {
+            tabs: 0
         }
     },
     computed: {
@@ -34,6 +46,14 @@ export default {
         // console.log('tooi_time =', this.tooi_time.himmer_time())
     },
     methods: {
+        // 打开何种 TAB
+        open_Tab(tb) {
+            if (this.tabs == tb) { this.tabs = 0 } else {
+                this.tabs = tb
+            }
+        },
+        // 将表情插入到 文本框
+        insert_emoji(v) { this.$refs.areaREF.insert_emoji(v); this.tabs = 0; console.log('关闭 tab', this.tabs) },
 
         // 先将消息插入数组
         insert_words(v) {
@@ -46,7 +66,9 @@ export default {
             sentence.phone_number = this.phoned
             this.insert_words( sentence )
             this.down()
-            await this.pina().say( this, sentence )
+            try {
+                await this.pina().say( this, sentence )
+            } catch(err) { }
             // 发送成功后 做的事情
             await this.$refs.reREF.refresh()
             this.down()

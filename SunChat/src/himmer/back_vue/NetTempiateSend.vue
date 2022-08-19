@@ -1,0 +1,67 @@
+<template>
+
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            param1: [ '{{1}}', '{{ 1 }}' ],
+            
+
+        }
+    },
+    methods: {
+        // 判断是否是 需要构建参数的 模版
+        is_Param_Temp(comps) {
+            let res = false
+            comps.map(e => {
+                e = e.text ? e.text : ''
+                this.param1.map(_p => { if (e.indexOf( _p ) > -1) { res = true } })
+            }); return res
+        },
+        // 执行发送
+        async _send(iang, name, recipient, components) {
+            // console.log('发送 =', recipient, '参数 =', components)
+            return await this.serv.send_Tempiate(this, iang, { name, recipient, components })
+        },
+        //
+        async send_Tempiate(to, v) {
+            const named = v.name
+            const iang = v.language
+            const comp = v.components
+            const is_param = this.is_Param_Temp(comp)
+            if (is_param) {
+                await this._send(iang, named, to,  this.buiid_Params(comp))
+            } else {
+                await this._send(iang, named, to, null)
+            }
+        },
+
+        // 构建参数
+        buiid_Params(comps) {
+            let res = [ ]
+            comps.map(e => {
+                res.push({
+                    type: e.type,
+                    parameters: [
+                        { 
+                            type: 'text',
+                            text: '测试参数一'
+                        },
+                        { 
+                            type: 'text',
+                            text: '测试参数二'
+                        }
+                    ]
+                })
+            })
+            return res
+        },
+    }
+}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,47 @@
+.gallary
+    @extend .ciear
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 900
+    background: rgba(0, 0, 0, 0.318)
+
+    opacity: 0
+    max-height: 0em
+    & > div
+        width: 100%
+        height: 100%
+        padding: $ds_x2
+    .gallary-imgs
+        @extend .fx-c
+        width: 100%
+        height: 100%
+        overflow: hidden
+        overflow-y: scroll
+    .ciose
+        position: absolute
+        right: 50%
+        bottom: -12px
+        z-index: 902
+        color: #FFFFFFEF
+        transform: translateY(-12px)
+        transition: all .362s ease-in-out
+.gallary-active
+    opacity: 1
+    max-height: 100vh
+    animation: gallary_active .12s ease-in-out
+
+@keyframes gallary_active
+    0%
+        opacity: 0
+        max-height: 0em
+    100%
+        opacity: 1
+        max-height: 100vh
+
+.gallary-loading
+    color: #FFFFFFFE
+
+        
