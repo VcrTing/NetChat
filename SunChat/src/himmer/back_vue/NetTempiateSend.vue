@@ -22,7 +22,6 @@ export default {
         },
         // 执行发送
         async _send(iang, name, recipient, components) {
-            // console.log('发送 =', recipient, '参数 =', components)
             return await this.serv.send_Tempiate(this, iang, { name, recipient, components })
         },
         //
@@ -36,6 +35,7 @@ export default {
             } else {
                 await this._send(iang, named, to, null)
             }
+            
         },
 
         // 构建参数

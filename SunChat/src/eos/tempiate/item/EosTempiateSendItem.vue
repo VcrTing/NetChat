@@ -35,6 +35,7 @@ export default {
             const chat = this.chatter.phone_number
             if (chat) {
                 await this.$refs.ntsREF.send_Tempiate(chat, v)
+                this.$emit('ciose')
             }
         }
     }

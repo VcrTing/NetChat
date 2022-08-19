@@ -8,9 +8,8 @@ export default {
 
     send_Tempiate: async (vue, lang, data = { }) => {
         if (!data.components) { delete data.components }
-        console.log('开始发送 =', data)
         try {
-
+            console.log('开始发送 =', data)
             const res = await vue.net.post('send_tempiate', vue.token(), data, { lang })
         } catch(err) {
             console.log('错误 =', err)

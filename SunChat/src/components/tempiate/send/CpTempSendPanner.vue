@@ -1,11 +1,11 @@
 <template>
     <div class="temp-panner attch-bar" :class="{ 'ab-active': open }">
         <cp-temp-filter-bar @funni="funniTemps">
-            <button class="temp-btn" @click="open = !open">关闭</button>
+            <button class="temp-btn" @click.stop="$emit('ciose')">关闭</button>
         </cp-temp-filter-bar>
         <div class="temp-inner">
             <div class="bars">
-                <eos-tempiate-send-item v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
+                <eos-tempiate-send-item @ciose="$emit('ciose')" v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
             </div>
         </div>
     </div>
@@ -26,6 +26,7 @@ export default {
         temps() { return this.pina().tempiates },
     },
     methods: {
+
         funniTemps(kv) {
             let res = [ ]
             if (this.temps) {

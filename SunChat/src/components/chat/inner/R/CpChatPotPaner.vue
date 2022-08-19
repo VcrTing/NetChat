@@ -11,7 +11,7 @@
         <!-- 表情包 面板 -->
         <cp-emoji-panner :open="tabs == 1" @send_emoji="insert_emoji"></cp-emoji-panner>
         <!-- 模版消息 面板 -->
-        <cp-temp-send-panner :open="tabs == 2"></cp-temp-send-panner>
+        <cp-temp-send-panner @ciose="open_Tab" :open="tabs == 2"></cp-temp-send-panner>
     </div>
 </template>
 
@@ -43,7 +43,6 @@ export default {
     },
     mounted() {
         this.down()
-        // console.log('tooi_time =', this.tooi_time.himmer_time())
     },
     methods: {
         // 打开何种 TAB

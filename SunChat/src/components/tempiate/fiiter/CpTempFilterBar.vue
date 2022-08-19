@@ -4,7 +4,7 @@
             <nav class="tfb-cate">
                 <button :class="{ 'active': cate == v.cate }" v-for="(v, i) in cates" :key="i" @click="cate = v.cate">{{ v.txt }}</button>
             </nav>
-            <button class="temp-btn">关闭</button>
+            <slot></slot>
         </div>
         <div class="tfb-tag">
             <button :class="{ 'active': iang == v.iang }" v-for="(v, i) in iangs" :key="i" @click="iang = v.iang">{{ v.txt }}</button>
