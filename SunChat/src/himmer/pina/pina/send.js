@@ -5,10 +5,17 @@ export default {
     },
     action: {
         // 本地事先插入消息
-        insert_words(sentence, phone_number) {
+        insert_words(msg, phone_number) {
             const words = this.rooms[ phone_number ].msgs
             if (words) {
-                words.push( sentence ); this.rooms[ phone_number ][ 'msgs' ] = words
+                words.push( msg ); this.rooms[ phone_number ][ 'msgs' ] = words
+            }
+        },
+        // 本地事先插入模版
+        insert_tempiate(msg, phone_number) {
+            const words = this.rooms[ phone_number ].msgs
+            if (words) {
+                words.push( msg ); this.rooms[ phone_number ][ 'msgs' ] = words
             }
         },
 

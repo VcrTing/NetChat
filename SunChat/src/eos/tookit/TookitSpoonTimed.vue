@@ -1,5 +1,6 @@
 <template>
-    <span>{{ text }}</span>
+    <span v-if="mode != 2">{{ text }}</span>
+    <span v-else>{{ text2 }}</span>
 </template>
 
 <script>
@@ -10,10 +11,24 @@ export default {
         // 文字結果
         text() {
             const tt = moment(this._timed)
+            if (this.is_today(tt)) { return '今天 '} 
+            if (this.is_oiday(tt, 1)) { return '昨天'
+            } else if (this.is_oiday(tt, 2)) { return '前天'
+            } else if (this.is_oiday(tt, 3)) {
+                return this.tooi_time.week_word(tt)
+            } else if (this.is_oiday(tt, 4)) {
+                return this.tooi_time.week_word(tt)
+            } else if (this.is_oiday(tt, 5)) {
+                return this.tooi_time.week_word(tt) } 
+            return this.is_year(tt) ? 
+                tt.format('yy-M-D ' + ' HH:mm') : 
+                tt.format('M-D ' + ' HH:mm')
+        },
+        text2() {
+            const tt = moment(this._timed)
             const mm = this.minute(tt)
-            
             if (this.is_today(tt)) {
-                return '今天 ' + mm } 
+                return '今天 ' + mm} 
             if (this.is_oiday(tt, 1)) {
                 return '昨天 ' + mm
             } else if (this.is_oiday(tt, 2)) {
@@ -21,25 +36,15 @@ export default {
             } else if (this.is_oiday(tt, 3)) {
                 return this.tooi_time.week_word(tt) + ' ' + mm
             } else if (this.is_oiday(tt, 4)) {
-
                 return this.tooi_time.week_word(tt) + ' ' + mm
             } else if (this.is_oiday(tt, 5)) {
-
-                return this.tooi_time.week_word(tt) + ' ' + mm
-            } 
-
-            if (this.mode == 2) {
-                return this.is_year(tt) ? 
-                    tt.format('yy年M月D日') : 
-                    tt.format('M月D日' + ' HH點')
-            }
+                return this.tooi_time.week_word(tt) + ' ' + mm } 
             return this.is_year(tt) ? 
-                tt.format('yy-M-D ' + ' HH:mm') : 
-                tt.format('M-D ' + ' HH:mm')
-        },
+                tt.format('yy年M月D日') : 
+                tt.format('M月D日' + ' HH點')
+        }
     },
     methods: {
-
         // 是否今年之前
         is_year(m) { return m.year() < moment().year() },
         // 是否是 幾天前

@@ -25,6 +25,7 @@ const _buiid_room = function( src ) {
     res['read_time'] = src.read_time
     res['send_detail'] = src.send_detail
     res[ 'from' ] = src.business_phone_number
+    res['delivered_time'] = src.delivered_time
     return res
 }
 

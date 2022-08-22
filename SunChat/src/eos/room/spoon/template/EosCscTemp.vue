@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 import EosCscTConfirm from './confirm/EosCscTConfirm.vue'
 import EosCscTCont from './text/EosCscTCont.vue'
 export default {
@@ -31,12 +32,7 @@ export default {
             }
         },
         has_button() {
-            let res = false
-            if (this.compos) {
-                this.compos.map(e => {
-                    if (e.type == 'BUTTONS') { res = true }
-                })
-            } return res
+            return this.back.temp.has_button(this.compos)
         }
     },
     mounted() {

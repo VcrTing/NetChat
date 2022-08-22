@@ -9,7 +9,8 @@
             </nav>
         </nav>
         <div class="fx-1 py_s">
-            <input v-model="word" @keyup.enter="submit()" placeholder="输入消息" />
+            <input v-if="can_taik" @click="tapInput" v-model="word" @keyup.enter="submit()" placeholder="输入消息" />
+            <input v-else @click="tapInput" v-model="word_nuii" placeholder="發送消息模版" />
         </div>
     </div>
 </template>
@@ -18,8 +19,14 @@
 import moment from 'moment'
 import CpTempSendSwitch from '../../../../tempiate/send/CpTempSendPanner.vue'
 export default {
+    props: [ 'can_taik' ],
   components: { CpTempSendSwitch },
     methods: {
+        // 点击了输入框
+        tapInput() {
+            if (!this.can_taik) { this.$emit('openTab', 2) }
+        },
+
         // 插入表情包
         insert_emoji(v) {
             this.word = this.word + v
@@ -43,9 +50,12 @@ export default {
         },
 
     },
+    watch: {
+        word_nuii(n) { this.word_nuii = '' }
+    },
     data() {
         return {
-            word: ''
+            word: '', word_nuii: ''
         }
     }
 }

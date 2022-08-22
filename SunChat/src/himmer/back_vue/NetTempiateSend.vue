@@ -30,12 +30,19 @@ export default {
             const iang = v.language
             const comp = v.components
             const is_param = this.is_Param_Temp(comp)
+
+            const condition = { iang, named, to, components: 
+                is_param ? this.buiid_Params(comp) : comp }
+            this.$emit('send_started', condition)
+            return 0
+            /*
             if (is_param) {
-                await this._send(iang, named, to,  this.buiid_Params(comp))
+                await this._send(...condition)
             } else {
-                await this._send(iang, named, to, null)
+                condition.components = null
+                await this._send(...condition)
             }
-            
+            */
         },
 
         // 构建参数

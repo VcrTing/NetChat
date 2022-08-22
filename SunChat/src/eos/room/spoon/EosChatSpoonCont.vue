@@ -10,9 +10,9 @@
         <p v-if="which <= 1" :class="{ 'spoon-one-emoji': is_one_emoji }">
             <span v-if="item.message">{{ item.message }}</span>
             <span v-else>&nbsp;</span>
-            <span class="fs_s sub pl_s fix-tip">
+            <span class="fs_s sub fix-tip">
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <span class="_fix-tip">{{ night }}</span>
+                <span class="_fix-tip t-r">{{ night }}</span>
             </span>
         </p>
         <div v-else-if="which == 2" class="spoon-emoji" :class="{ 'spoon-more': media().length > 1 }">
@@ -85,7 +85,7 @@ export default {
             if (_ap <= 12) { _ap = '上午' }
             else if (18 > _ap && _ap > 12) { _ap = '下午' }
             else if (_ap >= 18) { _ap = '晚上' }
-            return _ap + mt.format('mm:ss')
+            return _ap + mt.format('m:ss')
         }
     }
 }
@@ -97,7 +97,7 @@ export default {
     ._fix-tip
         position: absolute
         top: 7px
-        left: 9px
-        width: 5em
-        
+        left: 0px
+        width: 6em
+        padding-right: 11px
 </style>

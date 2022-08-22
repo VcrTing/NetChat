@@ -7,10 +7,11 @@
             </button>
             <button class="btn-send" @click="chooise(v)">发送</button>
         </div>
-        <net-tempiate-send ref="ntsREF"></net-tempiate-send>
+        <net-tempiate-send @send_started="sendStarted" ref="ntsREF"></net-tempiate-send>
 </template>
 
 <script>
+import conf from "../../../conf"
 import NetTempiateSend from "../../../himmer/back_vue/NetTempiateSend.vue"
 
 export default {
@@ -25,6 +26,11 @@ export default {
         }
     },
     methods: {
+        sendStarted(cond) {
+            this.$emit('send_temp', cond)
+        },
+
+        // 获取文本
         geText(v) {
             let res = ''
             if (v.components) {

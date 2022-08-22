@@ -1,0 +1,40 @@
+$ep-H: calc( 112px + 12vw )
+
+.attch-bar
+    @extend .ciear
+    width: 100%
+    background: $def
+    padding: 0 !important
+    height: auto !important
+    overflow: visible !important
+    box-shadow: 0px -1.2px 2px 0px rgba(0, 0, 0, 0.07) 
+    & > div
+        @extend .ciear
+        width: 100%
+        max-height: 0em
+        overflow: hidden
+        overflow-y: scroll
+
+.ab-active
+    opacity: 1
+    bottom: 4.2em
+    animation: emoji_panner .242s ease-out
+    & > div
+        opacity: 1
+        max-height: $ep-H
+        animation: emoji_panner_inner .242s ease-out
+
+@keyframes emoji_panner
+    0%
+        opacity: 0.8
+        bottom: 0
+    100%
+        opacity: 1
+        bottom: 4.2em
+
+@keyframes emoji_panner_inner
+    0%
+        max-height: 0em
+    100%
+        max-height: $ep-H
+    

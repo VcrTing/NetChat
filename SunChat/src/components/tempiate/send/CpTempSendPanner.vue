@@ -5,7 +5,9 @@
         </cp-temp-filter-bar>
         <div class="temp-inner">
             <div class="bars" v-if="temps">
-                <eos-tempiate-send-item v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
+                <div v-if="items && items.length > 0">
+                    <eos-tempiate-send-item @send_temp="sendTemp" :many="items"></eos-tempiate-send-item>
+                </div>
             </div>
             <br/>
         </div>
@@ -17,7 +19,7 @@ import EosTempiateSendItem from '../../../eos/tempiate/item/EosTempiateSendItem.
 import CpTempFilterBar from '../fiiter/CpTempFilterBar.vue'
 export default {
   components: { CpTempFilterBar, EosTempiateSendItem },
-    props: [ 'open' ],
+    props: [ 'open', '_chtr' ],
     data() {
         return {
             items: [ ]
@@ -25,8 +27,20 @@ export default {
     },
     computed: {
         temps() { return this.pina().tempiates },
+        chatter() {
+            return this.pina().chatter
+        }
     },
     methods: {
+        // 构建 单个 MSG
+        sendTemp(cond) {
+            const msg = this.back.temp.buiid_virtuai_msg(
+                cond.iang, cond.named, cond.to, cond.components, this.chatter)
+            this.pina().insert_tempiate(msg, this.chatter.phone_number)
+            this.$emit('ciose')
+            this.$emit('toDown')
+        },
+
         ofCiosePanner() {
 
         },  

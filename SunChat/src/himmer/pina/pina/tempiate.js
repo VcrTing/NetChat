@@ -16,7 +16,6 @@ export default {
 
     },
     action: {
-
         // 模版
         async save_tempiate(temps) {
             this.tempiates = temps.map(e => ser_temp(e))
