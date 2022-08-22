@@ -4,9 +4,9 @@
             <span>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <input class="input" v-model="word" placeholder="搜索用户"/>
+            <input class="input" v-model="word" placeholder="搜索或开始新对话"/>
         </nav>
-        <div @click="sort">
+        <div @click="sort" class="euef-btn-funni">
             <i v-if="!is_sort" class="fa-solid fa-arrow-down-short-wide"></i>
             <i v-else class="fa-solid fa-arrow-down-wide-short"></i>
         </div>

@@ -13,14 +13,14 @@ export default {
         },
         // 切换 Chatter
         change_chatter(phoned = '85292779625') {
-            this.chatter = this.rooms[ phoned ].chatter
+            this.chatter = this.rooms[ phoned ] ? this.rooms[ phoned ].chatter : {}
         },
         // 替换 ROOMS
         save_room(rs) { 
-            console.log('聊天内容 =', rs)
             const rooms = funni_chat.ciearn(rs)
             this.rooms = rooms
             this.chatter ? 0 : this.change_chatter()
+            console.log('聊天内容 =', rooms)
         },
 
         // 定位当前聊天对象的消息对象

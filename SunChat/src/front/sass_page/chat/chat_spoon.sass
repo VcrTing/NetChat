@@ -1,4 +1,7 @@
 
+._bxs
+    box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13)
+
 ._msg
     word-break: break-all
     word-wrap: break-word
@@ -12,15 +15,20 @@
     p
         @extend ._msg
         @extend .br
-        padding: $ds_s $ds
+        @extend ._bxs
+        padding: 6px 8px 8px 10px 
         background: #FFF
+@media screen and (min-width: 1080px) 
+    .msg-spoon
+        & > p, & > div
+            max-width: 80%
 
 .msg-spoon-me
     @extend .fx-r
     p
-        text-align: right
-        color: $secondary_Tit
-        background: $secondary
+        text-align: left
+        color: $tit
+        background: $secondary_Bg
 
 // 
 .spoon-emoji img
@@ -78,7 +86,7 @@
     font-size: calc( 10px + 3vw )
     border-radius: 0px
     background: none !important
-
+    box-shadow: none !important
 
 // 时间
 .spoon-iong-smaii
@@ -88,26 +96,28 @@
     padding: 1.4em $ds 0.9em
     text-align: center
     span 
-        padding: 0.8em $ds
+        position: sticky
+        top: 4.5em
+        padding: 0.7em $ds 0.75em
         @extend .br
+        @extend ._bxs
         font-size: $fs_s
-        color: #595c65
-        background: #fefefe
-        box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.18)
+        color: $thd
+        background: rgba(255, 255, 255, 0.95)
 
 .msg-spoon-space
     min-height: 3.8em
 
 // 尾巴
 .spoon-taii
-    top: 0.8em
-    left: -1em
+    top: 0em
+    left: -1.3em
     padding: 0
     font-size: 1em
     position: absolute
-    border: 0.5em solid transparent
-    border-right: 0.5em solid #FFF
-    transform: skew(-5deg, 5deg) scaleX(1.5) rotate(5deg)
+    border: 0.7em solid transparent
+    border-right: 0.7em solid #FFF
+    transform: skew(-7deg, 7deg) scaleX(1.5) rotate(5deg)
     span
         @extend .abs-cc
         visibility: hidden
@@ -115,7 +125,7 @@
 .msg-spoon-me
     .spoon-taii
         left: auto
-        right: -1em
+        right: -1.3em
         border-color: transparent
-        border-left-color: $secondary !important
+        border-left-color: $secondary_Bg !important
         transform: skew(5deg, -5deg) scaleX(1.5) rotate(-5deg)

@@ -43,7 +43,12 @@ export default {
     },
     mounted() {
         this.down()
-        console.log('WORDS =', this.words)
+        
+        document.getElementById('pot_' + this.$.uid).addEventListener('scroll', (e) => {
+            const t = e.target.scrollTop
+            const h = e.target.scrollHeight
+            if ((h - t) > 800) { this.$emit('showFunc') }
+        })
     },
     methods: {
         // 打开何种 TAB

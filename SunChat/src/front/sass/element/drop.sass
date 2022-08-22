@@ -1,4 +1,7 @@
+$drop_bxs: rgba(11, 20, 26, .26)
 
+._drop_bxs
+    box-shadow: 0 2px 5px 0 $drop_bxs,0 2px 10px 0 $drop_bxs
 
 .dropdown
     position: relative
@@ -56,3 +59,23 @@
         max-height: 0em
     100%
         max-height: 20em
+
+.ui-droptap
+    // position: relative
+    .droptap-inner
+        position: absolute
+        background: #FFF
+        right: $ds
+        max-height: 0em
+        overflow: hidden
+        @extend ._drop_bxs
+        border-radius: $br_s
+        & > div
+            min-width: 8em
+            display: block
+        button
+            width: 100%
+            @extend .ciear
+            padding: $ds_n $ds
+            &:hover
+                background: $def

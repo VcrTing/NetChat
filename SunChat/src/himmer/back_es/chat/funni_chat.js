@@ -14,6 +14,7 @@ const _build_media = function( src ) {
 
 const _buiid_room = function( src ) {
     const res = { }
+    res['id'] = src.id
     res['type'] = src.type
     res['media'] = _build_media ( src.media )
     res['is_read'] = src.isRead
@@ -34,14 +35,17 @@ export default {
 
         for (let i= 0; i< _L; i++ ) {
             const _p = msgs[i].phone_number
-            if (!res[ _p ]) { res[ _p ] = { msgs: [ ], chatter: null }}
+            if (!res[ _p ]) { res[ _p ] = { msgs: [ ], chatter: null, ids: [ ] }}
         }
 
         for (let i= 0; i< _L; i++ ) {
-            const _p = msgs[i].phone_number
-            if (!res[ _p ][ 'chatter' ]) { res[ _p ][ 'chatter' ] = msgs[i].contact }
-            res[ _p ][ 'msgs' ].push( _buiid_room( msgs[i] ) )
+            const mm = msgs[i]
+            const _p = mm.phone_number
+            if (!res[ _p ][ 'chatter' ]) { res[ _p ][ 'chatter' ] = mm.contact }
+            res[ _p ][ 'msgs' ].push( _buiid_room( mm ) )
+            res[ _p ][ 'ids' ].push( mm.id )
         }
+
         return res
     }
 }

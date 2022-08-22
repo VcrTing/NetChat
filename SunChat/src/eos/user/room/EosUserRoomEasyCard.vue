@@ -7,25 +7,29 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
             }"></div>
-            <div v-else class="user-avatar bg-avatar user-def-avatar">
-                <span>{{ name_avatar }}</span>
+            <div v-else>
+                <div v-if="name_avatar" class="user-avatar user-def-avatar bg-avatar">
+                    <span class="">{{ name_avatar }}</span>
+                </div>
+                <div v-else>
+                    <eos-user-avatar-def class="w-100"></eos-user-avatar-def>
+                </div>
             </div>
         </div>
         <span class="px_s"></span>
-        <nav class="t-l fx-1 fs_s">
-            <div class="fx-s op-90">
+        <nav class="t-l fx-1">
+            <div class="fx-s pl_s">
                 <div>{{ user.profile_name }}</div>
             </div>
-            <nav class="sub">
-                <span>{{ user.phone_number }}</span>
-            </nav>
         </nav>
     </nav>
     <div v-else></div>
 </template>
 
 <script>
+import EosUserAvatarDef from '../../static/avatar/EosUserAvatarDef.vue'
 export default {
+  components: { EosUserAvatarDef },
     props: [ 'user' ],
     computed: {
 

@@ -24,22 +24,22 @@ $chat-top-bar-H: 5em
 
     .user-avatar
         div
-            width: 3.3em
-            height: 3.3em
+            width: 49px
+            height: 49px
             border-radius: 100%
 
 .eos-user-room-card
     & > nav
-        padding: $ds_s $ds_x2 $ds_s 0px
+        padding: $ds $ds $ds $ds_s
         border-bottom: 0.7px solid $hr
-        nav
+        & > nav
             padding-top: 3px  
 
 .eos-user-room-easy-card
     .user-avatar
         div
-            width: 2.8em
-            height: 2.8em
+            width: 40px
+            height: 40px
     & > nav
         padding: 0
 
@@ -49,7 +49,8 @@ $chat-top-bar-H: 5em
     span
         @extend .abs-cc
         font-size: 2em
-        opacity: 0.62
+        // opacity: 0.62
+        color: #FFF
 .eos-user-room-easy-card
     .user-def-avatar
         span

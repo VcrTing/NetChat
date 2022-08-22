@@ -1,17 +1,15 @@
 <template>
-    <ui-dropdown :class="'user-dropdown'">
-        <template v-slot:tit>
-            <ui-icon-opt></ui-icon-opt>
-        </template>
-        <template v-slot:cont>
-            <nav class="tit">
-                <button @click.stop="option(1)">Archive chat</button>
-                <button @click.stop="option(2)">Mute notifications</button>
-                <button @click.stop="option(3)">Unpin chat</button>
-                <button @click.stop="option(4)">Mark as unread</button>
+    <div class="ui-droptap ui-droptap-anime user-room-droptap">
+        <div class="droptap-trig">
+            <span>...</span>
+        </div>
+        <div class="droptap-inner">
+            <nav class="py">
+                <button>read it all</button>
+                <button>trash talk</button>
             </nav>
-        </template>
-    </ui-dropdown>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -19,17 +17,32 @@ import UiDropdown from '../../../front/ui/dropdown/UiDropdown.vue'
 import UiIconOpt from '../../../front/ui/icon/opt/UiIconOpt.vue'
 export default {
   components: { UiDropdown, UiIconOpt },
-
+    props: [ 'open' ],
+    methods: {
+        cioseDrop() {
+            console.log('失去焦点')
+            this.$emit('ciose')
+        }
+    }
 }
 </script>
 
 <style lang="sass">
-.user-dropdown
-    min-width: 3em
-    min-height: 1em
-    .drop-trig
-        text-align: right
-    .drop-inner
-        left: 50%
-        transform: translate3d(-90%, 0, 0)
+.user-room-droptap
+    width: 3em
+    height: 1.4em
+    text-align: right
+
+.ui-droptap-anime:hover
+    .droptap-inner
+        max-height: 12em
+        animation: urtb_droptap_view .242s ease-out
+
+@keyframes urtb_droptap_view
+    0%
+        opacity: 0.618
+        transform: translateY(12px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
 </style>

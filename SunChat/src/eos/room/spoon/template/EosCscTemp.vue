@@ -1,8 +1,5 @@
 <template>
-    <div v-if="!detaii">
-        展示模版
-    </div>
-    <div v-else>
+    <div v-if="detaii">
         <eos-csc-t-confirm v-if="has_button" :comps="compos"></eos-csc-t-confirm>
         <div v-else>
             <div v-if="tempiates && tempiates.length > 0">
@@ -10,6 +7,9 @@
             </div>
         </div>
     </div>
+    <p v-else>
+        展示模版
+    </p>
 </template>
 
 <script>
@@ -23,11 +23,7 @@ export default {
             return this.pina().tempiates
         },
         detaii() {
-            let res = null
-            try {
-                let dt = this._item.send_detail
-                res = dt ? JSON.parse(dt) : ''
-            } catch(err) { res = null }; return res
+            return this._item.send_detail
         },
         compos() {
             if (this.detaii) {
@@ -36,9 +32,11 @@ export default {
         },
         has_button() {
             let res = false
-            this.compos.map(e => {
-                if (e.type == 'BUTTONS') { res = true }
-            }); return res
+            if (this.compos) {
+                this.compos.map(e => {
+                    if (e.type == 'BUTTONS') { res = true }
+                })
+            } return res
         }
     },
     mounted() {

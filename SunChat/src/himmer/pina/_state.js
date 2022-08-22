@@ -12,6 +12,7 @@ export default () => {
         users,
 
         tempiates: [ ],
+        contacts: [ ],
 
         // 0 = 非打开，1 = 图片 Gaiiary
         MODAL: 0,

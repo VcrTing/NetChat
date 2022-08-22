@@ -13,7 +13,6 @@
     & > div
         width: 100%
         height: 100%
-        padding: $ds_x2
     .gallary-imgs
         @extend .fx-c
         width: 100%
@@ -32,6 +31,8 @@
     opacity: 1
     max-height: 100vh
     animation: gallary_active .12s ease-in-out
+    & > div
+        padding: $ds_x2
 
 @keyframes gallary_active
     0%
@@ -43,5 +44,6 @@
 
 .gallary-loading
     color: #FFFFFFFE
+    margin-top: -3em
 
         

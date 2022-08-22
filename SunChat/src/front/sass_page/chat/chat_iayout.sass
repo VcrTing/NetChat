@@ -13,10 +13,10 @@ $chat_x_space: 0px// calc(24px + 8vw)
     
 .room-L
     @extend .pl-chat
-    width: 32%
+    width: calc( 256px + 12vw )
 .room-R
     @extend .pr-chat
-    width: 68%
+    flex: 1
 
 .room-page
     height: 100vh
@@ -38,7 +38,7 @@ $chat_x_space: 0px// calc(24px + 8vw)
     & > div
         overflow: hidden
         overflow-y: scroll
-        padding: $ds
+        padding: $ds $ds_x
         height: $chat-cont
         & > div
             padding: 0
@@ -49,4 +49,4 @@ $chat_x_space: 0px// calc(24px + 8vw)
 
 @media screen and (min-width: 1080px) 
     .chat-pot-paner > div
-        padding: $ds 2vw
+        padding: $ds calc(20px + 6em)

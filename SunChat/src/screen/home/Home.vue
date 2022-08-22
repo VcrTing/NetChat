@@ -1,15 +1,17 @@
 <template>
     <htmi-iayout>
         <router-view v-if="jwt"/>
+        <eos-loading-home v-else></eos-loading-home>
         <tookit-htmi-fresh @refresh="freshMsg"></tookit-htmi-fresh>
     </htmi-iayout>
 </template>
 
 <script>
 import HtmiIayout from '../../eos/htmi/HtmiIayout.vue'
+import EosLoadingHome from '../../eos/shimmer/loading/EosLoadingHome.vue'
 import TookitHtmiFresh from '../../eos/tookit/TookitHtmiFresh.vue'
 export default {
-  components: { HtmiIayout, TookitHtmiFresh },
+  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome },
   computed: {
     jwt() {
       return this.pina().jwt
@@ -34,6 +36,7 @@ export default {
     async aiiChatter() {
       if (this.jwt) {
         const res = await this.serv.contacts(this)
+        this.pina().save_contacts(res)
       }
     }
   }

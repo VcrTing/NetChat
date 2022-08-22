@@ -7,6 +7,7 @@
             <div class="bars" v-if="temps">
                 <eos-tempiate-send-item v-if="items && items.length > 0" :many="items"></eos-tempiate-send-item>
             </div>
+            <br/>
         </div>
     </div>
 </template>

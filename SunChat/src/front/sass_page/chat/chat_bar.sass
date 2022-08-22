@@ -1,4 +1,4 @@
-$chat_top_bar: 52px
+$chat_top_bar: 59px
 .chat-top-bar
     background: $def
     position: fixed
@@ -6,11 +6,12 @@ $chat_top_bar: 52px
     width: 100%
     z-index: 400
     min-height: $chat_top_bar
+    padding: 0px $ds_x
     & > div > div
         padding: 0px $ds
         min-height: $chat_top_bar
     .room-L > div
-        border-right: 1.4px solid $hr_x2
+        border-right: 1.4px solid $bc
 
 .for-chat-top
     .room-L,
@@ -20,5 +21,21 @@ $chat_top_bar: 52px
     .room-L .chat-top-bar
         border-left: 1px solid transparent
     .room-R .chat-top-bar
-        border-bottom: 0.7px solid $hr
-        border-left: 1.4px solid $hr_x2
+        // border-bottom: 0.7px solid $bc
+        border-left: 1.4px solid $bc
+
+
+//    
+
+.eos-func-dis-btn
+    position: fixed
+    z-index: 666
+    bottom: 4em
+    right: $ds_x2
+    width: 2.1em
+    height: 2.1em
+    color: $sub
+    font-size: $h4
+    background: #FFF
+    border-radius: 100%
+    box-shadow: 0 1px 1px 0 rgba(11, 20, 26, .06), 0 2px 5px 0 rgba(11, 20, 26, .2)

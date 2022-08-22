@@ -1,6 +1,6 @@
 <template>
     <nav class="eos-user-room-card fx-s" v-if="cher" :class="{ 'bg-def': is_now }">
-        <span class="px_s"></span>
+        <span class="pl"></span>
         <div class="user-avatar fx-c">
             <div v-if="cher.avatar" :style="{
                 'background': 'url(' + cher.avatar + ')',
@@ -8,20 +8,27 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
             }"></div>
-            <div v-else class="user-avatar user-def-avatar" :class="{ 'bg-def': !is_now, 'bg-avatar': is_now }">
-                <span>{{ name_avatar ? name_avatar : '' }}</span>
+            <div v-else>
+                <div v-if="name_avatar" class="user-avatar user-def-avatar bg-avatar" :class="{ 'bg-avatar': !is_now, 'bg-avatar': is_now }">
+                    <span class="">{{ name_avatar }}</span>
+                </div>
+                <div v-else>
+                    <eos-user-avatar-def class="w-100"></eos-user-avatar-def>
+                </div>
             </div>
         </div>
         <span class="px_s"></span>
         <nav class="t-l fx-1">
             <div class="fx-s">
                 <div>{{ cher.profile_name ? cher.profile_name : '未知用戶(對方未回復)' }}</div>
-                <div class="fs_s sus">昨天 12:20</div>
+                <div class="fs_s sub">
+                    <tookit-spoon-timed :_timed="iast_msg.date_time" :mode="2"></tookit-spoon-timed>
+                </div>
             </div>
-            <nav class="fs_s sub fx-s">
-                <span>{{ cher.phone_number }}</span>
+            <nav class="fs_s fx-s">
+                <span class="thd">{{ cher.phone_number }}</span>
                 <div>
-                    <eos-chat-user-drop-menu></eos-chat-user-drop-menu>
+                    <eos-chat-user-drop-menu :open="drop" @ciose="editDrop"></eos-chat-user-drop-menu>
                 </div>
             </nav>
         </nav>
@@ -30,11 +37,22 @@
 </template>
 
 <script>
+import moment from 'moment'
 
 import EosChatUserDropMenu from '../../drop/chat/EosChatUserDropMenu.vue'
+import EosUserAvatarDef from '../../static/avatar/EosUserAvatarDef.vue'
+import TookitSpoonTimed from '../../tookit/TookitSpoonTimed.vue'
 export default {
-  components: { EosChatUserDropMenu },
+  components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed },
     props: [ 'chatter', 'msgs' ],
+    data() {
+        return {
+            drop: false
+        }
+    },
+    methods: {
+        editDrop() { this.drop = !this.drop }
+    },
     computed: {
         cher() {
             const src = this.chatter
@@ -51,11 +69,37 @@ export default {
         name_avatar() {
             const res = this.cher ? this.cher.profile_name : ''
             return res ? res.substring(0, 1) : ''
-        }
+        },
+
+        iast_msg() {
+            let res = this.msgs
+            res = res ? res : [ ]
+            let ien = res.length
+            ien = ien ? ien - 1 : 0
+            return res[ ien ]
+        },
     }
 }
 </script>
 
-<style>
+<style lang="sass">
+.eos-user-room-card
+    .ui-droptap-anime
+        .droptap-trig
+            opacity: 0
+            visibility: hidden
 
+    &:hover
+        .droptap-trig
+            opacity: 1
+            visibility: visible
+            animation: urtb_view .242s ease-out
+
+@keyframes urtb_view
+    0%
+        opacity: 0
+        transform: translateX(2px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
 </style>

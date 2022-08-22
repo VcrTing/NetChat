@@ -8,8 +8,8 @@
                 <i class="fa-regular fa-message"></i>
             </nav>
         </nav>
-        <div class="fx-1">
-            <input v-model="word" @keyup.enter="submit()" placeholder="Type in message..." />
+        <div class="fx-1 py_s">
+            <input v-model="word" @keyup.enter="submit()" placeholder="输入消息" />
         </div>
     </div>
 </template>

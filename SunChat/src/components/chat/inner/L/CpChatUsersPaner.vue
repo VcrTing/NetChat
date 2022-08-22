@@ -1,18 +1,22 @@
 <template>
     <div class="chat-user-paner">
         <eos-user-room-filter @search="searchUser" @sort="sortUser"></eos-user-room-filter>
-        <div @click="change(v.chatter)" v-for="(v, i) in rooms" :key="i">
-            <eos-user-room-card v-if="v.chatter" :chatter="v.chatter" :msgs="v.msgs"></eos-user-room-card>
+        <div v-if="has_room">
+            <div @click="change(v.chatter)" v-for="(v, i) in rooms" :key="i">
+                <eos-user-room-card v-if="v.chatter" :chatter="v.chatter" :msgs="v.msgs"></eos-user-room-card>
+            </div>
         </div>
+        <eos-empty-conact v-else></eos-empty-conact>
     </div>
 </template>
 
 <script>
 import EosUserRoomCard from '../../../../eos/user/room/EosUserRoomCard.vue'
 import EosUserRoomFilter from '../../../../eos/user/filter/EosUserRoomFilter.vue'
+import EosEmptyConact from '../../../../eos/shimmer/empty/EosEmptyConact.vue'
 
 export default {
-  components: { EosUserRoomCard, EosUserRoomFilter },
+  components: { EosUserRoomCard, EosUserRoomFilter, EosEmptyConact },
     methods: {
         searchUser(q) {
             console.log('筛选 =', q)
@@ -33,6 +37,11 @@ export default {
         rooms() { return this.pina().rooms },
         chatter() { return this.pina().chatter },
         contacts() { return this.pina().contacts },
+
+        has_room() { 
+            let res = true
+            if (JSON.stringify(this.rooms) == '{}') { res = false }
+            return res },
     }
 }
 </script>

@@ -7,6 +7,7 @@
                     <span class="hand">{{ v }}</span>
                 </li>
             </ul>
+            <br/>
         </div>
     </div>
 </template>
