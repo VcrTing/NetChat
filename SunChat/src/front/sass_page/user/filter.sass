@@ -1,15 +1,21 @@
 
 .eos-user-room-filter
     position: sticky
+    z-index: 666
     top: 0
     padding: $ds_n $ds
     background: #FFF
-    z-index: 666
-    border-bottom: 0.7px solid $def 
+    border-bottom: 1px solid $def 
+    // box-shadow: 0 2px 3px rgba(11, 20, 26, 0.08)
     input
+        @extend .input-sus
         flex: 1
-        padding-left: 4.2em
-        border-radius: 0.4em
+        font-size: 0.86em
+        font-weight: 350
+        min-height: 35px
+        padding-left: 4.6em
+        padding-bottom: 4px
+        border-radius: 8px
     .euef-btn-funni
         min-width: 1.7em
         padding: $ds_s

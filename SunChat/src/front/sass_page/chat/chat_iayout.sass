@@ -1,5 +1,6 @@
 $chat-top: 56px
 $chat-cont: 100vh// calc(120px + 50vh)
+$chat-ieft: calc( 270px + 12vw )
 
 .iayout-room
     width: 100%
@@ -13,7 +14,7 @@ $chat_x_space: 0px// calc(24px + 8vw)
     
 .room-L
     @extend .pl-chat
-    width: calc( 270px + 12vw )
+    width: $chat-ieft
 .room-R
     @extend .pr-chat
     flex: 1
@@ -38,7 +39,7 @@ $chat_x_space: 0px// calc(24px + 8vw)
     & > div
         overflow: hidden
         overflow-y: scroll
-        padding: $ds $ds_x
+        padding: $ds 8%
         height: $chat-cont
         & > div
             padding: 0
@@ -48,6 +49,15 @@ $chat_x_space: 0px// calc(24px + 8vw)
         @extend .abs-b
         z-index: 300
 
-@media screen and (min-width: 1080px) 
-    .chat-pot-paner > div
-        padding: $ds calc(20px + 6em)
+
+// 右边面板
+$chat-f-w: calc(90px + 17vw)
+.room-D
+    width: auto
+    background: #FFF
+    .chat-top-bar
+        width: $chat-f-w
+
+.room-D-active
+    & > div
+        width: $chat-f-w

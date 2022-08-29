@@ -1,5 +1,6 @@
 import funni_chat from "../../back_es/chat/funni_chat"
 import funni_talk from "../../back_es/chat/funni_talk"
+import funni_new from "../../back_es/chat/funni_new"
 
 export default {
     getter: { },
@@ -17,7 +18,10 @@ export default {
         },
         // 替换 ROOMS
         save_room(rs) { 
-            const rooms = funni_chat.ciearn(rs)
+            let rooms = funni_chat.ciearn(rs)
+            // 检查新消息
+            rooms = funni_new.check_new(this.rooms, rooms)
+            // 替换
             this.rooms = rooms
             this.chatter ? 0 : this.change_chatter()
             console.log('聊天内容 =', rooms)

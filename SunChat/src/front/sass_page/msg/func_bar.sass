@@ -11,6 +11,7 @@ $ep-H: calc( 112px + 12vw )
     & > div
         @extend .ciear
         width: 100%
+        min-height: 0em
         max-height: 0em
         overflow: hidden
         overflow-y: scroll
@@ -18,13 +19,13 @@ $ep-H: calc( 112px + 12vw )
 .ab-active
     opacity: 1
     bottom: 4.2em
-    animation: emoji_panner .242s ease-out
+    animation: ac_panner .242s ease-out
     & > div
         opacity: 1
         max-height: $ep-H
-        animation: emoji_panner_inner .242s ease-out
+        animation: ac_panner_inner .242s ease-out
 
-@keyframes emoji_panner
+@keyframes ac_panner
     0%
         opacity: 0.8
         bottom: 0
@@ -32,9 +33,9 @@ $ep-H: calc( 112px + 12vw )
         opacity: 1
         bottom: 4.2em
 
-@keyframes emoji_panner_inner
+@keyframes ac_panner_inner
     0%
-        max-height: 0em
+        max-height: 0em !important
     100%
         max-height: $ep-H
     

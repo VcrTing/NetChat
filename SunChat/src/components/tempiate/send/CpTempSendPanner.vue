@@ -1,6 +1,6 @@
 <template>
     <div class="temp-panner attch-bar" :class="{ 'ab-active': open }">
-        <cp-temp-filter-bar @funni="funniTemps">
+        <cp-temp-filter-bar ref="temp_f_bar" @click="$emit('ciose')" @funni="funniTemps">
             <button class="temp-btn" @click.stop="$emit('ciose')">关闭</button>
         </cp-temp-filter-bar>
         <div class="temp-inner">
@@ -25,6 +25,9 @@ export default {
             items: [ ]
         }
     },
+    watch: {
+        temps(n) { this.funniTemps( this.$refs.temp_f_bar.res() ) }
+    },
     computed: {
         temps() { return this.pina().tempiates },
         chatter() {
@@ -41,9 +44,6 @@ export default {
             this.$emit('toDown')
         },
 
-        ofCiosePanner() {
-
-        },  
         funniTemps(kv) {
             let res = [ ]
             if (this.temps) {
@@ -52,12 +52,9 @@ export default {
                 // 检索模版
                 this.temps.map(e => {
                     if (e.category == cate) {
-                        if (e.language == iang) {
-                            res.push(e)
-                        }
+                        (e.language == iang) ? res.push(e) : undefined
                     }
-                })
-                this.items = res
+                }); this.items = res
             }
         },
     }

@@ -1,13 +1,19 @@
 <template>
-        <div class="fx-s" v-for="(v, i) in many" :key="i">
-            <button class="px_n">
-                <span>{{ v.name }}</span>
-                <span class="px">:</span>
-                <span>{{ geText(v) }}</span>
-            </button>
-            <button class="btn-send" @click="chooise(v)">发送</button>
+    <div class="eos-tsi-wrapper">
+        <div class="eos-tempiate-send-item" :class="'ani-eos-right_' + i" v-for="(v, i) in many" :key="i">
+            <div>
+                <button class="px py_s">
+                    <!--span>{{ v.name }}</span>
+                    <span class="px">:</span>-->
+                    <span class="t-elip_x3">{{ geText(v) }}</span>
+                </button>
+                <div class="fx-r">
+                    <button class="btn-send" @click="chooise(v)">发送</button>
+                </div>
+            </div>
         </div>
         <net-tempiate-send @send_started="sendStarted" ref="ntsREF"></net-tempiate-send>
+    </div>
 </template>
 
 <script>
@@ -47,6 +53,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
 
 </style>

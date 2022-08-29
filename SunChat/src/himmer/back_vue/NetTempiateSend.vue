@@ -31,18 +31,18 @@ export default {
             const comp = v.components
             const is_param = this.is_Param_Temp(comp)
 
-            const condition = { iang, named, to, components: 
-                is_param ? this.buiid_Params(comp) : comp }
-            this.$emit('send_started', condition)
-            return 0
-            /*
-            if (is_param) {
-                await this._send(...condition)
-            } else {
-                condition.components = null
-                await this._send(...condition)
+            const _cd = { iang, named, to, components: is_param ? this.buiid_Params(comp) : comp }
+            this.$emit('send_started', _cd)
+            try {
+                if (is_param) {
+                    await this._send(_cd.iang, _cd.named, _cd.to, _cd.components)
+                } else {
+                    _cd.components = null
+                    await this._send(_cd.iang, _cd.named, _cd.to, _cd.components)
+                }
+            } catch(err) {
+                console.log('模版发送失败 =', err)
             }
-            */
         },
 
         // 构建参数

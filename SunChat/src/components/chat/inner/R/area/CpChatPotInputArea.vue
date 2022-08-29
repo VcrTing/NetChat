@@ -8,7 +8,7 @@
                 <i class="fa-regular fa-message"></i>
             </nav>
         </nav>
-        <div class="fx-1 py_s">
+        <div class="fx-1 py_s pl_n">
             <input v-if="can_taik" @click="tapInput" v-model="word" @keyup.enter="submit()" placeholder="输入消息" />
             <input v-else @click="tapInput" v-model="word_nuii" placeholder="發送消息模版" />
         </div>

@@ -2,7 +2,7 @@
     <div>
         <cp-chat-top-user-detail-bar class="chat-top-bar"></cp-chat-top-user-detail-bar>
         <cp-chat-pot-paner @showFunc="showFunc" ref="potREF" :chtr="chatter"></cp-chat-pot-paner>
-        <eos-func-go-down v-if="func" class="upper" @down="goDown"></eos-func-go-down>
+        <eos-func-go-down v-if="func" class="upper-go-down" @down="goDown"></eos-func-go-down>
         
     </div>
 </template>
@@ -39,6 +39,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
+.upper-go-down
+  animation: upper_go_down .121s ease-in-out
 
+@keyframes upper_go_down 
+  0%
+    transform: translateY(24px) scale(0.618)
+  100%
+    transform: translateY(0px) scale(1)
 </style>

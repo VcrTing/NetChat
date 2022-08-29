@@ -26,4 +26,7 @@ app.config.globalProperties.tooi_time = tooi_time
 app.config.globalProperties.go = function (ink) { this.$router.push(ink) }
 app.config.globalProperties.token = function () { return this.pina().jwt }
 
-app.use( router ).use( createPinia() ).mount('#app')
+// import OneSignaVue from 'onesignal-vue'
+import OneSignalVuePlugin from '@onesignal/onesignal-vue3'
+
+app.use( router ).use( createPinia() ).use( OneSignalVuePlugin, conf.one_sign ).mount('#app')

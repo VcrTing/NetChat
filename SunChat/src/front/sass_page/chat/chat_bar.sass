@@ -1,3 +1,5 @@
+
+    
 $chat_top_bar: 59px
 .chat-top-bar
     background: $def
@@ -5,8 +7,8 @@ $chat_top_bar: 59px
     top: 0
     width: 100%
     z-index: 400
-    min-height: $chat_top_bar
     padding: 0px $ds_x
+    min-height: $chat_top_bar
     & > div > div
         padding: 0px $ds
         min-height: $chat_top_bar
@@ -23,15 +25,16 @@ $chat_top_bar: 59px
     .room-R .chat-top-bar
         // border-bottom: 0.7px solid $bc
         border-left: 1.4px solid $bc
-
+    .room-D .chat-top-bar
+        border-left: 1.4px solid $bc
 
 //    
 
 .eos-func-dis-btn
-    position: fixed
+    position: absolute
     z-index: 666
-    bottom: 4em
     right: $ds_x2
+    bottom: 4em
     width: 2.1em
     height: 2.1em
     color: $sub

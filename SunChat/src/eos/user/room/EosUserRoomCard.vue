@@ -25,9 +25,9 @@
                     <tookit-spoon-timed :_timed="iast_msg.date_time" :mode="2"></tookit-spoon-timed>
                 </div>
             </div>
-            <nav class="fs_s fx-s">
-                <span class="thd">{{ cher.phone_number }}</span>
-                <div>
+            <nav class="fx-s">
+                <eos-user-rc-mute-msg :text="cher.phone_number"/>
+                <div class="fs_s">
                     <eos-chat-user-drop-menu :open="drop" @ciose="editDrop"></eos-chat-user-drop-menu>
                 </div>
             </nav>
@@ -42,8 +42,9 @@ import moment from 'moment'
 import EosChatUserDropMenu from '../../drop/chat/EosChatUserDropMenu.vue'
 import EosUserAvatarDef from '../../static/avatar/EosUserAvatarDef.vue'
 import TookitSpoonTimed from '../../tookit/TookitSpoonTimed.vue'
+import EosUserRcMuteMsg from './EosUserRcMuteMsg.vue'
 export default {
-  components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed },
+  components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed, EosUserRcMuteMsg },
     props: [ 'chatter', 'msgs' ],
     data() {
         return {

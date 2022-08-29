@@ -1,4 +1,5 @@
-
+$chat_fs: 14.2px
+$chat_timed_fs: 12.5px
 ._bxs
     box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13)
 
@@ -8,7 +9,8 @@
     
 .msg-spoon
     width: 100%
-    margin: 0.28em 0vw
+    margin: 0.19em 0vw
+    font-size: $chat_fs
     & > p, & > div
         display: inline-block !important
         max-width: 61.8%
@@ -20,10 +22,11 @@
         @extend ._bxs
         padding: 6px 8px 8px 10px 
         background: #FFF
+        min-height: 1.5em
 @media screen and (min-width: 1080px) 
     .msg-spoon
         & > p, & > div
-            max-width: 80%
+            max-width: 61.8%
 
 .msg-spoon-me
     @extend .fx-r
@@ -95,8 +98,9 @@
     margin-top: 1.4em
 .msg-spoon-timed
     width: 100%
-    padding: 1.4em $ds 0.9em
     text-align: center
+    padding: 1.4em $ds 0.9em
+    font-size: $chat_timed_fs
     span 
         position: sticky
         top: 4.5em

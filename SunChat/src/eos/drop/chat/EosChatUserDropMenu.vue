@@ -1,7 +1,9 @@
 <template>
     <div class="ui-droptap ui-droptap-anime user-room-droptap">
         <div class="droptap-trig">
-            <span>...</span>
+            <span>
+                <i class="fa-solid fa-angle-down"></i>
+            </span>
         </div>
         <div class="droptap-inner">
             <nav class="py">
@@ -20,7 +22,6 @@ export default {
     props: [ 'open' ],
     methods: {
         cioseDrop() {
-            console.log('失去焦点')
             this.$emit('ciose')
         }
     }
@@ -32,6 +33,9 @@ export default {
     width: 3em
     height: 1.4em
     text-align: right
+    .droptap-trig
+        i
+            font-size: 1.6em
 
 .ui-droptap-anime:hover
     .droptap-inner

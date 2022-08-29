@@ -17,7 +17,8 @@ export default {
         this.conf.STRAPI.named,
         this.conf.STRAPI.pass
       )
-    }
+    },
+    // 提醒功能对接
   }
 }
 </script>

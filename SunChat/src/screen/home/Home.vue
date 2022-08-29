@@ -1,8 +1,11 @@
 <template>
     <htmi-iayout>
-        <router-view v-if="jwt"/>
-        <eos-loading-home v-else></eos-loading-home>
-        <tookit-htmi-fresh @refresh="freshMsg"></tookit-htmi-fresh>
+        <nav v-if="jwt">
+            <router-view/>
+            <cpp-one-sign/>
+        </nav>
+        <eos-loading-home v-else/>
+        <tookit-htmi-fresh @refresh="freshMsg"/>
     </htmi-iayout>
 </template>
 
@@ -10,8 +13,9 @@
 import HtmiIayout from '../../eos/htmi/HtmiIayout.vue'
 import EosLoadingHome from '../../eos/shimmer/loading/EosLoadingHome.vue'
 import TookitHtmiFresh from '../../eos/tookit/TookitHtmiFresh.vue'
+import CppOneSign from '../../components/plugins/one_sign/CppOneSign.vue'
 export default {
-  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome },
+  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome, CppOneSign },
   computed: {
     jwt() {
       return this.pina().jwt

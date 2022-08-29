@@ -1,5 +1,5 @@
 <template>
-    <nav class="eos-user-room-easy-card fx-s" v-if="user && user.profile_name">
+    <nav @click="open" class="eos-user-room-easy-card fx-s" v-if="user && user.profile_name">
         <div class="user-avatar fx-c">
             <div v-if="user.avatar" :style="{
                 'background': 'url(' + user.avatar + ')',
@@ -19,7 +19,7 @@
         <span class="px_s"></span>
         <nav class="t-l fx-1">
             <div class="fx-s pl_s">
-                <div>{{ user.profile_name }}</div>
+                <div >{{ user.profile_name }}</div>
             </div>
         </nav>
     </nav>
@@ -32,10 +32,14 @@ export default {
   components: { EosUserAvatarDef },
     props: [ 'user' ],
     computed: {
-
         name_avatar() {
             const res = this.user ? this.user.profile_name : ''
             return res ? res.substring(0, 1) : ''
+        }
+    },
+    methods: {
+        open() {
+            this.pina().open_Panner(1)
         }
     }
 }

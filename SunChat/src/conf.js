@@ -3,6 +3,7 @@ const TEST = true
 const SPEED = TEST ? 80 * 1000 : 8 * 1000
 
 import ENDPOINT from './air/endpoint'
+import PLUGINS_CONF from './air/plugins_conf'
 
 export default {
     STRAPI: {
@@ -12,5 +13,6 @@ export default {
     TEST,
     API: 'https://strapi08.svr.up5d.com',
     SPEED,
-    ENDPOINT
+    ENDPOINT,
+    ...PLUGINS_CONF
 }

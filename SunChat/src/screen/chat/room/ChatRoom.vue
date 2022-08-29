@@ -14,6 +14,9 @@
 
             <cp-gallary></cp-gallary>
         </template>
+        <template v-slot:D>
+            <cp-user-detail-panner></cp-user-detail-panner>
+        </template>
     </room-iayout>
 </template>
 
@@ -22,9 +25,10 @@
 import RoomIayout from '../../../eos/room/RoomIayout.vue'
 import CpChatCard from '../../../components/chat/CpChatCard.vue'
 import CpGallary from '../../../components/media/gallary/CpGallary.vue'
+import CpUserDetailPanner from '../../../components/user/detail/CpUserDetailPanner.vue'
 
 export default {
-  components: { RoomIayout, CpChatCard, CpGallary },
+  components: { RoomIayout, CpChatCard, CpGallary, CpUserDetailPanner },
     data() {        
         return {
             

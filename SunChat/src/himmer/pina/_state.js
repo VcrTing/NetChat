@@ -16,6 +16,10 @@ export default () => {
 
         // 0 = 非打开，1 = 图片 Gaiiary
         MODAL: 0,
+
+        // 0 = 非打开，1 = 用户详情面板
+        PANNER: 0, 
+
         GALLARY: [  ]
     }
 }
