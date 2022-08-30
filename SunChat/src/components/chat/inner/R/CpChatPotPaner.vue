@@ -67,7 +67,7 @@ export default {
             }
         },
         // 将表情插入到 文本框
-        insert_emoji(v) { this.$refs.areaREF.insert_emoji(v); this.tabs = 0; console.log('关闭 tab', this.tabs) },
+        insert_emoji(v) { this.$refs.areaREF.insert_emoji(v); this.tabs = 0 },
 
         // 先将消息插入数组
         insert_words(v) {
@@ -77,6 +77,7 @@ export default {
         // 发送消息
         async say(sentence) { 
             this.down()
+            sentence.from_ioc = true
             sentence.phone_number = this.phoned
             this.insert_words( sentence )
             this.down()

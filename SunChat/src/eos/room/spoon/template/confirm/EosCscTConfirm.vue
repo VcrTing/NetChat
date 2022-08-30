@@ -19,7 +19,6 @@
 export default {
     props: [ 'comps' ],
     mounted() {
-        console.log('COMPS =', this.comps)
     },
     methods: {
         typed(v) {

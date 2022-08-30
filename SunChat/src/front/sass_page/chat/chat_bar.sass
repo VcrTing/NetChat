@@ -3,7 +3,7 @@
 $chat_top_bar: 59px
 .chat-top-bar
     background: $def
-    position: fixed
+    position: absolute
     top: 0
     width: 100%
     z-index: 400
@@ -11,9 +11,11 @@ $chat_top_bar: 59px
     min-height: $chat_top_bar
     & > div > div
         padding: 0px $ds
-        min-height: $chat_top_bar
     .room-L > div
         border-right: 1.4px solid $bc
+.for-ctb-h
+    background: #FFF
+    height: $chat_top_bar
 
 .for-chat-top
     .room-L,
@@ -21,6 +23,9 @@ $chat_top_bar: 59px
         padding-top: $chat_top_bar
 
     .room-L .chat-top-bar
+        position: fixed
+        max-width: $chat-ieft
+        padding-left: $ds
         border-left: 1px solid transparent
     .room-R .chat-top-bar
         // border-bottom: 0.7px solid $bc

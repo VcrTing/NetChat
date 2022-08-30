@@ -6,6 +6,7 @@ import App from './App.vue'
 import './front/base.sass'
 
 import net from './air/net'
+import vid from './air/vid'
 import conf from './conf'
 import pina from './himmer/pina'
 import serv from './himmer/serv'
@@ -17,6 +18,7 @@ import tooi_time from './air/tooi/timed'
 const app = createApp(App)
 
 app.config.globalProperties.net = net
+app.config.globalProperties.vid = vid
 app.config.globalProperties.conf = conf
 app.config.globalProperties.serv = serv
 app.config.globalProperties.back = back
@@ -28,5 +30,8 @@ app.config.globalProperties.token = function () { return this.pina().jwt }
 
 // import OneSignaVue from 'onesignal-vue'
 import OneSignalVuePlugin from '@onesignal/onesignal-vue3'
+import persist from 'pinia-plugin-persist'
+const store = createPinia()
+store.use( persist )
 
-app.use( router ).use( createPinia() ).use( OneSignalVuePlugin, conf.one_sign ).mount('#app')
+app.use( router ).use( store ).use( OneSignalVuePlugin, conf.one_sign ).mount('#app')

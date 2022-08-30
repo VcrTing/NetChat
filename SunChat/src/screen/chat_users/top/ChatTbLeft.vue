@@ -1,15 +1,12 @@
 <template>
-    <div class="fx-r">
-        <!--
-        <div class="">
-            <eos-user-easy-card></eos-user-easy-card>
-        </div>
-        <nav class="fx-r ister">
-            <div>编辑</div>
-            <div>设定</div>
-            <eos-chat-setting-drop-menu></!--eos-chat-setting-drop-menu>
-        </nav>-->
-    </div>
+    <nav class="fx-l">
+        <nav class="fx-s w-100">
+            <eos-user-easy-card :user="me" />
+            <div class="fx-c">
+                <eos-chat-setting-drop-menu />
+            </div>
+        </nav>
+    </nav>
 </template>
 
 <script>
@@ -18,6 +15,11 @@ import EosUserEasyCard from '../../../eos/user/info/EosUserEasyCard.vue'
 export default {
   components: { EosChatSettingDropMenu, EosUserEasyCard },
 
+    computed: {
+        me() {
+            return this.pina().me
+        }
+    }
 }
 </script>
 

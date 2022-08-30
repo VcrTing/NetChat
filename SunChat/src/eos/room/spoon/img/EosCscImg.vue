@@ -9,7 +9,7 @@
 export default {
     props: [ 'medias' ],
     mounted() {
-        console.log('medias =', this.medias)
+
     },
     methods: {
         open(src) {

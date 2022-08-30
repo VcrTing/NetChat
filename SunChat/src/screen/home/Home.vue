@@ -21,10 +21,17 @@ export default {
       return this.pina().jwt
     }
   },
+  mounted() {
+    this.init()
+  },
   watch: {
-    jwt(n) { this.freshMsg(); this.aiiTempiates(); this.aiiChatter() }
+    jwt(n) {  }
   },
   methods: {
+    init() {
+      console.log('APP INIT')
+      this.freshMsg(); this.aiiTempiates(); this.aiiChatter()
+    },
     async freshMsg() {
       if (this.jwt) {
         const res = await this.serv.fresh_msg(this)

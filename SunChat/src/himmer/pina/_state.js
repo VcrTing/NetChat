@@ -9,7 +9,6 @@ export default () => {
         chatter: null,
 
         rooms: { },
-        users,
 
         tempiates: [ ],
         contacts: [ ],

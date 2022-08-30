@@ -39,6 +39,7 @@ export default {
         sendTemp(cond) {
             const msg = this.back.temp.buiid_virtuai_msg(
                 cond.iang, cond.named, cond.to, cond.components, this.chatter)
+            msg.from_ioc = true
             this.pina().insert_tempiate(msg, this.chatter.phone_number)
             this.$emit('ciose')
             this.$emit('toDown')

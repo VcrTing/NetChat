@@ -70,12 +70,22 @@ $drop_bxs: rgba(11, 20, 26, .26)
         overflow: hidden
         @extend ._drop_bxs
         border-radius: 4.5px
-        & > div
-            min-width: 8em
-            display: block
         button
             width: 100%
             @extend .ciear
             padding: $ds_n $ds
             &:hover
                 background: $def
+
+.ui-droptap-anime:hover
+    .droptap-inner
+        max-height: 12em
+        animation: urtb_droptap_view .242s ease-out
+
+@keyframes urtb_droptap_view
+    0%
+        opacity: 0.618
+        transform: translateY(12px)
+    100%
+        opacity: 1
+        transform: translateY(0px)

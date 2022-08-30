@@ -26,6 +26,7 @@ $chat_x_space: 0px// calc(24px + 8vw)
         height: 100vh
     .room-L
         position: relative
+        overflow-y: scroll
         background: #FFF
     .room-R
         position: relative
@@ -46,15 +47,15 @@ $chat_x_space: 0px// calc(24px + 8vw)
             padding-top: 0.7em
     & > nav
         width: 100%
-        @extend .abs-b
         z-index: 300
+        @extend .abs-b
 
 
 // 右边面板
 $chat-f-w: calc(90px + 17vw)
 .room-D
     width: auto
-    background: #FFF
+    background: $def
     .chat-top-bar
         width: $chat-f-w
 

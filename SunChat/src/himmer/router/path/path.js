@@ -13,4 +13,8 @@ export default [
             },
         ]
     },
+    { 
+        path: '/login',
+        component: () => import('../../../screen/auth/Login.vue'),
+    }
 ]

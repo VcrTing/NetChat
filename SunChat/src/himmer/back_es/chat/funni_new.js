@@ -11,6 +11,17 @@ const msgs_by_ids = function(o_ids, n_ids, o_k = [ ]) {
     }; return res
 }
 
+// 2.5 
+// 删除 from ioc
+const trash_from_ioc = function(msgs, res = [ ]) {
+    let _e = undefined
+    const LEN = msgs.length
+    for (let i= 0; i< LEN; i++ ) {
+        _e = msgs[i]
+        if (!_e.from_ioc) { res.push( _e ) }
+    }; return res
+}
+
 // 2
 // oid 为主，加入新消息
 const insert_new_msg = function(oid, fresh, f_k = [ ]) {
@@ -18,12 +29,12 @@ const insert_new_msg = function(oid, fresh, f_k = [ ]) {
     // 每个号码
     for (let k in oid) {
         const o_ids = oid[k].ids
-        const o_msgs = oid[k].msgs
+        let o_msgs = oid[k].msgs
+        o_msgs = trash_from_ioc(o_msgs)
 
         f_k.map(f => {
             if (k == f || k === f) {
                 const msgs = msgs_by_ids(o_ids , fresh[f].ids)
-                console.log('联络人 ', f, ' 是否有新消息 =', msgs)
                 if (msgs) {
                     o_msgs.push(...msgs)
                     // 循环结果

@@ -1,24 +1,23 @@
 <template>
-    <div class="ui-droptap ui-droptap-anime user-room-droptap">
-        <div class="droptap-trig">
+    <ui-drop-tap class="user-room-droptap">
+        <template v-slot:trig>
             <span>
                 <i class="fa-solid fa-angle-down"></i>
             </span>
-        </div>
-        <div class="droptap-inner">
+        </template>
+        <template v-slot:cont>
             <nav class="py">
                 <button>read it all</button>
                 <button>trash talk</button>
             </nav>
-        </div>
-    </div>
+        </template>
+    </ui-drop-tap>
 </template>
 
 <script>
-import UiDropdown from '../../../front/ui/dropdown/UiDropdown.vue'
-import UiIconOpt from '../../../front/ui/icon/opt/UiIconOpt.vue'
+import UiDropTap from '../../../front/ui/dropdown/UiDropTap.vue';
 export default {
-  components: { UiDropdown, UiIconOpt },
+  components: { UiDropTap },
     props: [ 'open' ],
     methods: {
         cioseDrop() {
@@ -36,17 +35,4 @@ export default {
     .droptap-trig
         i
             font-size: 1.6em
-
-.ui-droptap-anime:hover
-    .droptap-inner
-        max-height: 12em
-        animation: urtb_droptap_view .242s ease-out
-
-@keyframes urtb_droptap_view
-    0%
-        opacity: 0.618
-        transform: translateY(12px)
-    100%
-        opacity: 1
-        transform: translateY(0px)
 </style>

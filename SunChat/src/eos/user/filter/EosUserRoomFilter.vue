@@ -4,7 +4,7 @@
             <span>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <input class="input" v-model="word" placeholder="搜索或开始新对话"/>
+            <input class="input" v-model="word" placeholder="搜索或開始新對話"/>
         </nav>
         <div @click="sort" class="euef-btn-funni">
             <i v-if="!is_sort" class="fa-solid fa-arrow-down-short-wide"></i>
