@@ -1,45 +1,24 @@
 <template>
-  <home v-if="jwt"/>
-  <router-view v-else/>
+  <home v-show="jwt"/>
+  <router-view v-show="!jwt"/>
 </template>
 
 <script>
 import Home from './screen/home/Home.vue'
 export default {
   components: { Home },
-  async created() {
-    
-  },
-  mounted(){
-    if (!this.jwt) {
-      this.$router.push('/login')
-    }
-  },
+  mounted() { this.is_auth() },
   computed: {
-    jwt() { 
-      return this.pina().jwt
-    }
+    jwt() { return this.pina().jwt }
   },
   methods: {
-    async init() {
-
+    is_auth() {
+      (!this.jwt) ? this.$router.push('/login') : undefined
     },
-    async admin() {
-      await this.serv.iogin(
-        this,
-        this.conf.STRAPI.named,
-        this.conf.STRAPI.pass
-      )
-    }
-    // 提醒功能对接
+    async init() { }
   }
 }
 </script>
 
 <style lang="sass">
-.jwt
-  position: fixed
-  z-index: 999
-  bottom: 0
-  background: #FFF
 </style>

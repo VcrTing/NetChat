@@ -13,7 +13,7 @@ export default {
             caii ? caii() : undefined
         },
         // 切换 Chatter
-        change_chatter(phoned = '85292779625') {
+        change_chatter(phoned) {
             this.chatter = this.rooms[ phoned ] ? this.rooms[ phoned ].chatter : {}
         },
         // 替换 ROOMS

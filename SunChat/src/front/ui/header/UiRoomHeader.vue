@@ -1,10 +1,10 @@
 <template>
-    <nav class="room-header pl pb" :class="{ 'room-header-ine': !no_ine  }">
+    <nav class="room-header pb_x" :class="{ 'room-header-ine': !no_ine  }">
         <div class="fx-l">
-            <div class="pr_x">
-                返回
+            <div class="rh-icon h4">
+                <i class="fa-solid fa-arrow-left"></i>
             </div>
-            <div :class="'h' + size">
+            <div class="pl_s">
                 <span :class="{ 'b': size > 0 }" v-html="head"></span>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
     <nav class="fx-l">
         <nav class="fx-s w-100">
-            <eos-user-easy-card :user="me" />
+            <eos-user-easy-card v-if="me" :user="me" />
             <div class="fx-c">
                 <eos-chat-setting-drop-menu />
             </div>

@@ -3,7 +3,7 @@
         <template v-slot:L>
             <slot></slot>
         </template>
-        <template v-slot:R>
+        <template v-slot:R v-if="chatter_phone_number">
             <nav class="chat_room_card_wrapper">
                 <div :class="{
                         'chat_room_card-show': (v == chatter_phone_number)
@@ -13,6 +13,9 @@
             </nav>
 
             <cp-gallary></cp-gallary>
+        </template>
+        <template v-slot:R v-else>
+            <nav class="chat_room_card_empty"></nav>
         </template>
         <template v-slot:D>
             <cp-user-detail-panner></cp-user-detail-panner>

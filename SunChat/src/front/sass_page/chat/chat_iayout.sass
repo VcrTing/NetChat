@@ -1,6 +1,7 @@
 $chat-top: 56px
 $chat-cont: 100vh// calc(120px + 50vh)
-$chat-ieft: calc( 270px + 12vw )
+// 左边面板
+$chat-ieft: calc( 279px + 13vw )
 
 .iayout-room
     width: 100%
@@ -15,6 +16,7 @@ $chat_x_space: 0px// calc(24px + 8vw)
 .room-L
     @extend .pl-chat
     width: $chat-ieft
+    overflow-x: hidden
 .room-R
     @extend .pr-chat
     flex: 1
@@ -30,9 +32,14 @@ $chat_x_space: 0px// calc(24px + 8vw)
         background: #FFF
     .room-R
         position: relative
-        background: $bg_warm
 
 .room-header-ine
+    font-size: 19px
+    *, 
+    *::before
+        color: #FFF !important
+    .rh-icon
+        padding: 0px 1.4em
     border-bottom: 0.7px solid $cold_Br2
 
 //    

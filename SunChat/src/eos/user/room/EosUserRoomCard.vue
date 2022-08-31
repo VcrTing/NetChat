@@ -20,7 +20,7 @@
         <span class="px_s"></span>
         <nav class="t-l fx-1">
             <div class="fx-s">
-                <div>{{ cher.profile_name ? cher.profile_name : '未知用戶(對方未回復)' }}</div>
+                <div>{{ cher.profile_name ? cher.profile_name : '未知用戶' }}</div>
                 <div class="fs_s sub">
                     <tookit-spoon-timed :_timed="iast_msg.date_time" :mode="2"></tookit-spoon-timed>
                 </div>

@@ -1,6 +1,12 @@
 
     
 $chat_top_bar: 59px
+.space-chat_top_bar
+    border: none
+    margin: 0
+    height: $chat_top_bar
+    max-height: $chat_top_bar
+
 .chat-top-bar
     background: $def
     position: absolute
@@ -18,13 +24,12 @@ $chat_top_bar: 59px
     height: $chat_top_bar
 
 .for-chat-top
-    .room-L,
     .chat-pot-paner > div
         padding-top: $chat_top_bar
 
     .room-L .chat-top-bar
-        position: fixed
         max-width: $chat-ieft
+        position: fixed
         padding-left: $ds
         border-left: 1px solid transparent
     .room-R .chat-top-bar
