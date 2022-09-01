@@ -1,22 +1,23 @@
 <template>
-  <home v-show="jwt"/>
-  <router-view v-show="!jwt"/>
+  <div id="app">
+    <home v-if="can"/>
+    <router-view v-else/>
+
+    <tookit-auth-check />
+  </div>
 </template>
 
 <script>
 import Home from './screen/home/Home.vue'
+import TookitAuthCheck from './eos/tookit/TookitAuthCheck.vue';
 export default {
-  components: { Home },
-  mounted() { this.is_auth() },
+  components: { Home, TookitAuthCheck },
   computed: {
-    jwt() { return this.pina().jwt }
+    jwt() { return this.pina().jwt },
+    can() {
+      if (this.jwt) return true;
+    }
   },
-  methods: {
-    is_auth() {
-      (!this.jwt) ? this.$router.push('/login') : undefined
-    },
-    async init() { }
-  }
 }
 </script>
 

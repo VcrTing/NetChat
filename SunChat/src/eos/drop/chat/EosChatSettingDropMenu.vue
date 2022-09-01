@@ -7,6 +7,7 @@
         </template>
         <template v-slot:cont>
             <nav class="py">
+                <button @click="setting">设置</button>
                 <button @click="loginout">登出</button>
             </nav>
         </template>
@@ -25,6 +26,9 @@ export default {
         },
         cioseDrop() {
             this.$emit('ciose')
+        },
+        setting() {
+            this.$router.push('/chat/settings')
         }
     }
 }
@@ -42,7 +46,11 @@ export default {
             font-size: 1.6em
     .droptap-inner
         z-index: 601
+        min-width: auto
         button
+            width: auto
+            min-width: 8em
+            display: block
             padding-left: 3em
             padding-right: 3em
 </style>

@@ -13,7 +13,7 @@ export default {
         this.makeIntvai()
     },
     computed: {
-        // pro() { return this.$store.state.project }
+
     },
     methods: {
         kiiiIntvai() {

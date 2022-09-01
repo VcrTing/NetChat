@@ -9,7 +9,7 @@ $chat_timed_fs: 12.5px
     
 .msg-spoon
     width: 100%
-    margin: 0.19em 0vw
+    margin: 0.17em 0vw
     font-size: $chat_fs
     & > p, & > div
         display: inline-block !important
@@ -51,21 +51,27 @@ $chat_timed_fs: 12.5px
 // 图片
 .spoon-img
     cursor: pointer
+    padding: 3px !important
     img
+        margin: 0
+        overflow: hidden
         border-radius: 0.68vw
         max-height: calc( 120px + 12vw )
     .spoon-img-wrapper
-        margin: 0
-        padding: 0
+        margin: 0 !important
+        padding: 0 !important
         overflow: hidden
         position: relative
         border-radius: 0.68vw
-        div
-            @extend .abs-cc
+        .spoon-media-open-tap
+            position: absolute
+            bottom: 0
+            right: 0
+            left: 0
+            top: 0
             @extend .fx-c
             opacity: 0
             width: 100%
-            height: 100%
             color: #FFFFFFEF
             background: rgba(0, 0, 0, 0.05)
             button
@@ -73,7 +79,7 @@ $chat_timed_fs: 12.5px
                 border-radius: 100%
                 &:hover
                     background: rgba(0, 0, 0, 0.25)
-        div:hover
+        .spoon-media-open-tap:hover
             opacity: 1
 .spoon-img-more
     img
@@ -99,11 +105,9 @@ $chat_timed_fs: 12.5px
 .msg-spoon-timed
     width: 100%
     text-align: center
-    padding: 1.4em $ds 0.9em
+    padding: 1.62em $ds 1.09em
     font-size: $chat_timed_fs
     span 
-        position: sticky
-        top: 4.5em
         padding: 0.7em $ds 0.75em
         @extend .br
         @extend ._bxs
@@ -141,3 +145,9 @@ $chat_timed_fs: 12.5px
         border: 0.6em solid transparent
         border-top-color: $secondary_Bg !important
         border-right-color: $secondary_Bg !important
+
+
+// time tip
+.fix-tip
+    display: inline-block
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,Courier,monospace

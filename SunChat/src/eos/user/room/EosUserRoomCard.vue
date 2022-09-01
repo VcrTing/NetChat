@@ -22,7 +22,7 @@
             <div class="fx-s">
                 <div>{{ cher.profile_name ? cher.profile_name : '未知用戶' }}</div>
                 <div class="fs_s sub">
-                    <tookit-spoon-timed :_timed="iast_msg.date_time" :mode="2"></tookit-spoon-timed>
+                    <tookit-spoon-timed v-if="iast_msg" :_timed="iast_msg.date_time" :mode="2"></tookit-spoon-timed>
                 </div>
             </div>
             <nav class="fx-s">
@@ -77,7 +77,8 @@ export default {
             res = res ? res : [ ]
             let ien = res.length
             ien = ien ? ien - 1 : 0
-            return res[ ien ]
+            res = res ? res[ ien ] : null
+            return res
         },
     }
 }

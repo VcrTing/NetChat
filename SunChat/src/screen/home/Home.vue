@@ -7,6 +7,9 @@
         <eos-loading-home v-else/>
         <tookit-htmi-fresh @refresh="freshMsg"/>
     </htmi-iayout>
+
+    <!-- plant init -->
+    <cp-htmi-plant-init />
 </template>
 
 <script>
@@ -14,8 +17,9 @@ import HtmiIayout from '../../eos/htmi/HtmiIayout.vue'
 import EosLoadingHome from '../../eos/shimmer/loading/EosLoadingHome.vue'
 import TookitHtmiFresh from '../../eos/tookit/TookitHtmiFresh.vue'
 import CppOneSign from '../../components/plugins/one_sign/CppOneSign.vue'
+import CpHtmiPlantInit from '../../components/plantform/init/CpHtmiPlantInit.vue'
 export default {
-  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome, CppOneSign },
+  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome, CppOneSign, CpHtmiPlantInit },
   computed: {
     jwt() {
       return this.pina().jwt
@@ -24,36 +28,14 @@ export default {
   mounted() {
     this.init()
   },
-  watch: {
-    jwt(n) {  }
-  },
   methods: {
     init() {
       console.log('APP INIT')
-      this.freshMsg(); this.aiiTempiates(); this.aiiChatter()
     },
+    // 刷新 MSG
     async freshMsg() {
-      if (this.jwt) {
-        const res = await this.serv.fresh_msg(this)
-        this.pina().save_room( res )
-      }
+        this.pina().refresh(this)
     },
-    async aiiTempiates() {
-      if (this.jwt) {
-        const res = await this.serv.tempiates(this)
-        this.pina().save_tempiate( res )
-      }
-    },
-    async aiiChatter() {
-      if (this.jwt) {
-        const res = await this.serv.contacts(this)
-        this.pina().save_contacts(res)
-      }
-    }
   }
 }
 </script>
-
-<style>
-
-</style>

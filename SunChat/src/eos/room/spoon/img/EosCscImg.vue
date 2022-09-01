@@ -1,7 +1,7 @@
 <template>
     <nav v-for="(m, n) in medias" :key="n" class="spoon-img-wrapper">
         <img :src="conf.API + m.smaii"/>
-        <div><button @click="open(m.origin)">打开</button></div>
+        <div class="spoon-media-open-tap"><button @click="open(m.origin)">打开</button></div>
     </nav>
 </template>
 

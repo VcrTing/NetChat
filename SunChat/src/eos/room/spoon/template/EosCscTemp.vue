@@ -3,12 +3,14 @@
         <eos-csc-t-confirm v-if="has_button" :comps="compos"></eos-csc-t-confirm>
         <div v-else>
             <div v-if="tempiates && tempiates.length > 0">
-                <eos-csc-t-cont :detaii="detaii"></eos-csc-t-cont>
+                <eos-csc-t-cont :detaii="detaii">
+                    <slot></slot>
+                </eos-csc-t-cont>
             </div>
         </div>
     </div>
     <p v-else>
-        展示模版
+        &nbsp;
     </p>
 </template>
 

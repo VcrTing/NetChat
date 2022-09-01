@@ -1,5 +1,5 @@
 <template>
-    <setting-app-iayout @barTap="$emit('ciose')" :head="'个人信息'">
+    <setting-app-iayout @barTap="pina().ciose_Panner_Left()" :head="'個人信息'">
         <div class="sou-cover">
             <nav><eos-user-avatar></eos-user-avatar></nav>
         </div>
@@ -9,7 +9,7 @@
             </div>
         </com-sou-panner>
         <div class="sub sou-panner-sub">
-            这并非您的用户名或个人识别码，您的 WhatsApp 的联系人将可看见它。
+            這並非您的用戶名或個人識別碼，您的 WhatsApp 的聯系人將可看見它。
         </div>
         <com-sou-panner :head="'聯絡電話'">
             <div>

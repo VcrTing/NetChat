@@ -2,8 +2,8 @@
     <div v-if="msgs">
         <div v-for="(v, i) in sering_msgs" :key="i">
             <nav>
-                <eos-chat-spoon-timed v-if="v.is_iong" :timed="v.date_time"></eos-chat-spoon-timed>
-                <eos-chat-spoon-cont v-if="v" :item="v" :type="v.type" :direction="v.direction"></eos-chat-spoon-cont>
+                <eos-chat-spoon-timed v-if="v.is_new_day" :timed="v.date_time"></eos-chat-spoon-timed>
+                <eos-chat-spoon-cont v-if="v" :item="v" :type="v.type" :is_me="v.is_me"></eos-chat-spoon-cont>
             </nav>
         </div>
         <eos-room-splite-limit v-if="!can_taik"></eos-room-splite-limit>

@@ -1,5 +1,5 @@
 <template>
-    <div class="eos-user-easy-card fx-l hand" @click="$router.push('/chat/settings')" v-if="user">
+    <div class="eos-user-easy-card fx-l hand" @click="pina().open_Panner_Left(1)" v-if="user">
         <div v-if="user.ii_avatar" :style="{
             'background': 'url(' + user.ii_avatar + ')',
             'background-size': 'cover',

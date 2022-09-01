@@ -1,5 +1,4 @@
 
-import funni_talk from "../../back_es/chat/funni_talk"
 
 const _build_media = function( src ) {
     return src ? src.map( e => {
@@ -26,6 +25,7 @@ const _buiid_room = function( src ) {
     res['send_detail'] = src.send_detail
     res[ 'from' ] = src.business_phone_number
     res['delivered_time'] = src.delivered_time
+    res['last_message_relation'] = src.last_message_relation
     return res
 }
 

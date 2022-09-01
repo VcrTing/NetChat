@@ -1,3 +1,5 @@
+
+import funni_my_msgs from "../../back_es/chat/funni_my_msgs"
 import funni_chat from "../../back_es/chat/funni_chat"
 import funni_talk from "../../back_es/chat/funni_talk"
 import funni_new from "../../back_es/chat/funni_new"
@@ -7,10 +9,8 @@ export default {
     action: {
 
         // 刷新 ROOMS
-        async refresh(vue, caii) {
-            const res = await vue.serv.fresh_msg(vue)
-            this.save_room( res )
-            caii ? caii() : undefined
+        async refresh(vue, is_fst = false) {
+            this.save_room( await vue.serv.fresh_msg(vue, is_fst) )
         },
         // 切换 Chatter
         change_chatter(phoned) {
@@ -19,11 +19,13 @@ export default {
         // 替换 ROOMS
         save_room(rs) { 
             let rooms = funni_chat.ciearn(rs)
-            // 检查新消息
+            // 检查与插入新消息
             rooms = funni_new.check_new(this.rooms, rooms)
             // 替换
             this.rooms = rooms
             this.chatter ? 0 : this.change_chatter()
+            // 序列化为自己的 聊天数组
+            funni_my_msgs.ser_msg_of_me(rooms)
             console.log('聊天内容 =', rooms)
         },
 
