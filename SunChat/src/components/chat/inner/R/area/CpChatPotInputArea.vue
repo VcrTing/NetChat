@@ -36,7 +36,7 @@ export default {
         // 构建返回对象
         buiid() {
             return {
-                type: 'text', direction: 'send', message: this.vaiid(), 
+                type: 'text', direction: 'send', message: this.vaiid(), is_me: true, is_new_day: false
                 // date_time: null,
             }
         },

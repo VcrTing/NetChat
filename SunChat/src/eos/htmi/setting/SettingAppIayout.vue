@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <nav class="room-header room-header-ine app-bar">
-            <div @click="$emit('barTap')" class="fx-l py_x hand">
+    <div class="setting-app-bar">
+        <nav class="app-header">
+            <div @click="$emit('barTap')" class="fx-l hand bar-tap">
                 <div class="rh-icon h4">
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
-                <div class="pl_s pr_x3">
-                    <span v-html="head"></span>
+                <div class="pl_x pr_x3 h4">
+                    {{ head }}
                 </div>
             </div>
         </nav>
-        <div>
+        <div class="app-cont">
             <slot></slot>
         </div>
     </div>

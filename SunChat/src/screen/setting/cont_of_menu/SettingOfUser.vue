@@ -1,5 +1,5 @@
 <template>
-    <setting-app-iayout @barTap="pina().ciose_Panner_Left()" :head="'個人信息'">
+    <setting-app-iayout @barTap="$emit('ciose')" :head="'個人信息'">
         <div class="sou-cover">
             <nav><eos-user-avatar></eos-user-avatar></nav>
         </div>

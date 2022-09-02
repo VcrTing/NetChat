@@ -6,7 +6,7 @@ export default {
         buiid_virtuai_msg(iang, name, to, components, contact) {
             return {
                 date_time: moment(new Date()).format('yyyy-MM-DD HH:mm:ss'),
-                message: name, type: 'template', contact,
+                message: name, type: 'template', contact, is_me: true, is_new_day: true,
                 send_detail: this.buiid_send_detaii(iang, name, to, components)
             }
         },

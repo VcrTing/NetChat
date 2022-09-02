@@ -3,6 +3,9 @@
         <nav class="fx-s w-100">
             <eos-user-easy-card v-if="me" :user="me" />
             <div class="fx-c">
+                <span class="h4" @click="pina().open_Panner_Left(2)">
+                    <i class="fa-solid fa-user-plus"></i>
+                </span>
                 <eos-chat-setting-drop-menu />
             </div>
         </nav>

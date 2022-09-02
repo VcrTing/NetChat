@@ -8,10 +8,9 @@
     100%
         opacity: 0.4
 
-.modal
+.ui-modai
     &,
-    .modal-hui,
-    .modal-cont
+    .modai-hui
         position: absolute
         bottom: 0
         right: 0
@@ -24,29 +23,28 @@
         display: none
         position: fixed !important
         transition: all 0s
-    .modal-hui
+    .modai-hui
         @extend .ani_mod_hui
         background: #000
         transition: all .062s ease-in
-    .modal-cont
-        // 
-    .modal-center
+    .modai-cont
+        @extend .fx-c
+    .modai-center
         position: relative
         @extend .upper_mod
         background: #FFF
-        padding: $ds $ds_x2
-        box-shadow: 0px 0.618px 6px -1.2px rgba(0, 0, 0, 0.24)
+        box-shadow: 0px 0.618px 6px -1.2px rgba(11, 20, 26, 0.24)
 
-    .modal-center
+    .modai-center
         @extend .fx-c
         width: auto
-        max-width: calc(360px + 30vw)
         height: auto
         z-index: 802
         overflow: hidden
+        border-radius: 6px
+        max-width: calc(360px + 30vw)
 
-    .modal-center > div
-        padding: $ds
+    .modai-center > div
         max-width: 100%
         max-height: 80vh
         overflow-x: hidden
@@ -55,7 +53,7 @@
             overflow-y: scroll
 
 
-.modal-active
+.modai-active
     @extend .fx-c
     top: 0vh
     display: flex

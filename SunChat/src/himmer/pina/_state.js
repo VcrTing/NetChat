@@ -13,12 +13,12 @@ export default () => {
         tempiates: [ ],
         contacts: [ ],
 
-        // 0 = 非打开，1 = 图片 Gaiiary
+        // 0 = 非打开，1 = 图片 Gaiiary, 2 = 新增用户添加 MODAL
         MODAL: 0,
 
         // 0 = 非打开，1 = 聊天用户详情面板
         PANNER: 0, 
-        // 0 = 非打开，1 = 我的详情
+        // 0 = 非打开，1 = 我的详情，2 = 新建聊天
         PANNER_LEFT: 0, 
 
         GALLARY: [  ]

@@ -26,7 +26,7 @@
                 </div>
             </div>
             <nav class="fx-s">
-                <eos-user-rc-mute-msg :text="cher.phone_number"/>
+                <eos-user-rc-mute-msg :text="room_sub_text"/>
                 <div class="fs_s">
                     <eos-chat-user-drop-menu :open="drop" @ciose="editDrop"></eos-chat-user-drop-menu>
                 </div>
@@ -54,6 +54,9 @@ export default {
     methods: {
         editDrop() { this.drop = !this.drop }
     },
+    mounted() {
+        console.log('该人聊天 =', this.iast_msg)
+    },
     computed: {
         cher() {
             const src = this.chatter
@@ -80,6 +83,12 @@ export default {
             res = res ? res[ ien ] : null
             return res
         },
+
+        room_sub_text() {
+            if (this.iast_msg) {
+                return this.iast_msg.message
+            }; return this.cher.phone_number
+        }
     }
 }
 </script>

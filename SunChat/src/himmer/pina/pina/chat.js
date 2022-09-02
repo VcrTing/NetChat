@@ -39,6 +39,14 @@ export default {
             src = src ? src.msgs : [ ]
             funni_talk.iong_time_taik(src)
             return src
+        },
+
+        // 插入新的 聊天
+        insert_new_chatter(chtr) {
+            const src = this.rooms
+            if (chtr && chtr.phone_number) {
+                src[ chtr.phone_number ] = { chatter: chtr, msgs: [ ], ids: [ ] } }
+            this.rooms = src
         }
     }
 }

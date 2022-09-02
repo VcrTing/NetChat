@@ -1,6 +1,6 @@
 <template>
     <div class="chat-user-fixed-panner">
-        <setting-of-user/>
+        <setting-of-user @ciose="pina().ciose_Panner_Left()"/>
     </div>
 </template>
 

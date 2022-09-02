@@ -1,0 +1,43 @@
+
+.eos-front-search-block
+    @extend .fx-s
+    background: #FFF
+    min-height: 49px
+    padding: $ds_s $ds
+    position: sticky
+    width: 100%
+    top: 0
+    .ip-i-i
+        z-index: 300
+        span
+            padding-left: $ds_s
+    input
+        min-height: 35px
+        padding-left: 4em
+
+.eos-new-user-button-card
+    @extend .fx-l
+    background: #FFF
+    &:hover
+        background: $def_n
+    & > div
+        margin: 0px 15px 0px 13px
+        .icon-cover,
+        .eos-user-avatar
+            width: 48px
+            height: 48px
+            overflow: hidden
+            border-radius: 100%
+    & > button
+        border: none
+        min-height: 71px
+        text-align: left
+        border-top: 1px solid $bc_s
+
+    .icon-cover
+        width: 100%
+        height: 100%
+        @extend .fx-c
+        background: $secondary_Shai
+        i, i::before
+            color: #FFF !important
