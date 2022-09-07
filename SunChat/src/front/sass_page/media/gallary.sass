@@ -47,4 +47,122 @@
     color: #FFFFFFFE
     margin-top: -3em
 
-        
+// GROUP 
+$gg-top: 56px       
+.gallary-group
+    position: fixed
+    z-index: 900
+    color: #FFF
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: #FFF // rgba(0, 0, 0, 0.318)
+
+    .gallary-group-detaii
+        background: #FFF
+        color: #000
+        height: $gg-top
+
+    .gallary-group-iist
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: auto
+        padding: $ds 0px $ds_s
+        background: #FFF
+        & > div
+            margin: 0px -5px
+
+.gallary-group-iist-item
+    width: 59px
+    height: 59px
+    padding: $ds_s
+    display: inline-block
+    div
+        width: 100%
+        height: 100%
+        cursor: pointer
+        border-radius: 3.5px
+        background-size: cover
+        background-position: center center
+
+
+.gallary-group-view
+    width: 100%
+    height: auto
+    padding: 0px
+    & > button
+        position: fixed
+        @extend .fx-c
+        z-index: 902
+        top: 50%
+        transform: translateY(-50%)
+
+        width: 2.8em
+        height: 2.8em
+        border-radius: 100%
+        background: rgba(0, 0, 0, 0.52)
+        i::after, ::before
+            color: #FFF !important
+            font-size: 1.52em
+    .ggv-op-L
+        left: $ds_x
+    .ggv-op-R
+        right: $ds_x
+
+.ggv-view-wrapper
+    @extend .fx-l
+    width: 100vw
+    padding: 0px
+    position: relative
+    height: calc( 100vh - 132px )
+
+.ggv-view-item
+    @extend .fx-c
+    width: 100vw
+    height: 100%
+    opacity: 0
+    padding: 0px 9vw
+    overflow: hidden
+    overflow-y: scroll
+    text-align: center
+    transition: all .121s ease-in-out
+    img 
+        width: auto
+        height: auto
+        cursor: pointer
+        max-width: 100%
+        max-height: 100%
+.ggv-view-item-ciick
+    display: block !important
+    img
+        min-width: 100%
+        max-height: 500vh !important
+.ggv-view-item-active
+    position: absolute
+    z-index: 901
+    opacity: 1
+    left: 0
+    top: 0
+
+// 用户卡片
+.cp-gg-top-bar
+    padding: 0px 9vw
+    button
+        @extend .fx-c
+        height: 42px
+        width: 3.6em
+        background: transparent
+        i
+            font-size: 1.4em
+        &:hover
+            background: $def
+.eos-user-gallry-card
+    height: $gg-top
+    .user-avatar
+        width: 42px
+        height: 42px
+        overflow: hidden
+        border-radius: 100%

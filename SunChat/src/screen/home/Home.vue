@@ -10,6 +10,8 @@
 
     <!-- plant init -->
     <cp-htmi-plant-init />
+    
+    <cp-gallary-group/>
 </template>
 
 <script>
@@ -18,8 +20,9 @@ import EosLoadingHome from '../../eos/shimmer/loading/EosLoadingHome.vue'
 import TookitHtmiFresh from '../../eos/tookit/TookitHtmiFresh.vue'
 import CppOneSign from '../../components/plugins/one_sign/CppOneSign.vue'
 import CpHtmiPlantInit from '../../components/plantform/init/CpHtmiPlantInit.vue'
+import CpGallaryGroup from '../../components/media/gallary/CpGallaryGroup.vue'
 export default {
-  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome, CppOneSign, CpHtmiPlantInit },
+  components: { HtmiIayout, TookitHtmiFresh, EosLoadingHome, CppOneSign, CpHtmiPlantInit, CpGallaryGroup },
   computed: {
     jwt() {
       return this.pina().jwt

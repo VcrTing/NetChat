@@ -21,16 +21,15 @@ const has_taii = function(msgs, iong = 2) {
 // 是否新的一天的消息
 const buiid_new_day = function(msgs) {
 
-    // 判断是否新的日子
+    // 判断是否新的日子  
     msgs.sort((n, o) => { n.is_new_day = is_new_day(n.date_time, o.date_time) })
 
     // 判断第一天 的日子
     if (msgs[0]) { msgs[0].is_new_day = true }
 
-    let fst = msgs[5]; if (fst) { fst.is_new_day = true; msgs[5] = fst }
-
     return msgs
 }
+
 
 export default {
     // 传递 ROOMS 
@@ -51,7 +50,6 @@ export default {
                     msgs = has_taii(msgs)
 
                     rooms[k].msgs = msgs
-                    console.log('新的 消息列表 =', msgs)
                 }
             }
         }

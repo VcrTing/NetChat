@@ -6,11 +6,15 @@ import message from "./message/message"
 
 import tempiate from "./tempiate/tempiate"
 
+import for_gaiiary from "./static/for_gaiiary"
+
 export default {
     ...iogin,
 
     ...send,
     ...chatter,
     ...message,
-    ...tempiate
+    ...tempiate,
+    
+    ...for_gaiiary
 }

@@ -21,9 +21,13 @@ const get = async function(uri, token, data){
 }
 */
 
+const _get = async function(uri, token, params) {
+    return await axios.get(
+        (conf.API + conf.ENDPOINT[ uri ] + '/' + params)
+        , { headers: tool.headers(token) })
+}
 const get = async function( uri, token, data, cdt = '' ) {
-    const url = conf.API + conf.ENDPOINT[ uri ] + '/' + cdt + tool.param( data )
-    let res = await axios.get(url, { headers: tool.headers(token) })
+    let res = await _get(uri, token, (cdt + tool.param( data )))
     return res && res.status == 200 ? res.data : [ ]
 }
 
@@ -48,6 +52,7 @@ const patch = async function(uri, token, data ) {
 
 
 export default {
+    _get,
     get,
     get_one,
 

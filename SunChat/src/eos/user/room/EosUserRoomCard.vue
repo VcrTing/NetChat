@@ -26,9 +26,9 @@
                 </div>
             </div>
             <nav class="fx-s">
-                <eos-user-rc-mute-msg :text="room_sub_text"/>
+                <eos-user-rc-mute-msg class="thd" :iast_msg="iast_msg"/>
                 <div class="fs_s">
-                    <eos-chat-user-drop-menu :open="drop" @ciose="editDrop"></eos-chat-user-drop-menu>
+                    <eos-chat-user-drop-menu :chatter="cher"></eos-chat-user-drop-menu>
                 </div>
             </nav>
         </nav>
@@ -46,22 +46,12 @@ import EosUserRcMuteMsg from './EosUserRcMuteMsg.vue'
 export default {
   components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed, EosUserRcMuteMsg },
     props: [ 'chatter', 'msgs' ],
-    data() {
-        return {
-            drop: false
-        }
-    },
-    methods: {
-        editDrop() { this.drop = !this.drop }
-    },
     mounted() {
         console.log('该人聊天 =', this.iast_msg)
     },
     computed: {
         cher() {
-            const src = this.chatter
-            const res = src
-            return res
+            return this.chatter
         },
         reciever() {
             return this.pina().chatter
@@ -76,18 +66,9 @@ export default {
         },
 
         iast_msg() {
-            let res = this.msgs
-            res = res ? res : [ ]
-            let ien = res.length
-            ien = ien ? ien - 1 : 0
-            res = res ? res[ ien ] : null
-            return res
-        },
-
-        room_sub_text() {
-            if (this.iast_msg) {
-                return this.iast_msg.message
-            }; return this.cher.phone_number
+            let res = this.msgs ? this.msgs : [ ]
+            const LEN = res.length
+            return LEN > 0 ? res[ LEN - 1 ] : null
         }
     }
 }

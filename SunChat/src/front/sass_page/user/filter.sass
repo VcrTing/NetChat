@@ -3,7 +3,7 @@
     position: sticky
     z-index: 399
     top: $chat_top_bar
-    padding: $ds_n $ds
+    padding: 7px $ds
     background: #FFF
     border-bottom: 1px solid $def 
     // box-shadow: 0 2px 3px rgba(11, 20, 26, 0.08)
@@ -14,6 +14,7 @@
         font-weight: 350
         min-height: 35px
         padding-left: 4.6em
+        padding-right: 4.6em
         padding-bottom: 4px
         border-radius: 8px
     .euef-btn-funni
@@ -24,3 +25,23 @@
     .ip-i-i
         span
             left: $ds_x
+.eurf-ciose
+    left: auto !important
+    right: $ds_x
+    font-weight: 300
+    opacity: 0
+    display: none
+    *, *::before
+        color: $sub_x3
+.eurf-ciose-active
+    display: block
+    opacity: 1
+
+.cpcup-search-nuii
+    @extend .fx-c
+    padding: 72px $ds
+    border: 1px solid transparent
+    border-bottom-color: $bc_s
+
+.eosurf-work
+    box-shadow: 0px 2px 3px rgba(11, 20, 26, 0.08)

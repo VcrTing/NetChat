@@ -11,11 +11,13 @@
                     <cp-chat-card v-if="v" :chatter="{ 'phone_number': v }"></cp-chat-card>
                 </div>
             </nav>
-
-            <cp-gallary></cp-gallary>
-        </template>
+            <!--
+            <cp-gallary></cp-gallary> -->
+        </template> 
         <template v-slot:R v-else>
-            <nav class="chat_room_card_empty"></nav>
+            <nav class="chat_room_card_empty fx-c">
+                <eos-flash-room-index/>
+            </nav>
         </template>
         <template v-slot:D>
             <cp-user-detail-panner></cp-user-detail-panner>
@@ -29,9 +31,11 @@ import RoomIayout from '../../../eos/room/RoomIayout.vue'
 import CpChatCard from '../../../components/chat/CpChatCard.vue'
 import CpGallary from '../../../components/media/gallary/CpGallary.vue'
 import CpUserDetailPanner from '../../../components/user/detail/CpUserDetailPanner.vue'
+import EosFlashRoomIndex from '../../../eos/static/flash/EosFlashRoomIndex.vue'
+import CpGallaryGroup from '../../../components/media/gallary/CpGallaryGroup.vue'
 
 export default {
-  components: { RoomIayout, CpChatCard, CpGallary, CpUserDetailPanner },
+  components: { RoomIayout, CpChatCard, CpGallary, CpUserDetailPanner, EosFlashRoomIndex, CpGallaryGroup },
     data() {        
         return {
             
@@ -51,6 +55,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="sass">
+.chat_room_card_empty
+    width: 100%
+    height: 100%
 </style>

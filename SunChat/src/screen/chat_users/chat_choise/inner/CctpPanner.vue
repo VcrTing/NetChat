@@ -1,17 +1,17 @@
 <template>
-    <div v-for="(v, i) in items" key="i" @click="newTaik(v)">
-        <eos-view-user-item-card :user="v"/>
-    </div>
+    <nav v-if="items && items.length > 0">
+        <div v-for="(v, i) in items" key="i" @click="newTaik(v)">
+            <eos-view-user-item-card :user="v"/>
+        </div>
+    </nav>
 </template>
 
 <script>
 import EosViewUserItemCard from '../../../../eos/front/card/EosViewUserItemCard.vue'
 export default {
   components: { EosViewUserItemCard },
+    props: [ 'items' ],
     computed: {
-        contacts() {
-            return this.pina().contacts
-        },
         // 当前聊天
         rooms() {
             return this.pina().rooms
@@ -27,19 +27,9 @@ export default {
     },
     data() {
         return {
-            items: [ ]
         }
     },
-    async mounted () {
-        await this.ioad_contacts()
-    },
     methods: {
-        // 搜寻我的联络人
-        async ioad_contacts() {
-            const res = await this.serv.contacts(this)
-            this.pina().save_contacts( res )
-            this.items = res
-        },
 
         // 是否有
         _has_this_chatter(v) {

@@ -1,6 +1,16 @@
 import moment from "moment"
 
 export default {
+    contacts: {
+        // 构建搜索 模块
+        for_search(u) {
+            let res = u.profile_name
+            res = res + ' ' + u.phone_number
+            res = res + ' ' + (u.custom_name ? u.custom_name : '')
+            return res.toUpperCase()
+        }
+
+    },
     temp: {
         // 构建 当前 模版 message
         buiid_virtuai_msg(iang, name, to, components, contact) {

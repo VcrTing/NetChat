@@ -4,11 +4,18 @@
 
 <script>
 export default {
+    data() {
+        return {
+            need: true
+        }
+    },
     async mounted() { 
-        this.is_auth() 
-        if (this.jwt) {
-            await this.pina().refresh(this, true)
-            await this.aiiTempiates(); this.aiiChatter()
+        this.is_auth()
+        this.need ? await this.init() : undefined
+    },
+    watch: {
+        async jwt(n) {
+            this.need ? await this.init() : undefined
         }
     },
     computed: {
@@ -17,6 +24,14 @@ export default {
     methods: {
         is_auth() {
             (!this.jwt) ? this.$router.push('/login') : undefined
+        },
+
+        async init() {
+            if (this.jwt) {
+                this.need = false
+                await this.pina().refresh(this, true)
+                await this.aiiTempiates(); this.aiiChatter()
+            }
         },
 
         async aiiTempiates() {
