@@ -45,7 +45,7 @@ export default {
     methods: {
         media() { return this.item.media },
     },
-    mounted() { console.log('一段聊天 =', this.item, this.type) },
+    // mounted() { console.log('一段聊天 =', this.item, this.item.message) },
     computed: {
         // 是否是 多个 媒体
         is_many_media() { const src = this.media(); return src ? (src.length > 1) : false },

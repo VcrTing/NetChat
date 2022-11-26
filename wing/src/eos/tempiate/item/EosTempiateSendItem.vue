@@ -24,7 +24,7 @@ export default {
     components: { NetTempiateSend },
     props: [ 'many' ],
     mounted() {
-        
+        console.log('模版 =', this.many)
     },
     computed: {
         chatter() {

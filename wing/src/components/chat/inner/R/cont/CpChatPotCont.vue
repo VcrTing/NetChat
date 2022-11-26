@@ -34,6 +34,9 @@ export default {
             })
         },
     },
+    mounted() {
+        console.log('MSG =', this.msgs)
+    },
     methods: {
         
     }

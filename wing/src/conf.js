@@ -1,5 +1,7 @@
 const TEST = true
 
+const BASE = 'https://strapi10.svr.up5d.com'
+
 const SPEED = TEST ? 8000 * 1000 : 8 * 1000
 
 import ENDPOINT from './air/endpoint'
@@ -11,7 +13,9 @@ export default {
         pass: '1Qazxc2Wsxcv?!'
     },
     TEST,
-    API: 'https://strapi10.svr.up5d.com/api',
+    
+    BASE,
+    API: BASE + '/api',
     SPEED,
     ENDPOINT,
     ...PLUGINS_CONF

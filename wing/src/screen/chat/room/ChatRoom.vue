@@ -29,6 +29,7 @@
 
 import RoomIayout from '../../../eos/room/RoomIayout.vue'
 import CpChatCard from '../../../components/chat/CpChatCard.vue'
+
 import CpGallary from '../../../components/media/gallary/CpGallary.vue'
 import CpUserDetailPanner from '../../../components/user/detail/CpUserDetailPanner.vue'
 import EosFlashRoomIndex from '../../../eos/static/flash/EosFlashRoomIndex.vue'

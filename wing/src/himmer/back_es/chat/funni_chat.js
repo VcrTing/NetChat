@@ -11,7 +11,6 @@ const _build_media = function( src ) {
         return md
     }) : [ ]
     */
-   console.log('媒体 =', src)
     let e = src
     if (e) {
         const md = {
