@@ -10,6 +10,7 @@ export default {
       return { refresh: this.refresh }
     },
     mounted() {
+        console.log('开启循环')
         this.makeIntvai()
     },
     computed: {

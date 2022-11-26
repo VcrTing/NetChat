@@ -2,18 +2,23 @@
 export default {
     tempiates: async (vue, data = { }) => {
         data['isBlocked'] = false
-        console.log('GET tempiates =', data)
         let res = await vue.net.get('tempiates', vue.token(), data)
         res = res ? vue.strapi.data( res ) : [ ]
-        console.log('SERVER tempiates =', res)
         return res
     },
 
     send_Tempiate: async (vue, lang, data = { }) => {
         if (!data.components) { delete data.components }
         try {
+            const phoned = data.recipient
+            const wsn_id = vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+            // delete data.recipient
             console.log('发送模版 =', data)
-            const res = await vue.net.post('send_tempiate', vue.token(), data, { lang }, data.recipient)
+            if (wsn_id) {
+                const res = await vue.net.post('send_tempiate', vue.token(), data, { lang }, wsn_id)
+            } else {
+                
+            }
         } catch(err) {
             console.log('错误 =', err)
         }
