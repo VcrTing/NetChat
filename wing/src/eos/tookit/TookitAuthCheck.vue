@@ -20,6 +20,8 @@ export default {
     },
     computed: {
         jwt() { return this.pina().jwt },
+        me() { return this.pina().me },
+        wsn_id() { return this.me.whatsapp_send_number_id }
     },
     methods: {
         is_auth() {
@@ -36,8 +38,12 @@ export default {
         },
 
         async aiiTempiates() {
-            let tps = await this.serv.tempiates(this)
-            this.pina().save_tempiate( tps )
+            if (this.wsn_id) {
+                const condition = { } //{ 'sort[0]': 'dateTime', 'filters[whatsapp_send_number_id][$eq]': this.wsn_id }
+                let tps = await this.serv.tempiates(this, condition)
+                
+                this.pina().save_tempiate( tps )
+            }
         },
         async aiiChatter() {
             let cts = await this.serv.contacts(this)

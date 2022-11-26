@@ -4,7 +4,7 @@ export default {
         {
             key: 'dan_whatsapp',
             storage: sessionStorage, 
-            paths: [ 'jwt' ]
+            paths: [ 'jwt', 'me', 'tempiates' ]
         }
     ]
 }

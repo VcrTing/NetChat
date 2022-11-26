@@ -39,6 +39,7 @@ export default {
         if (this.detaii) {
             this.temp = this.pina().ioc_tempiate(this.named, this.iang)
         }
+        console.log('TEMP CONT =', this.named, this.iang, this.detaii, this.temp)
     },
     methods: {
         get_named() {

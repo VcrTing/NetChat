@@ -2,6 +2,7 @@
 export default {
     tempiates: async (vue, data = { }) => {
         data['isBlocked'] = false
+        console.log('GET tempiates =', data)
         let res = await vue.net.get('tempiates', vue.token(), data)
         res = res ? vue.strapi.data( res ) : [ ]
         console.log('SERVER tempiates =', res)

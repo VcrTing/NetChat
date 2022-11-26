@@ -19,17 +19,32 @@ export default {
         // 模版
         async save_tempiate(temps) {
             this.tempiates = temps.map(e => ser_temp(e))
+            console.log('模版 =', this.tempiates)
         },
 
         // 根据模版名称 与 语言，定位当前内容
         ioc_tempiate(named, iang) {
             let res = undefined
             this.tempiates.map(e => {
-                if (named == e.name) {
-                    if (iang == e.language) {
-                        res = e
+                if (e.name) {
+                    if (named == e.name) {
+                        if (iang == e.language) {
+                            res = e
+                        }
                     }
                 }
+               console.log('结果 =', e.name, e.language, iang, named)
+               /*
+                if (e.template) {
+                    let _ig = e.template.language ? e.template.language.code : null
+
+                    if (named == e.template.name) {
+                        if (_ig && (iang == _ig)) {
+                            res = e
+                        }
+                    }
+                }
+                */
             })
             return res
         },

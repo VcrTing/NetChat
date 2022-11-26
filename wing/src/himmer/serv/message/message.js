@@ -5,7 +5,10 @@ const yesterday = () => {
 }
 
 // 构建条件
-const buiid_msg_condition = (_fst) => { return { _limit: _fst ? 999 : 99 } }
+const buiid_msg_condition = (_fst, wsn_id) => { return {
+    'pagination[pageSize]': _fst ? 999 : 99, 
+    'sort[0]': 'dateTime', 'filters[whatsapp_send_number_id][$eq]': wsn_id
+} }
 
 export default {
     msg_one: async (vue, phone, _start = 0, _limit = 50) => {
@@ -17,17 +20,20 @@ export default {
 
     // 已对接
     fresh_msg: async (vue, is_frist = false) => {
-        let res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist) )
-        
-        res = res ? vue.strapi.data(res) : [ ]
-        console.log('MSG 源数据 =', res)
-        // 卸掉 strapi v4
-        if (res) {
-            res.map(e => {
-                e.media = (e && e.media) ? vue.strapi.view( e.media.data ) : null
-                e.contact = (e && e.contact) ? vue.strapi.view( e.contact.data ) : null
-                return e
-            })
+        let res = [ ]
+        const wsn_id = vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+        if (wsn_id) {
+            res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist, wsn_id) )
+            res = res ? vue.strapi.data(res) : [ ]
+            console.log('MSG 源数据 =', res)
+            // 卸掉 strapi v4
+            if (res) {
+                res.map(e => {
+                    e.media = (e && e.media) ? vue.strapi.view( e.media.data ) : null
+                    e.contact = (e && e.contact) ? vue.strapi.view( e.contact.data ) : null
+                    return e
+                })
+            }
         }
         return res
     }
