@@ -10,13 +10,21 @@ const buiid_msg_condition = (_fst, wsn_id) => { return {
     'sort[0]': 'dateTime', 'filters[whatsapp_send_number_id][$eq]': wsn_id
 } }
 
+// 虚拟增加一条消息
+const vituri = function (oid) {
+    let res = JSON.parse(JSON.stringify( oid ))
+
+    res.id = res.id + 1
+    res.message = '虚拟消息'
+    return res
+}
+
 export default {
     msg_one: async (vue, phone, _start = 0, _limit = 50) => {
         const condition = { phone_number: phone, _start, _limit }
         let res = await vue.net.get('message', vue.token(), condition)
         return res
     },
-
 
     // 已对接
     fresh_msg: async (vue, is_frist = false) => {
@@ -27,11 +35,6 @@ export default {
         if (wsn_id) {
             res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist, wsn_id) )
             res = res ? vue.strapi.data(res) : [ ]
-
-            console.log("")
-            console.log("AAA聊天 =", res)
-            console.log("")
-
             // 卸掉 strapi v4
             if (res) {
                 res.map(e => {
@@ -41,6 +44,8 @@ export default {
                 })
             }
         }
+        console.log('聊天元数据 =', res)
+        // if (!is_frist) { res.push( vituri(res[res.length - 1]) ) }
         return res
     }
 }

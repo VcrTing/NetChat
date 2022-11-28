@@ -1,5 +1,5 @@
 <template>
-    <div class="eos-csc-t eos-csc-t-confirm">
+    <div class="eos-csc-t eos-csc-t-confirm" v-if="comps">
         <p class="t_confirm-cont">
             <div v-for="(v, i) in comps" :key="i">
                 <div v-if="typed(v) != 3" :class="'t_confirm-' + v.type">{{ v.text }}</div>

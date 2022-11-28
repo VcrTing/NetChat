@@ -8,6 +8,9 @@
                 <div v-if="items && items.length > 0">
                     <eos-tempiate-send-item @send_temp="sendTemp" :many="items"></eos-tempiate-send-item>
                 </div>
+                <div v-else class="fx-c temp-empty sub">
+                    沒有模版
+                </div>
             </div>
             <br/>
         </div>
@@ -62,6 +65,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="sass">
+.temp-empty
+    padding-top: 2em
+    min-height: 6em
 </style>

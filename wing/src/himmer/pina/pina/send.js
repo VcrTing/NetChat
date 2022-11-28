@@ -23,8 +23,9 @@ export default {
         async say(vue, sentence) {
             let res = undefined
             if (sentence.type == 'text') {
-                console.log('sentence =', sentence)
-                await vue.serv.say(vue, sentence.message, sentence.phone_number)
+                console.log('sentence =', sentence, ' 但是 发送的号码改为 =', this.conf.STRAPI.whatsapp_phone)
+
+                await vue.serv.say(vue, sentence.message, this.conf.STRAPI.whatsapp_phone)
             }
         },
 

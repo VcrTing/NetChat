@@ -50,7 +50,6 @@ export default {
             const _p = msgs[i].phone_number
             if (!res[ _p ]) { res[ _p ] = { msgs: [ ], chatter: null, ids: { } }}
         }
-
         for (let i= 0; i< _L; i++ ) {
             const mm = msgs[i]
             const _p = mm.phone_number

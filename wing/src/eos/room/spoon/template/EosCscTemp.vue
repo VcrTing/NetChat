@@ -12,6 +12,7 @@
     <p v-else>
         &nbsp;
     </p>
+    <div></div>
 </template>
 
 <script>
@@ -34,11 +35,11 @@ export default {
             }
         },
         has_button() {
-            return this.back.temp.has_button(this.compos)
+            return false // this.back.temp.has_button(this.compos)
         }
     },
     mounted() {
-        console.log('TEMP = ', this._item.message, this.detaii, this.compos)
+        // console.log('TEMP = ', this._item.message, this.detaii, this.compos)
         // this.detaii ? console.log('模版 =', this.detaii, '交互 =', this.has_button) : ''
     },
     methods: {

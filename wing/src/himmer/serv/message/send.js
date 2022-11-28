@@ -9,7 +9,7 @@ export default {
     */
     say: async (vue, message, recipient) => {
 
-        const wsn_id = vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+        const wsn_id = vue.conf.STRAPI.whatsapp_sned_id // vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
 
         if (wsn_id) {
             console.log('发送 =', { message, recipient })

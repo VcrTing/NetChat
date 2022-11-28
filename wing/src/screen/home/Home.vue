@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     init() {
-      console.log('APP INIT')
+      // console.log('APP INIT')
     },
     // 刷新 MSG
     async freshMsg() {

@@ -47,7 +47,7 @@ export default {
   components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed, EosUserRcMuteMsg },
     props: [ 'chatter', 'msgs' ],
     mounted() {
-        console.log('该人聊天 =', this.iast_msg)
+        // console.log('该人聊天 =', this.iast_msg)
     },
     computed: {
         cher() {

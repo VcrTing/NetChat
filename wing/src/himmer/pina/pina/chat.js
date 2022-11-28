@@ -10,6 +10,7 @@ export default {
 
         // 刷新 ROOMS
         async refresh(vue, is_fst = false) {
+            // const nm = 
             this.save_room( await vue.serv.fresh_msg(vue, is_fst) )
         },
         // 切换 Chatter
@@ -19,14 +20,18 @@ export default {
         // 替换 ROOMS
         save_room(rs) { 
             let rooms = funni_chat.ciearn(rs)
+            console.log('')
+            console.log('AAA ROOMS =', rooms['85292779625'])
             // 检查与插入新消息
             rooms = funni_new.check_new(this.rooms, rooms)
             // 替换
             this.rooms = rooms
-            this.chatter ? 0 : this.change_chatter()
+            // console.log('替换 ROOMS =', this.rooms)
+            console.log('')
+            // this.chatter ? 0 : this.change_chatter()
+            if (this.chatter) {  } else { this.change_chatter() }
             // 序列化为自己的 聊天数组
             funni_my_msgs.ser_msg_of_me(rooms)
-            console.log('聊天内容 =', rooms)
         },
 
         // 定位当前聊天对象的消息对象

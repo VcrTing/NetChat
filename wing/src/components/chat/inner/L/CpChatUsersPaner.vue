@@ -43,12 +43,12 @@ export default {
         },
         // 给用户增加 排序
         seriai_users(cts) {
-            console.log('CTS =', cts)
+            // console.log('CTS =', cts)
             return cts ? cts.map((e, i) => { if (e) { e.order = i; e.is_show = true; e.for_search = this._for_search(e); return e } }) : [ ]
         }
     },
     mounted() {
-        console.log('联络人(CPchatuserpaner) =', this.contacts)
+        // console.log('联络人(CPchatuserpaner) =', this.contacts)
     },
     watch: {
         search(n) {

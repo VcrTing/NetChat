@@ -36,6 +36,9 @@ export default {
             const src = this.pina().chatter
             return src ? src.phone_number : ''
         },
+        phoned_send() {
+            return this.conf.STRAPI.whatsapp_phone
+        },
         chatter() {
             let pp = this.chtr; pp = pp ? pp.phone_number : undefined
             return pp ? this.pina().ioc_chatter_by_phoned( pp ) : {}
@@ -71,7 +74,7 @@ export default {
 
         // 先将消息插入数组
         insert_words(v) {
-            this.pina().insert_words( v, this.phoned )
+            this.pina().insert_words( v, this.phoned)
         },
 
         // 发送消息

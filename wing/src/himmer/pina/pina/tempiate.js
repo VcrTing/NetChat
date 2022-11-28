@@ -19,7 +19,7 @@ export default {
         // 模版
         async save_tempiate(temps) {
             this.tempiates = temps.map(e => ser_temp(e))
-            console.log('模版 =', this.tempiates)
+            // console.log('模版 =', this.tempiates)
         },
 
         // 根据模版名称 与 语言，定位当前内容
@@ -33,7 +33,7 @@ export default {
                         }
                     }
                 }
-               console.log('结果 =', e.name, e.language, iang, named)
+               // console.log('结果 =', e.name, e.language, iang, named)
                /*
                 if (e.template) {
                     let _ig = e.template.language ? e.template.language.code : null
@@ -51,13 +51,14 @@ export default {
         
         // 传来 components 和 模版文字，返回有参数的结果
         text_of_params(comps, text, typed = 'BODY') {
+            // console.log('COMPS =', comps)
             comps = comps ? comps : [ ]
-            comps.map(e => {
-                const ps = e.parameters
+            (comps.length > 0) ? comps.map(e => {
                 if (e.type == typed) {
+                    const ps = e.parameters
                     text = funni_tempiate.text_of_params(ps, text)
                 }
-            }); return text
+            }) : undefined; return text
         }
     }
 }

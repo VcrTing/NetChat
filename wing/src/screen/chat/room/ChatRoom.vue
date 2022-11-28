@@ -51,7 +51,7 @@ export default {
         }
     },
     mounted() {
-        console.log('所有聊天 =', this.rooms)
+        // console.log('所有聊天 =', this.rooms)
     }
 }
 </script>

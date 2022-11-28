@@ -35,8 +35,8 @@ export default {
         },
     },
     mounted() {
-        console.log('MSG =', this.msgs)
-        console.log(this.pina().me)
+        // console.log('MSG =', this.msgs)
+        // console.log(this.pina().me)
     },
     methods: {
         
