@@ -11,7 +11,7 @@ export default {
         if (!data.components) { delete data.components }
         try {
             const phoned = data.recipient
-            const wsn_id = vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+            const wsn_id = vue.conf.STRAPI.whatsapp_sned_id // vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
             // delete data.recipient
             console.log('发送模版 =', data)
             if (wsn_id) {

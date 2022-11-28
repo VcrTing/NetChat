@@ -1,4 +1,4 @@
-const TEST = false
+const TEST = true
 
 const BASE = 'https://strapi10.svr.up5d.com'
 
@@ -10,7 +10,9 @@ import PLUGINS_CONF from './air/plugins_conf'
 export default {
     STRAPI: {
         named: 'support@manfulls.com',
-        pass: '1Qazxc2Wsxcv?!'
+        pass: '1Qazxc2Wsxcv?!',
+        whatsapp: '85290617430',
+        whatsapp_sned_id: '101639509439423'
     },
     TEST,
     

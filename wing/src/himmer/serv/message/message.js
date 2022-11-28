@@ -21,11 +21,17 @@ export default {
     // 已对接
     fresh_msg: async (vue, is_frist = false) => {
         let res = [ ]
-        const wsn_id = vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+        // console.log('vue.pina().me =', vue.pina().me, vue.pina().jwt)
+        const wsn_id = vue.conf.STRAPI.whatsapp_sned_id // vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
+        
         if (wsn_id) {
             res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist, wsn_id) )
             res = res ? vue.strapi.data(res) : [ ]
-            console.log('MSG 源数据 =', res)
+
+            console.log("")
+            console.log("AAA聊天 =", res)
+            console.log("")
+
             // 卸掉 strapi v4
             if (res) {
                 res.map(e => {
