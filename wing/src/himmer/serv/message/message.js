@@ -7,7 +7,8 @@ const yesterday = () => {
 // 构建条件
 const buiid_msg_condition = (_fst, wsn_id) => { return {
     'pagination[pageSize]': _fst ? 999 : 99, 
-    'sort[0]': 'dateTime', 'filters[whatsapp_send_number_id][$eq]': wsn_id
+    'sort[0]': 'dateTime', 
+    // 'filters[whatsapp_send_number_id][$eq]': wsn_id
 } }
 
 // 虚拟增加一条消息
@@ -29,11 +30,10 @@ export default {
     // 已对接
     fresh_msg: async (vue, is_frist = false) => {
         let res = [ ]
-        // console.log('vue.pina().me =', vue.pina().me, vue.pina().jwt)
         const wsn_id = vue.conf.STRAPI.whatsapp_sned_id // vue.pina().me ? vue.pina().me.whatsapp_send_number_id : null
         
         if (wsn_id) {
-            res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist, wsn_id) )
+            res = await vue.net.get('message', vue.token(), buiid_msg_condition(is_frist) )
             res = res ? vue.strapi.data(res) : [ ]
             // 卸掉 strapi v4
             if (res) {
@@ -44,7 +44,6 @@ export default {
                 })
             }
         }
-        console.log('聊天元数据 =', res)
         // if (!is_frist) { res.push( vituri(res[res.length - 1]) ) }
         return res
     }

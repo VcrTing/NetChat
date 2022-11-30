@@ -3,7 +3,6 @@
         <cp-chat-top-user-detail-bar class="chat-top-bar"></cp-chat-top-user-detail-bar>
         <cp-chat-pot-paner @showFunc="showFunc" ref="potREF" :chtr="chatter"></cp-chat-pot-paner>
         <eos-func-go-down v-if="func" class="upper-go-down" @down="goDown"></eos-func-go-down>
-        
     </div>
 </template>
 

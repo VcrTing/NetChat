@@ -6,7 +6,6 @@ export default {
         _type.map(e => {
             condition += ('&type_in=' + e)
         })
-        console.log('条件 =', condition)
         let res = await vue.net._get('message', vue.token(), condition)
         if ( res && res.status == 200 ) {
             res = vue.strapi.data( res )

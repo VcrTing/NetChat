@@ -84,9 +84,9 @@ export default {
             sentence.phone_number = this.phoned
             this.insert_words( sentence )
             this.down()
-            try { await this.pina().say( this, sentence ) } catch(err) { }
+            await this.pina().say( this, sentence )
             // 发送成功后 做的事情
-            await this.$refs.reREF.refresh()
+            // await this.$refs.reREF.refresh()
             this.down()
         },
 

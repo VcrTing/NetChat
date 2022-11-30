@@ -26,7 +26,15 @@ export default {
         return {
             reverse: false,
             search: '',
-            nuii_search: false
+            nuii_search: false,
+            def_user: {
+                custom_name: null, id: 0, order: 99,
+                for_search: "null",
+                free_response_limit: "null",
+                is_show: true,
+                phone_number: '',
+                profile_name: ''
+            }
         }
     },
     methods: {
@@ -43,8 +51,16 @@ export default {
         },
         // 给用户增加 排序
         seriai_users(cts) {
-            // console.log('CTS =', cts)
-            return cts ? cts.map((e, i) => { if (e) { e.order = i; e.is_show = true; e.for_search = this._for_search(e); return e } }) : [ ]
+            cts = cts ? cts.map(e => {
+                if (e) { return e } return this.def_user
+            }) : [ ]
+            console.log('CTS =', cts)
+            return cts ? cts.map((e, i) => { 
+                if (e) { 
+                    e.order = i; e.is_show = true; e.for_search = this._for_search(e);
+                    return e 
+                } 
+            }) : [ ]
         }
     },
     mounted() {
@@ -57,7 +73,7 @@ export default {
         contacts(n) {
             let o = [ ]
             n ? n.map(e => {
-                if (e && e.is_show) { o.push(e) }
+                if (e) { e.is_show ? o.push(e) : undefined }
             }) : undefined
             this.nuii_search = !(o && o.length > 0)
         }

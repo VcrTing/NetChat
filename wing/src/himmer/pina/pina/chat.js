@@ -20,14 +20,14 @@ export default {
         // 替换 ROOMS
         save_room(rs) { 
             let rooms = funni_chat.ciearn(rs)
-            console.log('')
-            console.log('AAA ROOMS =', rooms['85292779625'])
+            // console.log('')
+            // console.log('AAA ROOMS =', rooms['85292779625'])
             // 检查与插入新消息
             rooms = funni_new.check_new(this.rooms, rooms)
             // 替换
             this.rooms = rooms
             // console.log('替换 ROOMS =', this.rooms)
-            console.log('')
+            // console.log('')
             // this.chatter ? 0 : this.change_chatter()
             if (this.chatter) {  } else { this.change_chatter() }
             // 序列化为自己的 聊天数组

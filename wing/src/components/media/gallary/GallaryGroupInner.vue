@@ -69,6 +69,9 @@ export default {
             }; return res ? res : 'unknown time'
         }
     },
+    mounted() {
+        console.log('imgs =', this.imgs)
+    },
     methods: {
         // 定位打开某图片
         ioc_which_img(_id, ii = 0) {

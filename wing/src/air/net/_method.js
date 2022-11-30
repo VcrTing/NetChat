@@ -22,7 +22,7 @@ const get = async function(uri, token, data){
 */
 
 const _get = async function(uri, token, params) {
-    // console.log('URI =', (conf.API + conf.ENDPOINT[ uri ] + '/' + params))
+    console.log('URI =', (conf.API + conf.ENDPOINT[ uri ] + '/' + params), 'TOKEN =', token)
     return await axios.get(
         (conf.API + conf.ENDPOINT[ uri ] + '/' + params)
         , { headers: tool.headers(token) })

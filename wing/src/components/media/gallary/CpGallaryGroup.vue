@@ -14,7 +14,7 @@ export default {
     methods: {
         _buiid(mda, msg) {
             return {
-                src: this.conf.API + mda.origin,
+                src: this.conf.BASE + mda.origin,
                 date_time: msg.date_time,
                 id: msg.id, mime: mda.mime,
                 ratio: mda.width ? (mda.width / mda.height) : 1

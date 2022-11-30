@@ -1,17 +1,18 @@
-const TEST = false
+const TEST = true
 
 const BASE = 'https://strapi10.svr.up5d.com'
 
-const SPEED = TEST ? 20 * 1000 : 8 * 1000
+const SPEED = TEST ? 200 * 1000 : 10 * 1000
 
 import ENDPOINT from './air/endpoint'
 import PLUGINS_CONF from './air/plugins_conf'
 
 export default {
     STRAPI: {
-        named: 'support@manfulls.com',
-        pass: '1Qazxc2Wsxcv?!',
+        named: 'info@edgaremma.com', // support@manfulls.com
+        pass: 'Cxzaq1Vcxsw2?!', // 1Qazxc2Wsxcv?!
         whatsapp_phone: '85290617430',
+        // 预示
         whatsapp_sned_id: '101639509439423'
     },
     TEST,

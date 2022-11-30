@@ -32,6 +32,6 @@ export default {
         position: absolute
         top: 7px
         left: 0px
-        width: 7.12em
+        width: 6.12em
         padding-right: 11px
 </style>

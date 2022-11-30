@@ -8,7 +8,7 @@ const msgs_by_ids = function(o_ids, n_ids, o_k = [ ]) {
 
     // 把 o_ids 的 key 塞入 o_k 中
     for (let k in o_ids) { o_k.push(k) }
-    console.log('n_ids =', n_ids, o_k)
+    // console.log('n_ids =', n_ids, o_k)
     for (let n in n_ids) {
         // 新消息 ID 不存在 老消息s 内
         if (o_k.indexOf(n) < 0) {
@@ -32,7 +32,7 @@ const trash_from_ioc = function(msgs, res = [ ]) {
 // 2
 // oid 为主，加入新消息
 const insert_new_msg = function(oid, fresh, f_k = [ ]) {
-    console.log('筛选出的老数据 =', oid['85292779625'], ' 新数据 =', fresh['85292779625'])
+    // console.log('筛选出的老数据 =', oid['85292779625'], ' 新数据 =', fresh['85292779625'])
     for (let k in fresh) { f_k.push(k) }
     // 每个号码
     
@@ -63,7 +63,7 @@ const insert_new_msg = function(oid, fresh, f_k = [ ]) {
             }           
         })
     }; 
-    console.log('最终操作结果 =', oid)
+    // console.log('最终操作结果 =', oid)
     return oid
 }
 
