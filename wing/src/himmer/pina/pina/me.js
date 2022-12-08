@@ -14,6 +14,7 @@ export default {
         
     },
     action: {
+        buiid_phone_view(pp) { return buiid_phone_view( pp ) },
         loginout() {
             this.jwt = null
         },

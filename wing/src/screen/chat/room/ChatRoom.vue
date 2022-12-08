@@ -11,8 +11,6 @@
                     <cp-chat-card v-if="v" :chatter="{ 'phone_number': v }"></cp-chat-card>
                 </div>
             </nav>
-            <!--
-            <cp-gallary></cp-gallary> -->
         </template> 
         <template v-slot:R v-else>
             <nav class="chat_room_card_empty fx-c">
@@ -46,8 +44,7 @@ export default {
         rooms() { return this.pina().rooms },
         rooms_convert() { let res = [ ]; for (let ii in this.rooms) { res.push(ii) } return res },
         chatter_phone_number() { 
-            let res = this.pina().chatter
-            return res ? res['phone_number'] : null 
+            let res = this.pina().chatter; return res ? res['phone_number'] : null 
         }
     },
     mounted() {

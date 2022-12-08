@@ -2,14 +2,14 @@
     <div>
         <nav class="ui-input-icon">
             <span><i class="fa-regular fa-user"></i></span>
-            <input v-model="named" class="input" placeholder="客户名称"/>
+            <input v-model="named" class="input" placeholder="客戶名稱"/>
         </nav>
 
         <div class="py_n"></div>
 
         <nav class="ui-input-select">
             <ui-country-seiect @change="(v) => prefix = v" class="attch-seiect input"/>
-            <input v-model="phoned" class="input" placeholder="联络电话"/>
+            <input v-model="phoned" class="input" placeholder="聯絡電話"/>
         </nav>
     </div>
 </template>
@@ -24,10 +24,7 @@ export default {
         }
     },
     methods: {
-        coiiect() {
-            let coii = this.data
-            return coii
-        }
+        coiiect() { let coii = this.data; return coii }
     }
 }
 </script>

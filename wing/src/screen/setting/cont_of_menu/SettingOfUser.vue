@@ -28,9 +28,7 @@ import EosUserAvatar from '../../../eos/user/media/EosUserAvatar.vue'
 import ComSouPanner from '../comm/ComSouPanner.vue'
 export default {
     components: { SettingAppIayout, EosUserAvatar, ComSouPanner },
-    mounted() {
-        // console.log('ME =', this.me)
-    },
+    mounted() { },
     computed: {
         me() { return this.pina().me }
     }

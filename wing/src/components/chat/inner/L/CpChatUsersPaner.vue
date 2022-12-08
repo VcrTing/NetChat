@@ -79,7 +79,6 @@ export default {
         }
     },
     computed: {
-
         // 所有联络人
         contacts() { 
             let res = [ ]

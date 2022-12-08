@@ -18,10 +18,10 @@ export default {
                     txt: '通知', icon: 'fa-solid fa-bell'
                 },
                 {
-                    txt: '隐私', icon: 'fa-solid fa-unlock-keyhole'
+                    txt: '隱私', icon: 'fa-solid fa-unlock-keyhole'
                 },
                 {
-                    txt: '帮助', icon: 'fa-solid fa-circle-question'
+                    txt: '幫助', icon: 'fa-solid fa-circle-question'
                 },
             ]
         }

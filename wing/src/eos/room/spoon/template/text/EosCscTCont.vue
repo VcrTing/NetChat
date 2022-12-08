@@ -15,9 +15,7 @@ export default {
             let res = this.temp
             if (res) {
                 res = res.components ? res.components : [ ]
-                res.map(e => {
-                    if (e.type == 'BODY') { res = e.text }
-                })
+                res.map(e => { if (e.type == 'BODY') { res = e.text } })
             }; return res
         },
         // 在原有基础上 序列化好 参数

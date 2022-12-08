@@ -45,11 +45,12 @@ export default {
     methods: {
         media() { return this.item.media },
     },
-    // mounted() { console.log('一段聊天 =', this.item, this.item.message) },
+    // mounted() { console.log('一段聊天 =', this.item, this.item.message, this.tempiates) },
     computed: {
         // 是否是 多个 媒体
         is_many_media() { const src = this.media(); return src ? (src.length > 1) : false },
         
+        tempiates() { return this.pina().tempiates },
         is_one_emoji() {
             let v = this.item.message
             let res = false
@@ -59,8 +60,7 @@ export default {
         },
 
         is_smaii_iong() {
-            const src = this.item.is_iong ? 0 : this.item.iong_minute
-            return src ? src > 2 : false
+            const src = this.item.is_iong ? 0 : this.item.iong_minute; return src ? src > 2 : false
         },
         which() {
             if (this.type == 'text') { return 1 }
@@ -79,9 +79,7 @@ export default {
             return res
         },
 
-        need_sub_time() {
-            return this.need_taii
-        }
+        need_sub_time() { return this.need_taii }
 
     }
 }

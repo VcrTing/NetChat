@@ -1,7 +1,7 @@
 <template>
     <div class="change-pager" :class="{ 'change-pager-active': (tab != 0), 'change-pager-noactive': (tab == 0) }">
         <div class="change-pager-one">
-            <setting-app-iayout @barTap="back" :head="'设置'">
+            <setting-app-iayout @barTap="back" :head="'設置'">
                 <setting-detaii @click="tab = 1" class="setting-hv-panner"/>
                 <div class="py_s"></div>
                 <setting-menu/>

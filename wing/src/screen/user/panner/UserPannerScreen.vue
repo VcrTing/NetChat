@@ -1,9 +1,9 @@
 <template>
     <div>
-        <ui-room-header class="app-bar" :size="5" :head="'个人信息'"></ui-room-header>
+        <ui-room-header class="app-bar" :size="5" :head="'個人信息'"></ui-room-header>
         <br/><br/><br/>
         <div class="px py">
-            个人信息
+            個人信息
         </div>
     </div>
 </template>

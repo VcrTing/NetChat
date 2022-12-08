@@ -13,9 +13,6 @@
             </ui-input>
             <div class="pt">
                 <button @click="submit" class="btn-pri btn-auth upper">
-                    <!--
-                    <loading v-if="dealing" :size="-1" :_class="'loading-fff'"></loading>
-                    <span v-else>登錄</span>-->
                     登錄
                 </button>
             </div>

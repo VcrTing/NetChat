@@ -20,18 +20,14 @@
 import EosUserRoomCard from '../../../../../eos/user/room/EosUserRoomCard.vue'
 export default {
     components: { EosUserRoomCard },
-    props: [
-        'many'
-    ],
+    props: [ 'many' ],
     methods: {
-
         // 根据用户 contact
         getMsgs(uu) {
             let res = uu ? uu.phone_number : ''
             res = res ? this.rooms[ res ] : undefined
             return res ? res.msgs : [ ]
         },
-
         // 切换聊天用户
         change(chr) {
             const ph_oid = chr.phone_number // 

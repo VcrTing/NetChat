@@ -28,25 +28,9 @@ export default {
             this.tempiates.map(e => {
                 if (e.name) {
                     if (named == e.name) {
-                        if (iang == e.language) {
-                            res = e
-                        }
-                    }
-                }
-               // console.log('结果 =', e.name, e.language, iang, named)
-               /*
-                if (e.template) {
-                    let _ig = e.template.language ? e.template.language.code : null
-
-                    if (named == e.template.name) {
-                        if (_ig && (iang == _ig)) {
-                            res = e
-                        }
-                    }
-                }
-                */
-            })
-            return res
+                        const ig = e.language; if (iang.indexOf( ig ) >= 0) { res = e }
+                    } }
+            }); return res
         },
         
         // 传来 components 和 模版文字，返回有参数的结果

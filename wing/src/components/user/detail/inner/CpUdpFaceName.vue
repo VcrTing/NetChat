@@ -6,8 +6,8 @@
         <div class="h4 pt">
             {{ user.profile_name }}
         </div>
-        <div class="sub">
-            {{ user.phone_number }}
+        <div class="sub pt_s">
+            {{ vid.buiid_phone_view( user.phone_number ) }}
         </div>
     </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     components: { EosUserAvatarDef },
     props: [ 'user' ],
     mounted() {
-        console.log('user =', this.user)
+        // console.log('user =', this.user)
     }
 }
 </script>
