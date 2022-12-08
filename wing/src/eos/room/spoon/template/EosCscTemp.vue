@@ -23,28 +23,20 @@ export default {
   components: { EosCscTConfirm, EosCscTCont },
     props: [ '_item' ],
     computed: {
-        tempiates() {
-            return this.pina().tempiates
-        },
-        detaii() {
-            return this._item.send_detail
-        },
+        tempiates() { return this.pina().tempiates },
+        detaii() { return this._item.send_detail },
         compos() {
             if (this.detaii) {
                 return this.detaii.template ? this.detaii.template.components : null
             }
         },
-        has_button() {
-            return false // this.back.temp.has_button(this.compos)
+        has_button() { return false // this.back.temp.has_button(this.compos)
         }
     },
     mounted() {
-        console.log('TEMP = ', this._item, this.tempiates)
+        // console.log('TEMP = ', this._item, this.tempiates)
         // this.detaii ? console.log('模版 =', this.detaii, '交互 =', this.has_button) : ''
     },
-    methods: {
-        
-    }
 }
 </script>
 

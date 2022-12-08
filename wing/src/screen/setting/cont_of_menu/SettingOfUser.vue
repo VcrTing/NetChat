@@ -4,7 +4,7 @@
             <nav><eos-user-avatar></eos-user-avatar></nav>
         </div>
         <com-sou-panner :head="'您的姓名'">
-            <div>
+            <div class="sou-name">
                 {{ me.username }}
             </div>
         </com-sou-panner>
@@ -13,7 +13,7 @@
         </div>
         <com-sou-panner :head="'聯絡電話'">
             <div>
-                {{ me.phone }}
+                {{ me.phone_number_view }}
             </div>
         </com-sou-panner>
         <br/>
@@ -28,15 +28,16 @@ import EosUserAvatar from '../../../eos/user/media/EosUserAvatar.vue'
 import ComSouPanner from '../comm/ComSouPanner.vue'
 export default {
     components: { SettingAppIayout, EosUserAvatar, ComSouPanner },
-
+    mounted() {
+        // console.log('ME =', this.me)
+    },
     computed: {
-        me() {
-            return this.pina().me
-        }
+        me() { return this.pina().me }
     }
 }
 </script>
 
-<style>
-
+<style lang="sass">
+.sou-name
+    text-transform: capitalize
 </style>
