@@ -35,12 +35,10 @@ export default {
         
         // 传来 components 和 模版文字，返回有参数的结果
         text_of_params(comps, text, typed = 'BODY') {
-            // console.log('COMPS =', comps)
             comps = comps ? comps : [ ]
             (comps.length > 0) ? comps.map(e => {
                 if (e.type == typed) {
-                    const ps = e.parameters
-                    text = funni_tempiate.text_of_params(ps, text)
+                    const ps = e.parameters; text = funni_tempiate.text_of_params(ps, text)
                 }
             }) : undefined; return text
         }

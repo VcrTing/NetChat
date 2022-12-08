@@ -6,15 +6,13 @@ const yesterday = () => {
 
 // 构建条件
 const buiid_msg_condition = (_fst, wsn_id) => { return {
-    'pagination[pageSize]': _fst ? 999 : 99, 
-    'sort[0]': 'dateTime', 
-    // 'filters[whatsapp_send_number_id][$eq]': wsn_id
+    'pagination[pageSize]': _fst ? 99 : 99, 
+    'sort[0]': 'dateTime:asc', 
 } }
 
 // 虚拟增加一条消息
 const vituri = function (oid) {
     let res = JSON.parse(JSON.stringify( oid ))
-
     res.id = res.id + 1
     res.message = '虚拟消息'
     return res
@@ -44,7 +42,6 @@ export default {
                 })
             }
         }
-        // if (!is_frist) { res.push( vituri(res[res.length - 1]) ) }
         return res
     }
 }

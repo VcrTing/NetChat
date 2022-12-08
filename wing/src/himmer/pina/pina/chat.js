@@ -19,12 +19,11 @@ export default {
         },
         // 替换 ROOMS
         save_room(rs) { 
-            console.log('RS =', rs)
             let rooms = funni_chat.ciearn(rs)
-            // console.log('')
-            // console.log('AAA ROOMS =', rooms['85292779625'])
             // 检查与插入新消息
             rooms = funni_new.check_new(this.rooms, rooms)
+
+            console.log('RS =', rooms)
             // 替换
             this.rooms = rooms
             // console.log('替换 ROOMS =', this.rooms)

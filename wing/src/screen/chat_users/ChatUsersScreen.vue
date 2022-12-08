@@ -20,9 +20,7 @@ import ChatChoiseTaikPanner from './chat_choise/ChatChoiseTaikPanner.vue';
 export default {
   components: { ChatTbLeft, CpChatUsersPaner, ChatUserFixedPanner, ChatPlusTaikModal, ChatChoiseTaikPanner },
     data() {
-      return {
-        
-      }
+      return { }
     },
     computed: {
       panner_ieft() {
