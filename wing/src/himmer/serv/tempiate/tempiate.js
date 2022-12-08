@@ -3,6 +3,7 @@ export default {
     tempiates: async (vue, data = { }) => {
         data['isBlocked'] = false
         let res = await vue.net.get('tempiates', vue.token(), data)
+        console.log('所有的模版 =', res)
         res = res ? vue.strapi.data( res ) : [ ]
         return res
     },

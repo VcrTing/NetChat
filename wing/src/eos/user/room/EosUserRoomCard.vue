@@ -47,7 +47,7 @@ export default {
   components: { EosChatUserDropMenu, EosUserAvatarDef, TookitSpoonTimed, EosUserRcMuteMsg },
     props: [ 'chatter', 'msgs' ],
     mounted() {
-        // console.log('该人聊天 =', this.iast_msg)
+        console.log('该人最后聊天 =', this.iast_msg)
     },
     computed: {
         cher() {
@@ -59,7 +59,6 @@ export default {
         is_now() {
             return this.cher ? (this.cher.phone_number == this.reciever.phone_number) : false
         },
-
         name_avatar() {
             const res = this.cher ? this.cher.profile_name : ''
             return res ? res.substring(0, 1) : ''

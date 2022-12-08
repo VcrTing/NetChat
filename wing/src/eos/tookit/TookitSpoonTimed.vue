@@ -39,9 +39,10 @@ export default {
                 return this.tooi_time.week_word(tt) + ' ' + mm
             } else if (this.is_oiday(tt, 5)) {
                 return this.tooi_time.week_word(tt) + ' ' + mm } 
+
+            let hh = tt.format('HH'); hh = hh ? Number.parseInt(hh) : ' 0'
             return this.is_year(tt) ? 
-                tt.format('yy年M月D日') : 
-                tt.format('M月D日' + ' HH點')
+                tt.format('yy年M月D日') : tt.format('M月D日 ' + (hh ? hh : '0') + '點')
         }
     },
     methods: {

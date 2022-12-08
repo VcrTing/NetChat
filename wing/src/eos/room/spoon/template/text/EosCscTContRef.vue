@@ -1,8 +1,5 @@
 <template>
-    <p class="eos-spoon-iong-temp-cont">
-        {{ body }}
-        <slot></slot>
-    </p>
+    <span>{{body}}</span>
 </template>
 
 <script>
@@ -48,12 +45,3 @@ export default {
     }
 }
 </script>
-
-<style lang="sass">
-.eos-spoon-iong-temp-cont
-    .fix-tip,
-    ._fix-tip
-        width: 100%
-        display: block
-        padding-right: 0 !important
-</style>

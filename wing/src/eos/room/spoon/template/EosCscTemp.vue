@@ -39,7 +39,7 @@ export default {
         }
     },
     mounted() {
-        // console.log('TEMP = ', this._item.message, this.detaii, this.compos)
+        console.log('TEMP = ', this._item, this.tempiates)
         // this.detaii ? console.log('模版 =', this.detaii, '交互 =', this.has_button) : ''
     },
     methods: {

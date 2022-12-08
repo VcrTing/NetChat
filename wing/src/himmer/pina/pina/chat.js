@@ -19,6 +19,7 @@ export default {
         },
         // 替换 ROOMS
         save_room(rs) { 
+            console.log('RS =', rs)
             let rooms = funni_chat.ciearn(rs)
             // console.log('')
             // console.log('AAA ROOMS =', rooms['85292779625'])

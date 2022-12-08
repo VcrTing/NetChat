@@ -26,12 +26,4 @@ export default {
 </script>
 
 <style lang="sass">
-.fix-tip
-    position: relative
-    ._fix-tip
-        position: absolute
-        top: 7px
-        left: 0px
-        width: 6.12em
-        padding-right: 11px
 </style>
