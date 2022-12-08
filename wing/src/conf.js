@@ -1,4 +1,4 @@
-const TEST = true
+const TEST = false
 
 const BASE = 'https://strapi10.svr.up5d.com'
 
