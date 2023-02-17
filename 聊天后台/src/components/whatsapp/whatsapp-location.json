@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_whatsapp_whatsapp_locations",
+  "info": {
+    "displayName": "whatsapp_location",
+    "icon": "school"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

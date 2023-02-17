@@ -1,0 +1,91 @@
+$drop_bxs: rgba(11, 20, 26, .26)
+
+._drop_bxs
+    box-shadow: 0 1.5px 3px 0 $drop_bxs, 0 1.5px 8px 0 $drop_bxs
+
+.dropdown
+    position: relative
+
+    .drop-inner
+        position: absolute
+        z-index: 999
+        background: #FFF
+        border-radius: 0.6em
+        box-shadow: 1px 1.4px 5px -0.5px rgba(0, 0, 0, 0.38)
+        overflow: hidden
+        padding: 0
+        max-height: 0em
+        button
+            @extend .ciear
+            min-width: 13em
+            padding: $ds_n $ds
+            &:hover
+                background: $def
+    &:hover 
+        .drop-inner
+            padding: $ds 0
+            max-height: 20em
+            animation: dropdown .122s ease-out
+
+@keyframes dropdown
+    0%
+        padding: 0
+        max-height: 0em
+    100%
+        padding: $ds 0
+        max-height: 20em
+        
+//   switch
+.switch
+    position: relative  
+    .switch-inner
+        @extend .br
+        @extend .ciear
+        position: absolute  
+        bottom: 0
+        left: 0
+        width: 100%
+        overflow: hidden
+        padding: 0
+        max-height: 0em  
+
+.switch-active
+    .switch-inner
+        max-height: 40em   
+        animation: switch .12s ease-out
+
+@keyframes switch
+    0%
+        max-height: 0em
+    100%
+        max-height: 20em
+
+.ui-droptap
+    // position: relative
+    .droptap-inner
+        position: absolute
+        background: #FFF
+        right: $ds
+        max-height: 0em
+        overflow: hidden
+        @extend ._drop_bxs
+        border-radius: 4.5px
+        button
+            width: 100%
+            @extend .ciear
+            padding: $ds_n $ds
+            &:hover
+                background: $def
+
+.ui-droptap-anime:hover
+    .droptap-inner
+        max-height: 12em
+        animation: urtb_droptap_view .162s ease-out
+
+@keyframes urtb_droptap_view
+    0%
+        opacity: 0.618
+        transform: translateY(6px)
+    100%
+        opacity: 1
+        transform: translateY(0px)

@@ -1,0 +1,107 @@
+
+$pg_br: #D9D9D9
+
+.ul-def
+    padding: 0px
+    margin: 0px $ds_s-r
+    li
+        padding: $ds
+        text-align: center
+        a
+            border: none
+            padding: $ds 0
+            cursor: pointer
+            position: relative
+            &::after
+                position: absolute
+                content: ''
+                bottom: -3px
+                left: 0
+                height: 3px
+                width: 100%
+                background: none
+
+.ul-tab
+    li
+        color: $sus
+        min-width: 5em
+        padding: $ds 1.5em
+    li.active
+        a   
+            color: $tit
+            &::after
+                background: $primary
+
+$pgW: 2.6em
+
+.ul-pagenation
+    padding: 0px $ds_s
+    @extend .fx-c
+    li
+        transition: all .2s ease-in-out
+        @extend .fx-c
+        width: $pgW
+        height: $pgW
+        padding: $ds
+        cursor: pointer
+        margin: 0px $ds_s
+        background: #FFF
+        &:focus
+            box-shadow: 0px 0px 0px 3px $primary_Thin
+        &:hover
+            color: #FFFFFFEF
+            background: $primary
+    li:last-child,
+    li:first-child
+        opacity: 0.8
+        margin: 0px $ds
+    .active
+        color: $primary // #FFFFFFEF
+        font-weight: bolder
+        background: $primary_Thin
+        border-color: $primary_Thin
+        &:hover
+            color: #FFFFFFC0
+            background: $primary
+            border-color: $primary
+
+.ul-pagenation li,
+.pagenation input,
+.pagenation select
+    font-weight: 320
+    height: $pgW
+    min-height: $pgW
+    // border: 1px solid $cold_Br
+
+.pagenation
+    input,
+    select
+        height: $pgW
+        min-width: 3em
+        text-align: center
+        padding: $ds_s $ds_n
+    input
+        width: 2em
+        margin: 0px $ds_s
+
+
+// ul 子选项
+.ul-menu-def
+    color: $sub
+
+    .active
+        color: $tit
+        cursor: default
+    li
+        @extend .br_s
+        cursor: pointer
+        transition: all .12s ease-in-out
+    li:hover
+        color: $tit
+        background: $bg_s
+    
+.ister
+    @extend .fx-l
+    @extend .fx-wp
+    div
+        padding: $ds_s

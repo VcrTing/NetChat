@@ -1,0 +1,22 @@
+
+
+.eos-pagenation
+    @extend .fx-c
+    li
+        @extend .ciear
+        @extend .fx-c
+        padding: $ds
+        margin: 0px $ds_s
+        border: 1px solid transparent
+        transition: all .2s ease-in-out
+        &:hover
+            color: $pri
+            transform: scale(1.04)
+            
+    .active
+        color: $pri
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible
+            // background: $pri_tin

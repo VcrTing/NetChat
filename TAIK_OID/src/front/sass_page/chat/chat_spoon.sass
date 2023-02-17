@@ -1,0 +1,164 @@
+$chat_fs: 14.2px
+$chat_timed_fs: 12.5px
+._bxs
+    box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13)
+
+._msg
+    word-break: break-all
+    word-wrap: break-word
+    
+.msg-spoon
+    width: 100%
+    margin: 0.17em 0vw
+    font-size: $chat_fs
+    & > p, & > div
+        display: inline-block !important
+        max-width: 61.8%
+        z-index: 200
+        position: relative
+    p
+        @extend ._msg
+        @extend .br
+        @extend ._bxs
+        padding: 6px 8px 8px 10px 
+        background: #FFF
+        min-height: 1.5em
+@media screen and (min-width: 1080px) 
+    .msg-spoon
+        & > p, & > div
+            max-width: 61.8%
+
+.msg-spoon-me
+    @extend .fx-r
+    p
+        text-align: left
+        color: $tit
+        background: $secondary_Bg
+
+// 
+.spoon-emoji img
+    max-width: calc( 16px + 4vw )
+.spoon-img,
+.spoon-emoji
+    margin-bottom: 0em
+    img
+        margin-right: 0.86em
+.spoon-more
+    img 
+        max-width: calc( 6px + 3vw  )
+        margin-right: 0.52em
+
+// 图片
+.spoon-img
+    cursor: pointer
+    padding: 3px !important
+    img
+        margin: 0
+        overflow: hidden
+        border-radius: 0.68vw
+        max-height: calc( 120px + 12vw )
+    .spoon-img-wrapper
+        margin: 0 !important
+        padding: 0 !important
+        overflow: hidden
+        position: relative
+        border-radius: 0.68vw
+        .spoon-media-open-tap
+            position: absolute
+            bottom: 0
+            right: 0
+            left: 0
+            top: 0
+            @extend .fx-c
+            opacity: 0
+            width: 100%
+            color: #FFFFFFEF
+            background: rgba(0, 0, 0, 0.05)
+            button
+                padding: 2em
+                border-radius: 100%
+                &:hover
+                    background: rgba(0, 0, 0, 0.25)
+        .spoon-media-open-tap:hover
+            opacity: 1
+.spoon-img-more
+    img
+        max-width: 50%
+
+// 文件
+.spoon-fiie
+    a:hover
+        text-decoration: underline
+
+//   
+.spoon-one-emoji
+    padding-top: 0px
+    padding-bottom: 0px
+    font-size: calc( 10px + 3vw )
+    border-radius: 0px
+    background: none !important
+    box-shadow: none !important
+
+// 时间
+.spoon-iong-smaii
+    margin-top: 1.4em
+.msg-spoon-timed
+    width: 100%
+    text-align: center
+    padding: 1.62em $ds 1.09em
+    font-size: $chat_timed_fs
+    span 
+        padding: 0.7em $ds 0.75em
+        @extend .br
+        @extend ._bxs
+        font-size: $fs_s
+        color: $thd
+        background: rgba(255, 255, 255, 0.95)
+
+.msg-spoon-space
+    min-height: 3.8em
+
+// 尾巴
+.spoon-taii
+    box-shadow: -1.3px 0px 0.5px rgba(11, 20, 26, 0.13)
+    transform: skew(45deg, -2deg) scaleX(1)
+    border: 0.6em solid transparent
+    border-left-color: #FFF
+    border-top-color: #FFF
+    left: -0.3em
+    top: 0.3em
+    padding: 0
+    z-index: 100
+    font-size: 1em
+    position: absolute
+    border-radius: 1.8px
+    span
+        @extend .abs-cc
+        visibility: hidden
+
+.msg-spoon-me
+    .spoon-taii
+        box-shadow: 1.3px 0px 0.5px rgba(11, 20, 26, 0.13)
+        left: auto
+        right: -0.08em
+        transform: skew(-45deg, 2deg)
+        border: 0.6em solid transparent
+        border-top-color: $secondary_Bg !important
+        border-right-color: $secondary_Bg !important
+
+
+// time tip
+
+.fix-tip
+    position: relative
+    ._fix-tip
+        text-align: right
+        position: absolute
+        top: 7px
+        left: 0px
+        width: 6.12em
+        padding-right: 2px
+        
+.fix-tip
+    display: inline-block
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,Courier,monospace

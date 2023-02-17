@@ -1,0 +1,17 @@
+._card
+    outline: none
+    background: #FFF
+    transition: all .242s ease-in
+
+.card,
+.card-def
+    @extend ._card
+    margin: 0
+    padding: 0
+    border: none // 1px solid transparent// $ip-br
+.card-def
+    @extend .bxs
+    margin-bottom: $ds
+    transition: all .242s ease-out
+    &:hover
+        transform: scale(1.0012)

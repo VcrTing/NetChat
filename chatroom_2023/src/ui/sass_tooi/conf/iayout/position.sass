@@ -1,0 +1,35 @@
+$z_index: 99
+
+// 基础定义
+.ps-r
+    position: relative
+.ps-s
+    position: sticky
+.ps-a
+    position: absolute
+    content: ''
+
+// Z INDEX
+.ps-r, .ps-a, .ps-s,
+.abs-t, .abs-i, .abs-r, .abs-b, .abs-c
+    z-index: $z_index
+
+// 附加定义
+.abs-t, .abs-i, .abs-r, .abs-b, .abs-c
+    position: absolute
+    content: ''
+    width: 100%
+
+.abs-t
+    top: 0
+.abs-i
+    left: 0
+.abs-r
+    right: 0
+.abs-b
+    bottom: 0
+
+.abs-c
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)

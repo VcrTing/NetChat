@@ -1,0 +1,136 @@
+$h_ip: 30px
+$ip-br: #E0E5F2
+$ip-br_Hover: #d8dde9
+
+$ip-br_x2: #c2c2c2
+
+
+textarea
+    width: 100%
+// 
+.input-sus
+    border-radius: 8px
+    i
+        color: $sub !important
+    &:-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-webkit-input-placeholder,
+    &::-webkit-input-placeholder
+        color: $sub !important
+    
+
+._input
+    min-height: $h_ip
+    @extend .input-sus
+    padding: $ds_t $ds
+    border: 1px solid transparent
+    outline: 2px solid transparent
+    transition: all .182s ease-out
+
+.input-def
+    @extend ._input
+    background: $def
+    border-color: tranaprent
+    
+.area,
+.input,
+.select
+    @extend .input-sus
+    @extend .input-def
+    margin: 0px
+    padding: $ds_t $ds_x3
+
+select::focus-visible
+    outline: none
+    
+.select
+    min-height: 2em
+    min-width: 2em
+    width: auto
+    display: inline-block
+    padding: 0.1em 0.5em !important
+
+.input-tip
+    transition: all .242s ease-out
+    padding: 0px $ds_x
+    padding-top: $ds_t
+    height: 0px 
+    overflow: hidden
+
+.ip-tip-active
+    height: 1.5em
+    animation: shower .62s ease-out
+
+@keyframes shower
+    0%
+        height: 0px
+    100%
+        height: 1.5em
+        
+
+.input-pri
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible
+        border-color: $primary
+        transition: all .242s ease-out
+
+.input-attach
+    position: relative
+    .icon
+        top: 48%
+        right: 1em
+        font-size: 1.4em
+        position: absolute
+        color: rgb(186, 186, 186)
+        transform: translateY(-50%)
+
+    input
+        padding-right: 2.6em
+
+// 
+$checkbox: #c2c2c2
+.checkbox
+    @extend .hand
+    border: 1px solid $checkbox !important
+
+
+// RADIO
+$radio: 1.4em
+    
+.radio
+    @extend .hand
+    &,
+    &::after
+        padding: 0
+        margin: 0
+        border-radius: 100%
+        transition: all .242s ease-in-out
+    color: transparent
+    position: relative
+    border: 1px solid $sus
+    width: $radio !important
+    height: $radio  !important
+    min-width: $radio !important
+    min-height: $radio !important
+    &:hover
+        color: $sus
+    &::after
+        @extend .abs-cc
+        width: 70%
+        height: 70%
+        border-radius: 100%
+        background: currentColor
+
+.radio-active
+    color: $primary
+    border-color: $primary
+    &:hover
+        color: $primary_Hover
+        border-color: $primary_Hover
+
+input[type=radio]
+    min-width: 1em
+
+@import './input_other'

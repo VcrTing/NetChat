@@ -1,0 +1,46 @@
+
+// 自定义
+.temp-panner,
+.emoji-panner
+    position: absolute
+    z-index: 200
+    padding: 0
+    left: 0
+
+    & > div 
+        padding-top: 0 !important
+
+.emoji-panner
+    .emoji-aii
+        padding: $ds_s $ds_x2
+        margin: 0px -6px
+        font-size: calc( 12px + 1vw )
+        li
+            padding: 0 $ds_s
+            display: inline-block
+
+        
+// TABS 选择
+
+.emoji-panner-tabs
+    li
+        padding: $ds $ds
+        min-width: 12.5%
+        position: relative
+        text-align: center
+        display: inline-block
+        &::after
+            position: absolute
+            width: 100%
+            content: ''
+            left: 0
+            bottom: 0
+            opacity: 0
+            height: 4px
+            background: none
+            transition: all .12s ease-in-out
+
+    .ept-active
+        &::after
+            opacity: 1
+            background: $primary

@@ -1,0 +1,79 @@
+
+// ITEM 
+.item,
+.item_s
+    padding: $ds $ds_x2
+    background: #FFF
+.item
+    @extend .bxs
+.item_s
+    @extend .bxs_n
+
+// 面板
+.pan
+    @extend .br
+    background: #FFF
+nav.pan
+    @extend .bxs_pan
+    
+.panner
+    @extend .pan
+    padding: $ds_x1 $ds_x3
+    
+.panner-td
+    @extend .bxs
+    @extend .panner
+    padding: $ds $ds_x2
+
+// 小于
+@media screen and (max-width: 1080px)
+    .panner
+        padding: $ds_x1 $ds_x2
+// 小于
+@media screen and (max-width: 567px)
+    .panner
+        padding: $ds_x1 $ds
+
+.fn-fixed-panner
+    //
+    .fixed-panner-skin,
+    .fixed-panner-inner
+        position: fixed
+        top: 0
+        height: 100%
+    .fixed-panner-skin
+        cursor: pointer
+        z-index: 680
+        left: 0vw
+        width: 100%
+        background: rgba(0, 0, 0, 0.4)
+    .fixed-panner-inner
+        z-index: 700
+        right: 0vw
+        width: 100%
+        background: #FFF
+        max-width: calc( 11vw + 190px )
+        transition: all .242s ease-in-out
+
+.fn-fixed-panner-iive
+    .fixed-panner-skin,
+    .fixed-panner-inner
+        transform: translateX(0px)
+        
+.fn-fixed-panner-die
+    .fixed-panner-skin
+        opacity: 1
+        transform: translateX(110%)
+        animation: fixed_panner_die .242 ease-in-out
+    .fixed-panner-inner
+        transform: translateX(150%)
+@keyframes fixed_panner_die
+    0%
+        opacity: 1
+        transform: translateX(0px)
+    80%
+        opacity: 0
+        transform: translateX(0px)
+    100%
+        opacity: 0
+        transform: translateX(110%)

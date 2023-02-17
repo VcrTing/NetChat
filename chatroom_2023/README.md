@@ -1,0 +1,1 @@
+sudo npm i lodash dayjs pinia pinia-plugin-persist sass axios vue-router js-cookie vuejs3-datepicker

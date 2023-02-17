@@ -1,0 +1,47 @@
+
+.btn-pri,
+.btn-pri-iht,
+.btn-pri-drk
+    color: $btn-hv-cr
+    &:hover
+        color: $btn-hv-cr
+.btn-pri-out,
+.btn-pri-tin
+    color: $pri
+
+.btn-pri
+    background: $pri
+    &:hover
+        background: $pri_hv
+
+.btn-pri-out
+    border-color: $pri
+    &:hover
+        color: $btn-hv-cr
+        background: $pri
+// 
+.btn-pri-iht
+    background: $pri_iht
+    &:hover
+        background: $pri_iht_hv
+
+.btn-pri-drk
+    background: $pri_drk
+    &:hover
+        background: $pri_drk_hv
+
+//
+.btn-pri-tin
+    background: $pri_tin
+    &:hover
+        background: $pri_tin_hv
+    &:active,
+    &:focus-visible
+        border-color: $pri
+    
+.btn-pri,
+.btn-pri-iht,
+.btn-pri-tin,
+.btn-pri-out,
+.btn-pri-drk
+    @extend .fx-pri

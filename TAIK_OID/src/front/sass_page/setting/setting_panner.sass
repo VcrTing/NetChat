@@ -1,0 +1,27 @@
+
+    
+.change-pager
+    width: 200%
+    height: 100%
+    overflow: hidden
+    .change-pager-one,
+    .change-pager-two
+        width: 50%
+        height: 100%
+        overflow-y: scroll
+        display: inline-block
+    .change-pager-two
+        background: $def
+
+.change-pager-active
+    .change-pager-one
+        margin-left: -50%
+        animation: change_pager_move .121s ease-in-out
+
+@keyframes change_pager_move
+    0%
+        margin-left: 0%
+    100%
+        margin-left: -50%
+        
+

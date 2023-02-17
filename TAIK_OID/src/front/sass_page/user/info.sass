@@ -1,0 +1,36 @@
+$avatar: #dfe5e7
+$urc_cover-s: 40px
+// 
+.eos-user-card
+    & > div
+        width: 5em
+        height: 5em
+        border-radius: 100%
+        
+.bg-avatar
+    background: $avatar
+
+
+.eos-user-easy-card
+    .eos-uec-cover-def,
+    .eos-uec-cover-def .user-avatar-def
+        padding: 0
+        border-radius: 100%
+        width: $urc_cover-s !important
+        height: $urc_cover-s !important
+        min-height: 0px !important
+
+// 详情页的 Fixed 面板
+.chat-user-fixed-panner,
+.chat-plus-taik-panner
+    z-index: 501
+    top: 0
+    left: 0
+    height: 100vh
+    position: fixed
+    background: $def
+    width: $chat-ieft
+.chat-user-fixed-panner
+    overflow-y: scroll
+
+    

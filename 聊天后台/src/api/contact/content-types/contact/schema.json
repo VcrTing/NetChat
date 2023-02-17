@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profile_name": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "last_conversation_time": {
+      "type": "datetime"
+    },
+    "free_response_limit": {
+      "type": "datetime"
+    },
+    "custom_name": {
+      "type": "string"
+    },
+    "isShow": {
+      "type": "boolean"
+    },
+    "whatsapp_send_number_id": {
+      "type": "string"
+    }
+  }
+}

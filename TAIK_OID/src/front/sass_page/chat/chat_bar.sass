@@ -1,0 +1,54 @@
+
+    
+$chat_top_bar: 59px
+.space-chat_top_bar
+    border: none
+    margin: 0
+    height: $chat_top_bar
+    max-height: $chat_top_bar
+
+.chat-top-bar
+    background: $def
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 400
+    padding: 0px $ds_x
+    min-height: $chat_top_bar
+    & > div > div
+        padding: 0px $ds
+    .room-L > div
+        border-right: 1.4px solid $bc
+.for-ctb-h
+    background: #FFF
+    height: $chat_top_bar
+
+.for-chat-top
+    .chat-pot-paner > div
+        padding-top: $chat_top_bar
+
+    .room-L .chat-top-bar
+        max-width: $chat-ieft
+        position: fixed
+        padding-left: $ds
+        border-left: 1px solid transparent
+    .room-R .chat-top-bar
+        // border-bottom: 0.7px solid $bc
+        border-left: 1.4px solid $bc
+    .room-D .chat-top-bar
+        border-left: 1.4px solid $bc
+
+//    
+
+.eos-func-dis-btn
+    position: absolute
+    z-index: 666
+    right: $ds_x2
+    bottom: 4em
+    width: 2.1em
+    height: 2.1em
+    color: $sub
+    font-size: $h4
+    background: #FFF
+    border-radius: 100%
+    box-shadow: 0 1px 1px 0 rgba(11, 20, 26, .06), 0 2px 5px 0 rgba(11, 20, 26, .2)

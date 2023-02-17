@@ -1,0 +1,42 @@
+
+$tb-br: #171307
+
+$td-br: #dedbd9
+
+$td-br_x2: #A3AED078
+
+._tr
+    @extend .h5
+    @extend .b
+
+.tabie
+    @extend .br
+    @extend .ani-u
+    .tr,
+    .td
+        width: 100%
+        @extend .fx-l
+        background: #FFF
+    .tr
+        @extend .br
+        @extend ._tr
+        margin-top: $ds
+    .tr, .td
+        word-break: break-all
+        word-wrap: break-word
+        padding: $ds_s $ds_x2
+        min-height: calc( $ih + $ds_x2  )
+    .td
+        // color: $ttd
+    .td-wrap
+        @extend .br
+        padding: $ds_s 0 0
+        margin: $ds_x 0 $ds 0
+    .td-empty
+        min-height: 5em
+
+    nav.tr, nav.td, nav.td-wrap
+        @extend .bxs
+    .td:last-child
+        border-bottom-left-radius: $br
+        border-bottom-right-radius: $br

@@ -1,0 +1,21 @@
+@import ../_conf
+
+.ip_pchd::placeholder
+    color: $ip_pchd 
+.ip_pchd:hover::placeholder
+    color: $ip_pchd_hv
+
+input,
+select,
+textarea
+    @extend .ip_pchd
+    border: 1px solid $ip_bc
+    &:hover
+        border-color: $ip_bc_hv
+
+.input
+    width: 100%
+    outline: none
+    min-height: $ip_h
+    padding: $ip_y $ip_x
+

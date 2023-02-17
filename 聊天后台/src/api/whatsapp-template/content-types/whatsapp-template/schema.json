@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "whatsapp_templates",
+  "info": {
+    "singularName": "whatsapp-template",
+    "pluralName": "whatsapp-templates",
+    "displayName": "whatsapp_template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "raw": {
+      "type": "json"
+    },
+    "name": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "whatsapp_id": {
+      "type": "string"
+    },
+    "components": {
+      "type": "json"
+    },
+    "isBlocked": {
+      "type": "boolean"
+    },
+    "expectedDeleteDate": {
+      "type": "date"
+    },
+    "whatsapp_busisness_account_id": {
+      "type": "string"
+    },
+    "body_variable_count": {
+      "type": "integer"
+    },
+    "header_variable_count": {
+      "type": "integer"
+    }
+  }
+}

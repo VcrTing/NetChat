@@ -1,0 +1,73 @@
+
+.btn-input
+    min-height: $h_ip_btn
+    border-width: 1px
+    min-width: $ds * 5
+
+.btn-round 
+    border-radius: 6em
+    text-transform: uppercase
+    padding: 0.6em 2.4em
+
+// $die: #b4b4b4
+.btn-die
+    color: $sus
+    background: $sus
+    border: 1px solid $sus
+//
+
+.txt-pri,
+.txt-pri_son,
+.txt-pri_son
+    @extend .hand
+    color: $primary
+    transition: all .362s ease-in
+    *
+        color: $primary
+        transition: all .362s ease-in
+    &:hover
+        *
+            color: $primary_Hover
+
+.txt-pri-hv
+    @extend .hand
+    &:hover
+        color: $primary
+    i
+        color: currentColor
+
+    &:focus,
+    &:active,
+    &:visited,
+    &:focus-visible
+        box-shadow: 0px 0px 0px 3px $primary
+
+
+//  WH
+.wh-btn
+    min-width: calc( 3.2vw + 72px )
+    padding: $ds_s $ds_x2
+    min-height: $h_ip_btn
+
+.wh-btn-simp
+    padding: 0.68em $ds_x2
+    min-width: calc( 3.2vw + 72px )
+
+
+////R
+.btn-td_opera
+    position: relative
+    transition: all .12s ease-in-out
+    *
+        position: relative
+        z-index: 300
+    &::after
+        @extend .abs-cc
+        z-index: 200
+        width: 6em
+        height: 2.8em
+        border-radius: 2em
+        background: transparent
+    &:hover::after
+        background: $primary_Tiny
+        

@@ -1,0 +1,55 @@
+
+.ani_dy
+    animation-delay: .122s
+.ani_dy_x2
+    animation-delay: .242s
+.ani_dy_x3
+    animation-delay: .362s
+.ani_dy_x4
+    animation-delay: .482s
+.ani_dy_x5
+    animation-delay: .602s
+.ani_dy_x6
+    animation-delay: .722s
+
+///  
+.ani-u
+    animation: upper .422s ease-in-out
+
+@keyframes upper 
+    0%
+        opacity: 0.382
+        transform: translateY(12px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
+
+//
+
+.ani-i
+    animation: lefter .422s ease-in-out
+
+@keyframes lefter 
+    0%
+        opacity: 0.382
+        transform: translateX(24px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+.ani-r
+    animation: righter .422s ease-in-out
+
+@keyframes righter 
+    0%
+        opacity: 0.382
+        transform: translateX(-24px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+
+// 微型动画
+.rot-180
+    transform: rotate(180deg)
+    transition: all .422s ease-in-out

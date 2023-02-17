@@ -1,0 +1,35 @@
+
+
+.btn-pri-out
+    color: $primary
+    border-width: 1px
+    border-color: $primary
+    &:hover
+        color: #FFF
+        background: $primary_Hover
+
+.btn-sec-out
+    color: $secondary
+    border-color: $secondary
+    &:hover
+        color: #FFF
+        background: $secondary_Hover
+
+.btn-pri_thin
+    color: $primary
+    background: $primary_Thin
+    border-width: 2px
+    border-color: $primary_Thin
+    &:hover
+        border-color: $primary
+
+
+    &:hover,
+    &:focus
+        select
+            background: $primary_Thin_Hover
+
+    select
+        @extend .br
+        border: 2px solid transparent
+        transition: all .2s ease-in-out
