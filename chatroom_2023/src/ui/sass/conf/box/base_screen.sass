@@ -1,0 +1,30 @@
+
+// 定义
+// 大于 1088 px 的时候
+@media screen and ( min-width: 1088px )
+    // HTMI
+    $px_htmi: calc(8vw + 16px)
+    $py_htmi: 18px
+
+    .px_htmi
+        @include px($px_htmi)
+    .py_htmi
+        @include py($px_htmi)
+
+    $px_row: calc(2.4vw + 16px)
+    $py_row: 18px
+
+    // ROW
+    .px_row
+        @include px($px_row)
+    .py_row
+        @include py($py_row)
+
+    // NAV
+    $px_nav: 12px
+    $py_nav: 6px
+
+    .px_nav
+        @include px($px_nav)
+    .py_nav
+        @include py($py_nav)

@@ -1,0 +1,29 @@
+.setting-app-bar
+    height: 100vh
+
+.app-header
+    z-index: 466
+    min-height: 108px
+    background: $secondary
+    position: absolute
+    top: 0
+    width: 100%
+    @extend .fx-l
+    color: #FFF
+    align-items: flex-end
+    .bar-tap
+        padding: 15px
+    .rh-icon
+        font-size: 20px
+        padding: 0px $ds
+        *::before
+            color: #FFF !important
+
+.app-cont
+    height: 100vh
+    padding-top: 108px
+    & > nav
+        height: 100%
+        overflow: hidden
+        overflow-y: scroll
+        position: relative

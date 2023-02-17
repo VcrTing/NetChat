@@ -1,0 +1,60 @@
+
+$br_t: 2px
+$br_s: 0.5em
+.br_t
+    border-radius: $br_t !important
+.br_s
+    border-radius: $br_s !important
+    
+$br: 7.5px
+$br_x4: 0.92em
+$br_x6: 1.6em
+.br
+    border-radius: $br !important
+.br_x4
+    border-radius: $br_x4 !important
+.br_x6
+    border-radius: $br_x6 !important
+
+.tr,
+.input,
+button,
+.td-collsp,
+.card-def,
+.modal-center,
+.wh-btn
+    border-radius: $br
+
+.ul-pagenation > li
+    border-radius: $br_s
+
+.card-project, .card-project .card-def
+    border-radius: $br_x6 !important
+.pro-cont
+    border-bottom-left-radius: $br_x6 !important
+    border-bottom-right-radius: $br_x6 !important
+.card-project .pro-avatar
+    border-top-left-radius: $br_x6 !important
+    border-top-right-radius: $br_x6 !important
+    
+@media screen and ( max-width: 782px )
+    $br: 4px
+    $br_x4: 0.68em
+    $br_x6: 1.2em
+    .br
+        border-radius: $br !important
+    .br_x4
+        border-radius: $br_x4 !important
+    .br_x6
+        border-radius: $br_x6 !important
+
+    .tr,
+    .input,
+    button
+        border-radius: $br
+
+    .td-collsp
+        border-radius: $br_x4
+
+.round
+    border-radius: 100%

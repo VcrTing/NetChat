@@ -1,0 +1,86 @@
+
+$tb-br: #dedede
+$td-br: #A3AED028
+$td-br_x2: #A3AED078
+
+._tr
+    @extend .h6
+    font-weight: bold
+
+
+.table
+    @extend .upper
+    .tr,
+    .td
+        @extend .fx-l
+        background: #FFF
+
+    .tr
+        @extend ._tr
+        @extend .bxs
+        padding: $ds $ds_x2
+        margin-bottom: $ds
+
+    .td
+        min-height: 30px
+        padding: $ds_s $ds_x2
+        .td-in
+            padding: 1em 0
+            // border-top: 1px solid $tb-br
+
+    .td-empty
+        min-height: 5em
+        // border-top: 1px solid $tb-br
+
+//
+.td-item-wrapper
+    padding-bottom: $ds
+    *
+        margin: 0
+        box-shadow: none
+    .collapse
+        background: #FFF
+        @extend .br
+        @extend .bxs
+    .collapse-item
+        & > button
+            padding: $ds_s $ds_x2
+    .tiw-td
+        overflow: hidden
+        border-top: 1px solid $td-br
+        border-bottom-left-radius: $br
+        border-bottom-right-radius: $br
+        .td:last-child
+            border-color: transparent !important
+
+.td-pr
+    & > div
+        padding-right: $ds_s
+
+// FORM SHOW
+.td-form-hide
+    animation: hide_2ms .262s ease-in !important
+
+@keyframes hide_2ms 
+    0%
+        opacity: 1
+        transform: translateY(0px)
+    100%
+        opacity: 0.2
+        transform: translateY(24px)
+
+
+.table-photo
+    @extend .br
+    @extend .bxs_inn
+    overflow: hidden
+    .td-iin
+        padding: 0px
+        margin: 0px
+        box-shadow: none
+        border-radius: 0px !important
+        .img
+            width: 100%
+            padding-bottom: 100%
+
+

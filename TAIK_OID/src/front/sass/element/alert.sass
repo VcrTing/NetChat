@@ -1,0 +1,31 @@
+.tooltip
+    top: -26px
+    opacity: 0
+    min-width: 86px
+    font-size: 0.82em
+    padding: 4px $ds
+    transition: all .362s ease-out
+    box-shadow: 0.5px 1px 5px rgba(0, 0, 0, 0.24)
+    &::after
+        background: none !important
+        content: ''
+        bottom: -15px
+        left: 50%
+        border: 5px solid transparent !important
+        border-top-color: #000000AA !important
+
+    &,
+    &::after
+        font-weight: normal
+        position: absolute
+        left: 50%
+        color: #FFFFFFF0
+        background: #000000D4
+        transform: translate(-50%, -50%)
+        
+.tooltip-tigger
+    &:hover
+        .tooltip
+            opacity: 1
+    div:last-child
+        cursor: default

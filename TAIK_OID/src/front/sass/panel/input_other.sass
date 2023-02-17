@@ -1,0 +1,51 @@
+
+// 时间
+.input-timed
+    .vdp-datepicker__calendar
+        border-color:  transparent
+        margin: $ds 0
+        z-index: 800
+        overflow: hidden
+        border-radius: 6px
+        padding-bottom: 2px
+        box-shadow: 0px 5px 8px -1.5px rgba(0, 0, 0, 0.23)
+        
+        span.day
+            border-radius: 100% !important
+        span.year,
+        span.month
+            border-radius: 4px !important
+        .selected 
+            color: #FFF
+            background: $primary_Hover !important 
+
+        .prev,
+        .next,
+        .day__month_btn,
+        .month__year_btn
+            padding: 8px 0px
+            text-align: center
+
+        .cell:not(.blank):not(.disabled).day:hover, 
+        .cell:not(.blank):not(.disabled).month:hover, 
+        .cell:not(.blank):not(.disabled).year:hover
+            transition: all .04s ease-in-out
+            border: 1px solid $primary_Thin
+            background: $primary_Thin
+
+    .vdp-datepicker
+        input
+            @extend .input
+            
+
+//   
+.ip-i-i
+    position: relative
+    span
+        position: absolute
+        top: 50%
+        left: $ds
+        transform: translateY(-50%)
+    input
+        width: 100%
+        padding-left: 3em

@@ -1,0 +1,100 @@
+
+$couter: #676868
+$couter_br: #989999
+$couter_hr: #989999
+    
+.focus_tab_three
+    .ftt_hr
+        height: 1px
+        background: none !important
+        border: none
+        border-top: 1px dashed $couter_hr
+
+
+.counter
+    @extend .fx-c
+    .counter_cont
+        color: $thd 
+        max-width: 290px
+        padding: $ds_s $ds
+
+    .active
+        color: #FFF
+        background: $primary
+        border-color: $primary
+
+.counter_icon
+    @extend .h3
+    @extend .t-c
+    width: 1.4em
+    height: 1.4em
+    color: $couter
+    border-radius: 100%
+    border: 1px solid $couter_br 
+    transition: all .62s ease-out
+
+// 面包屑
+.crumb
+    nav
+        cursor: default
+    .tid
+        cursor: text
+
+//  
+.f-time
+    @extend .br
+    background: #FFF
+    input
+        cursor: pointer
+        border: none !important
+        &:focus
+            // background: $bg_s
+
+.f-search
+    width: calc(15vw + 107px)
+    transition: all .242s ease-in-out
+    &:hover
+        width: calc(19vw + 122px)
+
+
+.fiiter-bar
+    padding: 0
+    margin: 0
+    @extend .fx-s
+
+    .fb-opera
+        @extend .fx-r
+        @extend .h6
+
+    .fb-many
+        flex: 1
+        @extend .fx-l
+        & > div,
+        & > nav
+            padding-right: $ds
+
+        .input
+            @extend .bxs_n
+        .f-time
+            @extend .bxs
+            input
+                box-shadow: none !important
+
+    .input
+        border-color: transparent
+
+
+@media screen and ( max-width: 1082px )
+    .fiiter-bar
+        flex-wrap: wrap
+        .fb-many
+            width: 100%
+            & > div
+                flex-wrap: wrap
+            & > div,
+            .input
+                width: 100% !important
+        .fb-opera
+            width: 100%
+            padding-top: $ds_x2
+            justify-content: start

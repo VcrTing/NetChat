@@ -1,0 +1,34 @@
+$udp-cover: 170px
+
+.cp-udp-wrapper
+    height: 100vh
+    overflow-x: hidden
+    overflow-y: scroll
+    
+.cp-udp-fn
+    width: 100%
+    @extend .fx-c
+    flex-wrap: wrap
+    .user-avatar-def 
+        margin: 0 !important
+        padding: 0 !important
+    .cp-udp-fn-cover
+        border-radius: 100%
+        overflow: hidden
+        width: $udp-cover
+        height: $udp-cover
+
+@media screen and (max-width: 1080px)
+    $udp-cover: 142px
+    .cp-udp-fn-cover
+        width: $udp-cover !important
+        height: $udp-cover !important
+
+@media screen and (min-width: 1921px)
+    $udp-cover: 216px
+    .cp-udp-fn-cover
+        width: $udp-cover !important
+        height: $udp-cover !important
+
+.cp-udp-op
+    height: 60vh

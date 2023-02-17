@@ -1,0 +1,63 @@
+
+.temp-inner
+    min-height: 40vh
+    .bars
+        padding-top: $ds_s
+        padding-bottom: $ds_s
+
+.eos-tsi-wrapper
+    @extend .fx-l
+    padding: $ds_t $ds_x
+    margin: 0px -6px
+    & > div
+        padding: $ds_s
+    .btn-send
+        min-width: 6em
+        border-radius: 0px
+        padding: $ds_n $ds_x2
+        border-right-width: 0px
+        border: 1px solid transparent
+        &:hover
+            background: #FFF
+            border: 1px solid $def
+    .eos-tempiate-send-item
+        width: 33.3%
+        & > div
+            border-radius: 3px
+            background: rgba(255, 255, 255, 0.86)
+            & > button
+                min-height: 5.5em
+            &:hover
+                background: rgba(255, 255, 255, 1)
+
+.temp-filter-bar
+    @extend .fx-s
+    background: #FFF !important
+    .tfb-cate
+        @extend .h6
+        padding: 0
+        button
+            @extend .ciear
+            font-weight: bold
+            padding: $ds_n $ds_x2
+        .active
+            background: $def
+
+    .tfb-tag
+        padding: $ds_s
+        background: none
+        button
+            padding: $ds_t $ds_x
+            border-radius: 0.2em
+            font-size: $fs_s 
+        .active
+            background: $def
+
+.temp-btn
+    padding: $ds_s $ds !important
+    border-radius: 0px
+    background: none
+    border: none
+    border-top: 1px solid transparent
+    &:hover
+        border-left-color: $def

@@ -1,0 +1,59 @@
+$chat-cont: 100vh// calc(120px + 50vh)
+
+.iayout-room
+    width: 100%
+    @extend .fx-s
+
+$chat_x_space: 0px// calc(24px + 8vw) 
+.pl-chat
+    padding-left: $chat_x_space
+.pr-chat
+    padding-right: $chat_x_space
+    
+.room-L
+    @extend .pl-chat
+    width: $chat-ieft
+    overflow-x: hidden
+.room-R
+    @extend .pr-chat
+    flex: 1
+
+.room-page
+    height: 100vh
+    & > div,
+    & > nav
+        height: 100vh
+    .room-L
+        position: relative
+        overflow-y: scroll
+        background: #FFF
+    .room-R
+        position: relative
+
+//    
+.chat-pot-paner
+    & > div
+        overflow: hidden
+        overflow-y: scroll
+        padding: $ds 8%
+        height: $chat-cont
+        & > div
+            padding: 0
+            padding-top: 0.7em
+    & > nav
+        width: 100%
+        z-index: 300
+        @extend .abs-b
+
+
+// 右边面板
+$chat-f-w: calc(90px + 17vw)
+.room-D
+    width: auto
+    background: $def
+    .chat-top-bar
+        width: $chat-f-w
+
+.room-D-active
+    & > div
+        width: $chat-f-w

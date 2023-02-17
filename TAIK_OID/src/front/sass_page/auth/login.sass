@@ -1,0 +1,119 @@
+$auth: #FFF // #F0F2F5
+.backimg
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: right -10vh
+
+.auth-wrapper
+    width: 100vw
+    height: 100vh
+    background: $auth
+    position: relative
+
+    .auth-img
+        z-index: 99
+        width: 100%
+        height: 100%
+        @extend .backimg
+        position: absolute
+        background-size: cover cover
+        background-position: right -10vh
+    
+    .auth-cont
+        width: 100%
+        height: 100%
+        z-index: 300
+        margin: 0 auto
+        position: absolute
+        background: none !important
+.auth-panel
+    height: 100%
+    z-index: 200
+    min-height: 240px
+    padding: $ds_x2
+    background: none !important
+    & > nav
+        width: 100%
+        @extend .fx-c
+        min-height: 80%
+        max-height: calc( 90vh - 120px )
+        overflow-y: scroll
+
+    .auth-logo
+        max-width: calc( 90px + 9vh ) !important
+
+.auth-panel > nav > div
+    min-width: calc( 170px + 8vw )
+
+.auth-bg
+    height: 100vh
+    background-size: cover
+    background-position: center
+
+.input-auth
+    border-radius: 6em !important
+    & > div
+        position: relative
+    i
+        top: 50%
+        left: 1.24em
+        opacity: 0.8
+        position: absolute
+        transform: translateY(-52%)
+    .input
+        width: 100%
+        background: none
+        border-radius: 3em
+        border: 1px solid $bc
+        padding: 0.68em 0.82em
+        padding-right: $ds !important
+        padding-left: 3.2em !important
+        
+.btn-auth
+    width: 100%
+    padding: 0.68em 0.82em
+    margin-top: 1vh
+    border-radius: 3em
+    text-indent: 0.25em
+    letter-spacing: 0.5em
+
+.pt_auth
+    padding-top: 5vh
+
+
+@media screen and ( max-width: 788px )
+
+    // 颜色
+    .auth-cont
+        .auth-panel,
+        .auth-bg
+            width: 100%
+
+    .auth-cont
+        z-index: 102
+        position: relative
+        .auth-panel > nav > div
+            width: 100%
+            padding: $ds_x2
+            background: #FFF
+            box-shadow: 0px 1px 6px -2px rgba(0, 0, 0, 0.08)
+                    
+        .auth-bg
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 100
+
+.user-name
+    // text-transform: capitalize
+    white-space: nowrap
+
+.auth-tool
+    position: fixed
+    bottom: $ds
+    right: 0
+    z-index: 300
+    button
+        color: #FFFFFFC2
+        &:hover
+            color: #FFF

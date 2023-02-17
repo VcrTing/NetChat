@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_whatsapp_whatsapp_media_details",
+  "info": {
+    "displayName": "whatsapp_media_detail",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "mime_type": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "whatsapp_id": {
+      "type": "string"
+    },
+    "extension": {
+      "type": "string"
+    }
+  }
+}

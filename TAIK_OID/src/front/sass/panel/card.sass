@@ -1,0 +1,189 @@
+._card
+    outline: none
+    background: #FFF
+    transition: all .242s ease-in
+
+.card,
+.card-def
+    @extend ._card
+    margin: 0
+    padding: 0
+    border: none // 1px solid transparent// $ip-br
+.card-def
+    @extend .bxs
+    margin-bottom: $ds
+    transition: all .242s ease-out
+    &:hover
+        transform: scale(1.0012)
+
+.card-board
+    padding: $ds $ds_x2
+    &:hover 
+        background: #FFF
+
+.card-board
+    @extend .bxs
+    @extend ._card
+    padding-left: $ds_x2
+    padding-right: 0px
+
+// 文本框
+.form-def
+    input,
+    select,
+    textarea,
+    .input-money
+        @extend .input-sus
+
+.card-invite
+    padding-top: $ds_s
+    padding-bottom: $ds_s
+    div
+        line-height: $lh_x2
+
+//  
+.card-page
+    border: none
+    padding: $ds $ds_x2
+    margin: $ds_x 0 $ds_x2
+
+// 过滤的结果
+
+$card_filter: #7DF1B0
+.card-filter
+    padding: $ds $ds_x2
+    background: $card_filter
+
+// MENU CARD
+
+.menu-auth-card
+    word-break: break-all
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 0
+    & > div
+        background: #FFF
+        padding: $ds_x2 $ds_x
+        padding-left: $ds_s * 7
+        padding-bottom: calc( 10px + 2vh )
+
+
+//   
+.card-project
+    width: 100%
+    margin-bottom: 4vh
+    &,
+    .pro-avatar
+        max-width: calc( 224px + 4vw )
+    .pro-avatar
+        width: 100%
+        overflow: hidden
+        height: calc( 110px + 2vw ) !important
+        & > div,
+        & > img
+            width: 100%
+            height: 100%
+            transition: all .362s ease-in
+            &:hover
+                transform: scale(1.07)
+        &:focus,
+        &:active,
+        &:focus-visible
+            box-shadow: 0px 0px 0px 3px $primary
+
+    .pro-cont
+        padding: $ds_x $ds_x $ds
+        & > nav
+            padding-bottom: $ds
+            h4
+                cursor: pointer
+                font-weight: 580
+                height: 3.2em
+                overflow: hidden
+                text-overflow: ellipsis
+
+    .pro-i
+        overflow: visible !important
+        line-height: 1.6em
+        .svg-wrapper
+            transform: translateX(0.2em)
+            opacity: 0.55
+            min-width: 1.6em
+            min-height: 1.6em
+            & > svg
+                width: 100%
+
+    .pro-sub
+        @extend .fx-l
+        height: 3em
+        align-items: end
+        
+
+// 一般卡片
+.card-work,
+.card-work-inn
+    @extend .card-def
+    padding: $ds_x $ds_x2
+    margin-bottom: $ds_x2
+.card-work .card-work-inn
+    @extend .bxs_inn
+    padding: $ds_x $ds_x $ds
+    min-height: 6em
+    margin-top: $ds_s
+    margin-bottom: 0px
+    &:first-child
+        margin-top: 0px
+
+//   
+
+.card-outso-contract
+    .f-txt-ine
+        padding-top: $ds
+    .f-txt-ine
+        p 
+            padding-bottom: $ds_s
+
+
+//   
+.card-sign
+    @extend .br
+    // @extend .bxs_inn_s
+    border: 1px solid $ip-br
+    border: 0.5px solid $ip-br
+    overflow: hidden
+    position: relative
+    display: inline-block
+    width: calc( 80px + 6vw )
+    max-height: calc( 140px + 9vw )
+    .card-sign-opera
+        right: 0
+        color: #FFFFFFEF !important
+        background: $primary
+        padding: $ds_t $ds
+        opacity: 0.83
+        position: absolute
+        transition: all .12s ease-in-out
+        border-bottom-left-radius: 0.46em
+        &:hover
+            opacity: 1
+    & > img
+        width: 100%
+        padding: $ds_s
+        background: #FFF
+        max-height: calc( 140px + 9vw )
+
+
+.card-damage
+    .i-big
+        i,
+        .i-icing
+            width: 100%
+            height: 100%
+        img
+            width: 100%
+            height: auto
+
+    h5
+        flex: 1
+        

@@ -1,0 +1,80 @@
+
+.coiiapse-item,
+.coiiapse-item > div,
+.coiiapse-item > nav
+    width: 100%
+    background: transparent
+
+.coiiapse-item
+    margin: 0px
+    flex-wrap: wrap
+    & > div,
+    & > nav
+        @extend .ciear
+        border-radius: 0px
+    & > nav
+        position: relative
+    & > div
+        max-height: 0px
+        overflow: hidden
+        margin-top: $ds_t
+        transform: translateY(-1em)
+        transition: all .242s ease-out
+
+
+.coiiapse-active
+    & > div
+        max-height: 24em
+        transform: translateY(0px)
+    & > nav 
+        .i-icing
+            transition: all .242s ease-in-out
+            transform: rotate(-180deg) !important
+    .coiiapse-trig i
+        transform: rotate(90deg) scale(0.85)
+
+.coiiapse-trig
+    position: absolute
+    right: $ds_x2
+    top: 0
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    i
+        transform: scale(0.85)
+        transition: all .242s ease-in-out
+
+/// . 
+
+.eos-coiiapse-die
+    opacity: 0.4
+    max-height: 0em
+    overflow: hidden
+    transform: translateY(-6px)
+    animation: eos-coiiapse-die .12s ease-in-out
+@keyframes eos-coiiapse-die
+    0%
+        opacity: 1
+        max-height: 30em
+        transform: translateY(0px)
+    100%
+        opacity: 0.4
+        max-height: 0em
+        transform: translateY(-6px)
+.eos-coiiapse-iive
+    opacity: 1
+    max-height: 0em
+    overflow: hidden
+    transform: translateY(0px)
+    animation: eos-coiiapse-iive .16s ease-in-out
+@keyframes eos-coiiapse-iive
+    0%
+        opacity: 0.4
+        max-height: 0em
+        transform: translateY(-6px)
+    100%
+        opacity: 1
+        max-height: 30em
+        transform: translateY(0px)
+        

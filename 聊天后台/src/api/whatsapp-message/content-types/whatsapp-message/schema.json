@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "collectionName": "whatsapp_messages",
+  "info": {
+    "singularName": "whatsapp-message",
+    "pluralName": "whatsapp-messages",
+    "displayName": "whatsapp_message",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "phone_number": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "dateTime": {
+      "type": "datetime"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "business_phone_number_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "raw": {
+      "type": "json"
+    },
+    "business_phone_number": {
+      "type": "string"
+    },
+    "whatsapp_message_id": {
+      "type": "string"
+    },
+    "whatsapp_profile": {
+      "type": "string"
+    },
+    "delivered_time": {
+      "type": "datetime"
+    },
+    "isDelivered": {
+      "type": "boolean"
+    },
+    "read_time": {
+      "type": "datetime"
+    },
+    "isRead": {
+      "type": "boolean"
+    },
+    "media_detail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "whatsapp.whatsapp-media-detail"
+    },
+    "context": {
+      "type": "json"
+    },
+    "last_message_relation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::whatsapp-message.whatsapp-message"
+    },
+    "last_message_whatsapp_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "whatsapp.whatsapp-location"
+    },
+    "attached_contacts": {
+      "type": "json"
+    },
+    "error": {
+      "type": "json"
+    },
+    "status": {
+      "type": "string"
+    },
+    "send_detail": {
+      "type": "json"
+    },
+    "isShow": {
+      "type": "boolean"
+    },
+    "sent_by": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

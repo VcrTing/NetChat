@@ -1,0 +1,31 @@
+
+.dw-def
+    & > button
+        z-index: 200
+        min-width: 6em
+        padding: $ds_s $ds
+        
+
+.auth-menu
+    min-width: calc( 10em + 5vw )
+    &, & > div
+        border-radius: 3px !important
+    & > div
+        margin-top: $ds
+    hr
+        opacity: 0.262
+    button
+        width: 100%
+        color: $ttd
+        text-indent: 0.1em
+        letter-spacing: 0.2em
+        transition: all .362s ease-in-out
+        &:hover
+            color: $tit
+            background: $primary_Light
+    button:first-child
+        border-bottom-left-radius: 0px !important
+        border-bottom-right-radius: 0px !important
+    button:last-child
+        border-top-left-radius: 0px !important
+        border-top-right-radius: 0px !important

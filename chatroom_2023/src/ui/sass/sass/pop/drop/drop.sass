@@ -1,0 +1,97 @@
+$drop_bxs: rgba(11, 20, 26, .26)
+
+._drop_bxs
+    box-shadow: 0 1.5px 3px 0 $drop_bxs, 0 1.5px 8px 0 $drop_bxs
+
+.dropdown
+    position: relative
+
+    .drop-inner
+        position: absolute
+        overflow: hidden
+        @extend .br
+        z-index: 999
+        padding: 0
+        background: #FFF
+        max-height: 0em
+        box-shadow: 0px 1.8px 5px -1px #004eca44
+        button
+            width: 100%
+            @extend .ciear
+            min-width: 2em
+    &:hover 
+        .drop-inner
+            max-height: 20em
+            animation: dropdown .422s ease-out
+
+@keyframes dropdown
+    0%
+        max-height: 0em
+    100%
+        max-height: 20em
+        
+// switch
+.switch-wrapper
+    width: 3em
+    height: 1em
+    position: relative
+
+.switch
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    cursor: pointer
+    padding: 0.2em
+    min-width: 3em
+    background: pink // $sut
+    transition: all .152s ease-in-out
+    .switch-inner
+        width: 1.2em
+        height: 1.2em
+        background: #FFF
+        border-radius: 100%
+.switch-active
+    background: $pri
+    .switch-inner
+        margin-left: 1.4em
+        animation: switch-active .162s ease-in-out
+@keyframes switch-active
+    0%
+        margin-left: 0em
+    100%
+        margin-left: 1.4em
+.switch-die
+    background: black
+    .switch-inner
+        margin-left: 0em
+        animation: switch-die .162s ease-in-out
+@keyframes switch-die
+    0%
+        margin-left: 1.4em
+    100%
+        margin-left: 0em
+///import css-variables from 
+
+.expan
+    position: relative  
+    .expan-inner
+        @extend .br
+        @extend .ciear
+        position: absolute  
+        bottom: 0
+        left: 0
+        width: 100%
+        overflow: hidden
+        padding: 0
+        max-height: 0em  
+
+.expan-active
+    .expan-inner
+        max-height: 40em   
+        animation: expan .12s ease-out
+
+@keyframes expan
+    0%
+        max-height: 0em
+    100%
+        max-height: 20em

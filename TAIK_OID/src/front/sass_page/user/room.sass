@@ -1,0 +1,57 @@
+
+$chat-top-bar-H: 5em
+
+.chat-user-paner
+    overflow-y: visible
+
+.chat-room-top-bar,
+.chat-room-top-left-bar
+    min-height: $chat-top-bar-H
+    padding: $ds_s 0 $ds_s $ds
+.chat-room-top-bar
+    border-bottom: 0.7px solid $cold_Br2
+
+.eos-user-room-card,
+.eos-user-room-easy-card
+    width: 100%
+    cursor: pointer
+    user-select: none
+    transition: all .12s ease-in-out
+
+    border-radius: 0px
+
+    .user-avatar
+        div
+            width: 49px
+            height: 49px
+            border-radius: 100%
+
+.eos-user-room-card
+    min-height: 65px
+    & > nav
+        padding: 10px $ds 10px $ds_s
+        border-bottom: 0.7px solid $hr
+        & > nav
+            user-select: none
+            // padding-top: 3px  
+
+.eos-user-room-easy-card
+    .user-avatar
+        div
+            width: $urc_cover-s
+            height: $urc_cover-s
+    & > nav
+        padding: 0
+
+.user-def-avatar
+    @extend .fx-c
+    position: relative
+    span
+        @extend .abs-cc
+        font-size: 2em
+        // opacity: 0.62
+        color: #FFF
+.eos-user-room-easy-card
+    .user-def-avatar
+        span
+            font-size: 1.7em
